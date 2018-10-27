@@ -1,0 +1,17 @@
+header {
+  margin-top: 10px;
+  color: red;
+}
+
+nav {
+  margin-top: 10px;
+  color: red;
+}
+nav ul display {
+  display: inline-block;
+}
+nav ul display li {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=style.css.map */

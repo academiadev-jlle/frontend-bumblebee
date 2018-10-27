@@ -1,0 +1,33 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_extends.scss";
+
+header {
+    margin-top: $defaultMarginTop;
+    color: $defaultColor;
+}
+
+nav {
+    margin-top: $defaultMarginTop;
+    color: $defaultColor;
+
+    ul {
+        display {
+            display: inline-block;
+
+            li {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.btn-promocao {
+    @extend %rounded-borders; // --> Não passa valore e agrupa no css compilado os seletores com atributos comuns
+    // @include radius(5px);  --> Passa valores
+}
+
+.bt-comprar {
+    @extend %rounded-borders;
+    // @include radius(50%);
+}
