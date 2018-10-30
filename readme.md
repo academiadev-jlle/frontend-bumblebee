@@ -1,6 +1,6 @@
 ﻿# Bumblebee - frontend
 
-Acesse [este link](https://github.com/academiadev-jlle/wiki-bumblebee/blob/master/readme.md) para as informações gerais do projeto.
+Acesse [este link](https://github.com/academiadev-jlle/wiki-bumblebee) para as informações gerais do projeto.
 
 * **Equipe frontend**
   * **[Victor Lucas de Melo Mafra](https://github.com/PurpleBooth)**
