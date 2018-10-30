@@ -6,6 +6,4 @@ Acesse [este link](https://github.com/academiadev-jlle/wiki-bumblebee) para as i
   * **[Victor Lucas de Melo Mafra](https://github.com/PurpleBooth)**
   * **[Wagner Esser](https://github.com/WagnerEsser)**
 
-### Mockups de tela
-
-[Draw.io](https://github.com/academiadev-jlle/frontend-bumblebee/tree/master/mockups)
+#### > [Mockups de tela](https://github.com/academiadev-jlle/frontend-bumblebee/tree/master/mockups)
