@@ -10,5 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.14.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.4.2",
+    "bootstrap": "^4.1.3"
   }
 }
