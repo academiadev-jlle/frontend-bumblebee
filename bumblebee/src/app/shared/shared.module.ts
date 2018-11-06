@@ -16,7 +16,7 @@ import { PetDetailComponent } from './pet-detail/pet-detail.component';
         PetListItemComponent,
         HeaderComponent,
         FooterComponent,
-        PetDetailComponent
+        PetDetailComponent,
     ],
     exports: [
         PetListItemComponent,
