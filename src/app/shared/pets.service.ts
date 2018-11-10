@@ -19,19 +19,31 @@ export class PetsService {
       id: 2,
       name: 'Jair',
       description: 'Mae sou presidente',
-      isAdoption: false,
+      isAdoption: true,
       isLost: true
     }, {
       id: 3,
       name: 'Rex',
       description: 'Queria ter um nome melhor',
       isAdoption: true,
-      isLost: false
+      isLost: true
     }, {
       id: 4,
       name: 'Totó',
       description: 'Fui perdido em algum lugar',
       isAdoption: true,
+      isLost: false
+    }, {
+      id: 5,
+      name: 'Fernando',
+      description: 'To perdido mae',
+      isAdoption: false,
+      isLost: false
+    }, {
+      id: 6,
+      name: 'Rex',
+      description: 'Queria ter um nome melhor',
+      isAdoption: false,
       isLost: false
     }]);
   }
