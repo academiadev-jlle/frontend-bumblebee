@@ -9,5 +9,5 @@ export class PetListItemComponent {
     @Input() pet: PetOptions;
 
     // tslint:disable-next-line:max-line-length
-    photo = 'https://thenypost.files.wordpress.com/2018/05/180516-woman-mauled-by-angry-wiener-dogs-feature.jpg?quality=90&strip=all&w=200&h=200&crop=1';
+    photo = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRIh_Lo1WiWd35K2nHcgXo0Q6T6WBqIzrIK7mXgEIKJ4M7CVk_Eg';
 }
