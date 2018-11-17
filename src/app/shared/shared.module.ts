@@ -8,11 +8,17 @@ import { FooterComponent } from './footer/footer.component';
 import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { IsAdoptedPipe } from './pipes/is-adopted.pipe';
 import { NormalFontWeightDirective } from './directives/normal-font-weight.directives';
+import { CarouselComponent } from './carousel/carousel.component';
+
+import { NguCarouselModule } from '@ngu/carousel';
+import 'hammerjs';
+
 
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        NguCarouselModule
     ],
     declarations: [
         PetListItemComponent,
@@ -20,13 +26,15 @@ import { NormalFontWeightDirective } from './directives/normal-font-weight.direc
         FooterComponent,
         PetDetailComponent,
         IsAdoptedPipe,
-        NormalFontWeightDirective
+        NormalFontWeightDirective,
+        CarouselComponent
     ],
     exports: [
         PetListItemComponent,
         HeaderComponent,
         FooterComponent,
-        PetDetailComponent
+        PetDetailComponent,
+        CarouselComponent
     ]
 })
 
