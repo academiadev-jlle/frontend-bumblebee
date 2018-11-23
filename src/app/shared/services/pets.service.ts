@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 import { PetOptions } from '../pet-list-item/pet-list-item.options';
 
 @Injectable({
@@ -6,61 +9,30 @@ import { PetOptions } from '../pet-list-item/pet-list-item.options';
 })
 export class PetsService {
 
-  pets: PetOptions[] = [];
+    private url = 'https://test-bumblebeepets.herokuapp.com/pet/';
 
-  constructor() {
-    this.pets.push(...[{
-      id: 1,
-      name: 'Fernando',
-      description: 'To perdido mae',
-      isAdoption: false,
-      isLost: true
-    }, {
-      id: 2,
-      name: 'Jair',
-      description: 'Mae sou presidente',
-      isAdoption: true,
-      isLost: true
-    }, {
-      id: 3,
-      name: 'Rex',
-      description: 'Queria ter um nome melhor',
-      isAdoption: true,
-      isLost: true
-    }, {
-      id: 4,
-      name: 'Totó',
-      description: 'Fui perdido em algum lugar',
-      isAdoption: true,
-      isLost: false
-    }, {
-      id: 5,
-      name: 'Fernando',
-      description: 'To perdido mae',
-      isAdoption: false,
-      isLost: false
-    }, {
-      id: 6,
-      name: 'Rex',
-      description: 'Queria ter um nome melhor',
-      isAdoption: false,
-      isLost: false
-    }]);
-  }
+    constructor(
+        private http: HttpClient
+    ) {}
 
-  getById(id: number): PetOptions {
-    return this.pets.filter(pet => pet.id === id)[0];
-  }
+    get(): Observable<PetOptions[]> {
+        return this.http.get<PetOptions[]>(this.url);
+    }
 
-  getLost(): PetOptions[] {
-    return this.pets.filter(pet => pet.isLost);
-  }
+    getLost(): Observable<PetOptions[]> {
+        return this.http.get<PetOptions[]>(this.url);
+    }
 
-  getAdoption(): PetOptions[] {
-    return this.pets.filter(pet => pet.isAdoption);
-  }
+    getAdoption(): Observable<PetOptions[]> {
+        return this.http.get<PetOptions[]>(this.url);
+    }
 
-  getAdopted(): PetOptions[] {
-    return this.pets.filter(pet => !pet.isAdoption);
-  }
+    getAdopted(): Observable<PetOptions[]> {
+        return this.http.get<PetOptions[]>(this.url);
+    }
+
+    getById(id: number): Observable<PetOptions> {
+        const url = this.url + '/' + id;
+        return this.http.get<PetOptions>(url);
+    }
 }

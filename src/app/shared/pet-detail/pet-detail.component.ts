@@ -22,9 +22,8 @@ export class PetDetailComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute
       .params
-      .subscribe((route) => {
-        this.pet = this.petService.getById(parseInt(route.id, 10));
-        this.titleService.setTitle(this.pet.name);
+      .subscribe((param) => {
+        this.petService.getById(parseInt(param.id, 10)).subscribe(pet => this.pet = pet);
       });
   }
 }

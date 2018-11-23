@@ -10,7 +10,7 @@ import { LostPetsComponent } from './public/lost-pets/lost-pets.component';
 import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
 
 const routes: Routes = [
-  { path: 'pet/:id/:slug', component: PetDetailComponent },
+  { path: 'pet/:id', component: PetDetailComponent },
   { path: 'user/cad', component: UserCadComponent },
   { path: 'pet/cad', component: PetCadComponent },
   {
@@ -21,7 +21,13 @@ const routes: Routes = [
     }
   },
   { path: 'login', component: LoginComponent },
-  { path: '**', component: HomeComponent }
+  {
+    path: '**',
+    component: HomeComponent,
+    // resolve: {
+    //   lostPets: LostPetsComponent
+    // }
+  }
 ];
 @NgModule({
   imports: [

@@ -18,7 +18,7 @@ export class LostPetsComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
-        this.lostPets = this.router.snapshot.data.lostPets.results;
+        this.lostPets = this.router.snapshot.data.lostPets;
         this.filterSubject
             .pipe(
                 debounceTime(300)

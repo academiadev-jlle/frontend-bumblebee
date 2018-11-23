@@ -17,13 +17,12 @@ export class HomeComponent implements OnInit {
   adoptionPets: PetOptions[] = [];
   adoptedPets: PetOptions[] = [];
 
-  constructor(private petService: PetsService) {
-    this.lostPets = petService.getLost();
-    this.adoptionPets = petService.getAdoption();
-    this.adoptedPets = petService.getAdopted();
-  }
+  constructor(private petService: PetsService) {  }
 
   ngOnInit() {
+    this.petService.getLost().subscribe(resposta => this.lostPets = resposta);
+    this.petService.getAdoption().subscribe(resposta => this.adoptionPets = resposta);
+    this.petService.getAdopted().subscribe(resposta => this.adoptedPets = resposta);
   }
 
 }
