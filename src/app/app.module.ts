@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './public/public.module';
 import { AppRoutingModule } from './app-routing.module';
-import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
+// import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
+import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
     AppRoutingModule
   ],
   providers: [
-    LostPetsResolver
+    // LostPetsResolver,
+    ListPetsResolver
   ],
   bootstrap: [AppComponent],
 })

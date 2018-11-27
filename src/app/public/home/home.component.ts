@@ -13,16 +13,15 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(private petService: PetsService) { }
   lostPets: PetOptions[] = [];
   adoptionPets: PetOptions[] = [];
   adoptedPets: PetOptions[] = [];
 
-  constructor(private petService: PetsService) {  }
-
   ngOnInit() {
-    this.petService.getLost().subscribe(resposta => this.lostPets = resposta);
-    this.petService.getAdoption().subscribe(resposta => this.adoptionPets = resposta);
-    this.petService.getAdopted().subscribe(resposta => this.adoptedPets = resposta);
+    this.petService.getPetsByCategory('perdidos').subscribe(resposta => this.lostPets = resposta);
+    this.petService.getPetsByCategory('para-adocao').subscribe(resposta => this.adoptionPets = resposta);
+    this.petService.getPetsByCategory('adotados').subscribe(resposta => this.adoptedPets = resposta);
   }
 
 }

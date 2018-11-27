@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { PetOptions } from '../pet-list-item/pet-list-item.options';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class PetsService {
 
@@ -13,23 +13,33 @@ export class PetsService {
 
     constructor(
         private http: HttpClient
-    ) {}
+    ) { }
 
     get(): Observable<PetOptions[]> {
         return this.http.get<PetOptions[]>(this.url);
     }
 
-    getLost(): Observable<PetOptions[]> {
+    getPetsByCategory(category: string): Observable<PetOptions[]> {
+        // const url = `${this.url}categoria/${category}/`;
+        // return this.http.get<PetOptions[]>(url);
         return this.http.get<PetOptions[]>(this.url);
     }
 
-    getAdoption(): Observable<PetOptions[]> {
-        return this.http.get<PetOptions[]>(this.url);
-    }
+    // ============= SAIU FORA, MAS ESTÁ AÍ PARA CONSULTA =============
 
-    getAdopted(): Observable<PetOptions[]> {
-        return this.http.get<PetOptions[]>(this.url);
-    }
+    // getLost(): Observable<PetOptions[]> {
+    //     return this.http.get<PetOptions[]>(this.url);
+    // }
+
+    // getAdoption(): Observable<PetOptions[]> {
+    //     return this.http.get<PetOptions[]>(this.url);
+    // }
+
+    // getAdopted(): Observable<PetOptions[]> {
+    //     return this.http.get<PetOptions[]>(this.url);
+    // }
+
+    // ============= ./SAIU FORA, MAS ESTÁ AÍ PARA CONSULTA =============
 
     getById(id: number): Observable<PetOptions> {
         const url = this.url + '/' + id;
