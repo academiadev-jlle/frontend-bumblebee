@@ -1,8 +1,163 @@
 <app-slider></app-slider>
 
-<hr />
+<div class="bumblebee-card-group">
+  <div class="card-header text-center bumblebee-card-header">
+    <a href="#">Pets perdidos que estão a procura do seu lar</a>
+  </div>
+  <div class="card-body">
+    <div class="card-deck">
 
-<div class="container mt-3">
+      <!-- LOST PETS -->
+      <!-- <div *ngFor="let pet of lostPets" class="card bumblebee-card-single">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+      <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
+        Não há pets para mostrar.
+      </div> -->
+      <!-- ./LOST PETS -->
+
+      <!-- ADOPTION PETS -->
+      <!-- <div *ngFor="let pet of adoptionPets" class="card bumblebee-card-single">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+      <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
+        Não há pets para mostrar.
+      </div> -->
+      <!-- ./ADOPTION PETS -->
+
+      <!-- ADOPTED PETS -->
+      <!-- <div *ngFor="let pet of adoptedPets" class="card bumblebee-card-single">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+      <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
+        Não há pets para mostrar.
+      </div> -->
+      <!-- ./ADOPTED PETS -->
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-dark"><i class="fa fa-plus"></i> Ver mais</button>
+    </div>
+  </div>
+</div>
+
+<div class="bumblebee-card-group">
+  <div class="card-header text-center bumblebee-card-header">
+    <a href="#">Pets que estão procurando um novo lar</a>
+  </div>
+  <div class="card-body">
+    <div class="card-deck">
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-dark"><i class="fa fa-plus"></i> Ver mais</button>
+    </div>
+  </div>
+</div>
+
+<div class="bumblebee-card-group">
+  <div class="card-header text-center bumblebee-card-header">
+    <a href="#">Pets que foram adotados pela nossa plataforma</a>
+  </div>
+  <div class="card-body">
+    <div class="card-deck">
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+
+      <div class="card bumblebee-card-single">
+        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Jubileu</h5>
+          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
+            e tenta se matar comendo bolas de pelos.</p>
+          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button type="button" class="btn btn-outline-dark"><i class="fa fa-plus"></i> Ver mais</button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container mt-3">
   <div class="card">
     <div class="card-header">Perdidos</div>
     <div class="card-body">
@@ -49,4 +204,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
