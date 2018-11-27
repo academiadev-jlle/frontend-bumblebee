@@ -1,7 +1,10 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <nav class="navbar navbar-expand-md fixed-top bumblebee-header">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">PetCodes</a>
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img [src]="bumblebee" alt="Bumblebee" class="rounded-circle bumblebee-logo" />
+        <img [src]="logo" alt="Bumblebee Pets" class="bumblebee-logo-text" />
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -11,22 +14,23 @@
           <li class="nav-item active">
             <a class="nav-link" [routerLink]="['/']">Início <span class="sr-only">(current)</span></a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/lost']">Pets perdidos</a>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="#">Buscar pets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/user/cad']">Cadastre-se</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" [routerLink]="['/pet/cad']">Cadastrar um pet</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/user/cad']">Cadastre-se</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/login']">Login</a>
           </li>
         </ul>
+
       </div>
     </div>
   </nav>
