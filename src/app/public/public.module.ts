@@ -9,6 +9,7 @@ import { UserCadComponent } from './user-cad/user-cad.component';
 import { PetCadComponent } from './pet-cad/pet-cad.component';
 import { LoginComponent } from './login/login.component';
 import { PetListCategoryComponent } from './pet-list-category/pet-list-category.component';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { PetListCategoryComponent } from './pet-list-category/pet-list-category.
     PetCadComponent,
     LoginComponent,
     PetListCategoryComponent,
+    SliderComponent,
   ],
   exports: [
     HomeComponent,
