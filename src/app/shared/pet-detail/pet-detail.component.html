@@ -1,5 +1,7 @@
-<h1 appNormalFontWeight>{{ pet.name | uppercase | lowercase }}</h1>
-
-<p>{{ pet.isAdoption | isadopted }}</p>
-
-{{ pet | json }}
+<div *ngIf='pet'>
+    <p>{{ pet.id }}</p>
+    <p>{{ pet.nome }}</p>
+    <p>{{ pet.descricao }}</p>
+    <p>{{ pet.categoria }}</p>
+    <p>{{ pet.especie }}</p>
+</div>

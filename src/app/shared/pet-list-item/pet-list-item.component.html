@@ -2,8 +2,8 @@
     <img class="card-img-top" [src]="photo" alt="Card image cap">
     <div class="card-body">
         <h3 class="mb-0">
-        <a class="text-dark" [routerLink]="['/pet', pet.id, pet.name]">{{ pet.name }}</a>
+        <a class="text-dark" [routerLink]="['/pet', pet.id]">{{ pet.nome }}</a>
         </h3>
-        <p class="card-text mb-auto">{{ pet.description }}</p>
+        <p class="card-text mb-auto">{{ pet.descricao }}</p>
     </div>
 </div>

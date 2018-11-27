@@ -6,22 +6,37 @@ import { HomeComponent } from './public/home/home.component';
 import { PetCadComponent } from './public/pet-cad/pet-cad.component';
 import { LoginComponent } from './public/login/login.component';
 import { UserCadComponent } from './public/user-cad/user-cad.component';
-import { LostPetsComponent } from './public/lost-pets/lost-pets.component';
-import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
+// import { LostPetsComponent } from './public/lost-pets/lost-pets.component';
+// import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
+import { PetListCategoryComponent } from './public/pet-list-category/pet-list-category.component';
+import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver';
 
 const routes: Routes = [
-  { path: 'pet/:id/:slug', component: PetDetailComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'pet/:id', component: PetDetailComponent },
   { path: 'user/cad', component: UserCadComponent },
   { path: 'pet/cad', component: PetCadComponent },
   {
-    path: 'lost',
-    component: LostPetsComponent,
+    path: 'pet/categoria/:category',
+    component: PetListCategoryComponent,
     resolve: {
-      lostPets: LostPetsResolver
+      lostPets: ListPetsResolver
     }
   },
-  { path: 'login', component: LoginComponent },
-  { path: '**', component: HomeComponent }
+  // {
+  //   path: 'lost',
+  //   component: LostPetsComponent,
+  //   resolve: {
+  //     lostPets: LostPetsResolver
+  //   }
+  // },
+  {
+    path: '**',
+    component: HomeComponent,
+    // resolve: {
+    //   lostPets: LostPetsComponent
+    // }
+  },
 ];
 @NgModule({
   imports: [
