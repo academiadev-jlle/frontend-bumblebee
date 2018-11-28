@@ -1,15 +1,19 @@
 <header>
-  <nav class="navbar navbar-expand-md fixed-top bumblebee-header">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bumblebee-header">
     <div class="container">
+
       <a class="navbar-brand" [routerLink]="['/']">
         <img [src]="bumblebee" alt="Bumblebee" class="rounded-circle bumblebee-logo" />
         <img [src]="logo" alt="Bumblebee Pets" class="bumblebee-logo-text" />
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-        aria-expanded="false" aria-label="Toggle navigation">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        (click)="toggleNavbar()">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" [routerLink]="['/']">Início <span class="sr-only">(current)</span></a>
