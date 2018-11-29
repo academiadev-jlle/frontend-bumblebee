@@ -10,12 +10,14 @@ import { UserCadComponent } from './public/user-cad/user-cad.component';
 import { PetListCategoryComponent } from './public/pet-list-category/pet-list-category.component';
 import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver';
 import { PetCadComponent } from './public/pet-cad/pet-cad.component';
+import { PerfilUserComponent } from './public/perfil-user/perfil-user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'pet/:id', component: PetDetailComponent },
   { path: 'cad/pet', component: PetCadComponent },
   { path: 'cad/user', component: UserCadComponent },
+  { path: 'perfil/user', component: PerfilUserComponent },
   {
     path: 'pet/categoria/:category',
     component: PetListCategoryComponent,
