@@ -26,7 +26,7 @@ import { PetCadComponent } from './pet-cad/pet-cad.component';
     LoginComponent,
     PetListCategoryComponent,
     SliderComponent,
-    PetCadComponent,
+    PetCadComponent
   ],
   exports: [
     HomeComponent,
