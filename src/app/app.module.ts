@@ -8,6 +8,7 @@ import { PublicModule } from './public/public.module';
 import { AppRoutingModule } from './app-routing.module';
 // import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
 import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver'
     HttpClientModule,
     SharedModule,
     PublicModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CollapseModule.forRoot(),
   ],
   providers: [
     // LostPetsResolver,

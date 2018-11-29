@@ -11,12 +11,14 @@ import { PetListCategoryComponent } from './pet-list-category/pet-list-category.
 import { SliderComponent } from './slider/slider.component';
 import { PetCadComponent } from './pet-cad/pet-cad.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    CarouselModule
+    CarouselModule,
+    AngularFontAwesomeModule
   ],
   declarations: [
     HomeComponent,
