@@ -6,10 +6,10 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 // import { LostPetsComponent } from './lost-pets/lost-pets.component';
 import { FilterPipe } from './lost-pets/filter.pipe';
 import { UserCadComponent } from './user-cad/user-cad.component';
-import { PetCadComponent } from './pet-cad/pet-cad.component';
 import { LoginComponent } from './login/login.component';
 import { PetListCategoryComponent } from './pet-list-category/pet-list-category.component';
 import { SliderComponent } from './slider/slider.component';
+import { PetCadComponent } from './pet-cad/pet-cad.component';
 
 @NgModule({
   imports: [
@@ -23,17 +23,16 @@ import { SliderComponent } from './slider/slider.component';
     FilterPipe,
 
     UserCadComponent,
-    PetCadComponent,
     LoginComponent,
     PetListCategoryComponent,
     SliderComponent,
+    PetCadComponent,
   ],
   exports: [
     HomeComponent,
     // LostPetsComponent,
 
     UserCadComponent,
-    PetCadComponent,
     LoginComponent
   ]
 })

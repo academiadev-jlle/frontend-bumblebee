@@ -12,7 +12,7 @@ import { NormalFontWeightDirective } from './directives/normal-font-weight.direc
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
     ],
     declarations: [
         PetListItemComponent,
