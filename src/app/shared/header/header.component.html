@@ -15,7 +15,7 @@
       <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/']">Início <span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['/']"><fa name="home"></fa> Início <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/pet/categoria/todos']">Buscar pets</a>
@@ -42,10 +42,10 @@
             Minha conta
           </a>
           <div class="dropdown-menu bumblebee-dropdown-menu-user" [ngClass]="{'show': dropdownOpen }" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" [routerLink]="['/perfil/user']">Meu perfil</a>
-            <a class="dropdown-item" href="#">Meus pets</a>
+            <a class="dropdown-item" [routerLink]="['/perfil/user']"><fa name="user mr-2"></fa>Meu perfil</a>
+            <a class="dropdown-item" href="#"><fa name="paw mr-2"></fa>Meus pets</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Sair</a>
+            <a class="dropdown-item" href="#"><fa name="power-off mr-2"></fa>Sair</a>
           </div>
         </li>
 

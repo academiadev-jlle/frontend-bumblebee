@@ -8,11 +8,13 @@ import { FooterComponent } from './footer/footer.component';
 import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { IsAdoptedPipe } from './pipes/is-adopted.pipe';
 import { NormalFontWeightDirective } from './directives/normal-font-weight.directives';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
+        AngularFontAwesomeModule
     ],
     declarations: [
         PetListItemComponent,
