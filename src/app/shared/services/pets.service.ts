@@ -20,7 +20,8 @@ export class PetsService {
     }
 
     getPetsByCategory(category: string): Observable<PetOptions[]> {
-        // const url = `${this.url}categoria/${category}/`;
+        const url = `${this.url}categoria/${category}/`;
+        // console.log(url);
         // return this.http.get<PetOptions[]>(url);
         return this.http.get<PetOptions[]>(this.url);
     }
@@ -42,7 +43,7 @@ export class PetsService {
     // ============= ./SAIU FORA, MAS ESTÁ AÍ PARA CONSULTA =============
 
     getById(id: number): Observable<PetOptions> {
-        const url = this.url + '/' + id;
+        const url = this.url + id;
         return this.http.get<PetOptions>(url);
     }
 }

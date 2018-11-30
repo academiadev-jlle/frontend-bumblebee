@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'pet/categoria/:category',
     component: PetListCategoryComponent,
     resolve: {
-      lostPets: ListPetsResolver
+      listPets: ListPetsResolver
     }
   },
   // {
