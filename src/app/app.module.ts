@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 // import { LostPetsResolver } from './public/lost-pets/lost-pets.resolver';
 import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ListPetsUserResolver } from './public/pet-list-user/pet-list-user.resolver';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,12 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     PublicModule,
     AppRoutingModule,
     CollapseModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [
     // LostPetsResolver,
-    ListPetsResolver
+    ListPetsResolver,
+    ListPetsUserResolver
   ],
   bootstrap: [AppComponent],
 })

@@ -3,7 +3,7 @@
 <!-- LOST PETS -->
 <div class="bumblebee-card-group">
   <div class="card-header text-center bumblebee-card-header">
-    <a href="#">
+    <a [routerLink]="['/pet/categoria/', 'perdidos']">
       <fa name="paw"></fa>
       Pets perdidos que estão a procura do seu lar
     </a>
@@ -37,7 +37,7 @@
 <!-- ADOPTION PETS -->
 <div class="bumblebee-card-group">
   <div class="card-header text-center bumblebee-card-header">
-    <a href="#">
+    <a [routerLink]="['/pet/categoria/', 'para-adocao']">
       <fa name="paw"></fa>
       Pets que estão procurando um novo lar
     </a>
@@ -71,7 +71,7 @@
 <!-- ADOPTED PETS -->
 <div class="bumblebee-card-group">
   <div class="card-header text-center bumblebee-card-header">
-    <a href="#">
+    <a [routerLink]="['/pet/categoria/', 'adotados']">
       <fa name="paw"></fa>
       Dê uma olhada nos pets que já foram adotados através da nossa plataforma
     </a>

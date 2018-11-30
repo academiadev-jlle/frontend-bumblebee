@@ -11,6 +11,8 @@ import { PetListCategoryComponent } from './public/pet-list-category/pet-list-ca
 import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver';
 import { PetCadComponent } from './public/pet-cad/pet-cad.component';
 import { PerfilUserComponent } from './public/perfil-user/perfil-user.component';
+import { PetListUserComponent } from './public/pet-list-user/pet-list-user.component';
+import { ListPetsUserResolver } from './public/pet-list-user/pet-list-user.resolver';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +25,13 @@ const routes: Routes = [
     component: PetListCategoryComponent,
     resolve: {
       listPets: ListPetsResolver
+    }
+  },
+  {
+    path: 'user/pets',
+    component: PetListUserComponent,
+    resolve: {
+      listPetsUser: ListPetsUserResolver
     }
   },
   // {
