@@ -1,5 +1,6 @@
 <app-slider></app-slider>
 
+<!-- LOST PETS -->
 <div class="bumblebee-card-group">
   <div class="card-header text-center bumblebee-card-header">
     <a href="#">
@@ -7,54 +8,27 @@
       Pets perdidos que estão a procura do seu lar
     </a>
   </div>
-  <div class="container bumblebee-container-card">
+  <div class="container bumblebee-card-container">
     <div class="row">
 
-      <!-- LOST PETS -->
-      <!-- <div *ngFor="let pet of lostPets" class="card bumblebee-card-single">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-      <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
-        Não há pets para mostrar.
-      </div> -->
-      <!-- ./LOST PETS -->
-
       <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        <div *ngFor="let pet of lostPets">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
+          Não há pets para mostrar.
         </div>
       </div>
 
-      <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
-        </div>
-      </div>
-
-      <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
-        </div>
-      </div>
     </div>
   </div>
   <div class="text-center">
     <button type="button" class="btn btn-outline-dark mb-5"><i class="fa fa-plus"></i> Ver mais</button>
   </div>
 </div>
+<!-- ./LOST PETS -->
 
+<!-- ADOPTION PETS -->
 <div class="bumblebee-card-group">
   <div class="card-header text-center bumblebee-card-header">
     <a href="#">
@@ -65,51 +39,24 @@
   <div class="container bumblebee-container-card">
     <div class="row">
 
-      <!-- ADOPTION PETS -->
-      <!-- <div *ngFor="let pet of adoptionPets" class="card bumblebee-card-single">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-      <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
-        Não há pets para mostrar.
-      </div> -->
-      <!-- ./ADOPTION PETS -->
-
       <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
+        <div *ngFor="let pet of adoptionPets">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div class="alert alert-info" role="alert" *ngIf="adoptionPets.length == 0">
+          Não há pets para mostrar.
         </div>
       </div>
 
-      <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
-        </div>
-      </div>
-
-      <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
-        </div>
-      </div>
     </div>
   </div>
   <div class="text-center">
     <button type="button" class="btn btn-outline-dark mb-5"><i class="fa fa-plus"></i> Ver mais</button>
   </div>
 </div>
+<!-- ./ADOPTION PETS -->
 
+<!-- ADOPTED PETS -->
 <div class="bumblebee-card-group">
   <div class="card-header text-center bumblebee-card-header">
     <a href="#">
@@ -120,96 +67,19 @@
   <div class="container bumblebee-container-card">
     <div class="row">
 
-      <!-- ADOPTED PETS -->
-      <!-- <div *ngFor="let pet of adoptedPets" class="card bumblebee-card-single">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
-          Não há pets para mostrar.
-        </div> -->
-      <!-- ./ADOPTED PETS -->
-
       <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
-        </div>
-      </div>
-
-      <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
-        </div>
-      </div>
-
-      <div class="bumblebee-card-single">
-        <img class="card-img-top bumblebee-card-image-pet" src="http://placekitten.com/200/200/" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Jubileu</h5>
-          <p class="card-text">Gatinho dócil e simpático, gosta de comer uns ratinhos as vezes
-            e tenta se matar comendo bolas de pelos.</p>
-          <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="text-center">
-    <button type="button" class="btn btn-outline-dark mb-5"><i class="fa fa-plus"></i> Ver mais</button>
-  </div>
-</div>
-
-<!-- <div class="container mt-3">
-  <div class="card">
-    <div class="card-header">Perdidos</div>
-    <div class="card-body">
-      <div class="row">
-        <div *ngFor="let pet of lostPets" class="col-md-4">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
-          Não há pets para mostrar.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-3">
-  <div class="card">
-    <div class="card-header">Para adoção</div>
-    <div class="card-body">
-      <div class="row">
-        <div *ngFor="let pet of adoptionPets" class="col-md-4">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div class="alert alert-info" role="alert" *ngIf="adoptionPets.length == 0">
-          Não há pets para mostrar.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="container mt-3">
-  <div class="card">
-    <div class="card-header">Dê uma olhada nos pets que foram adotados</div>
-    <div class="card-body">
-      <div class="row">
-        <div *ngFor="let pet of adoptedPets" class="col-md-4">
+        <div *ngFor="let pet of adoptedPets">
           <app-pet-list-item [pet]="pet"></app-pet-list-item>
         </div>
         <div class="alert alert-info" role="alert" *ngIf="adoptedPets.length == 0">
           Não há pets para mostrar.
         </div>
       </div>
+
     </div>
   </div>
-</div> -->
+  <div class="text-center">
+    <button type="button" class="btn btn-outline-dark mb-5"><i class="fa fa-plus"></i> Ver mais</button>
+  </div>
+</div>
+<!-- ./ADOPTED PETS -->
