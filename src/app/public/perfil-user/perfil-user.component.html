@@ -18,9 +18,12 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-dark">
-        <i class="fa fa-pencil"></i> Editar
-      </button>
+      <a href class="btn btn-dark mb-3">
+        <i class="fa fa-pencil mr-2"></i> Editar perfil
+      </a><br/>
+      <a [routerLink]="['/edit/password/user']">
+        <i class="fa fa-key"></i> Alterar senha
+      </a>
     </div>
   </div>
 </div>

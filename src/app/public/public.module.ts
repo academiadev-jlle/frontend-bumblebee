@@ -14,6 +14,7 @@ import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PetListUserComponent } from './pet-list-user/pet-list-user.component';
 import { RouterModule } from '@angular/router';
+import { EditPasswordUserComponent } from './edit-password-user/edit-password-user.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { RouterModule } from '@angular/router';
     PetCadComponent,
     PerfilUserComponent,
     PetListCategoryComponent,
-    PetListUserComponent
+    PetListUserComponent,
+    EditPasswordUserComponent
   ],
   exports: [
     HomeComponent,
