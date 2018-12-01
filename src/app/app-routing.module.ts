@@ -15,11 +15,13 @@ import { PetListUserComponent } from './public/pet-list-user/pet-list-user.compo
 import { ListPetsUserResolver } from './public/pet-list-user/pet-list-user.resolver';
 import { EditPasswordUserComponent } from './public/edit-password-user/edit-password-user.component';
 import { EditPerfilUserComponent } from './public/edit-perfil-user/edit-perfil-user.component';
+import { PetEditComponent } from './public/pet-edit/pet-edit.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'pet/:id', component: PetDetailComponent },
   { path: 'cad/pet', component: PetCadComponent },
+  { path: 'edit/pet/:id', component: PetEditComponent },
   { path: 'cad/user', component: UserCadComponent },
   { path: 'edit/password/user', component: EditPasswordUserComponent },
   { path: 'perfil/user', component: PerfilUserComponent },
