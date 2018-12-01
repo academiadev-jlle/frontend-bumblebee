@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { EditPasswordUserComponent } from './edit-password-user/edit-password-user.component';
 import { EditPerfilUserComponent } from './edit-perfil-user/edit-perfil-user.component';
 import { PetEditComponent } from './pet-edit/pet-edit.component';
+import { LostPasswordComponent } from './lost-password/lost-password.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { PetEditComponent } from './pet-edit/pet-edit.component';
     PetListUserComponent,
     EditPasswordUserComponent,
     EditPerfilUserComponent,
-    PetEditComponent
+    PetEditComponent,
+    LostPasswordComponent
   ],
   exports: [
     HomeComponent,
