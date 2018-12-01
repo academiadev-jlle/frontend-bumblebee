@@ -22,7 +22,7 @@
           </h5>
           {{ pet.descricao }}
         </div>
-        <a class="float-right">
+        <a [routerLink]="['/edit/pet', 1]" class="float-right">
           <button type="button" class="btn btn-dark">
             <fa name="pencil"></fa> Editar
           </button>
