@@ -12,11 +12,14 @@ import { SliderComponent } from './slider/slider.component';
 import { PetCadComponent } from './pet-cad/pet-cad.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { PetListUserComponent } from './pet-list-user/pet-list-user.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
+    RouterModule,
     CarouselModule,
     AngularFontAwesomeModule
   ],
@@ -27,10 +30,11 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
     UserCadComponent,
     LoginComponent,
-    PetListCategoryComponent,
     SliderComponent,
     PetCadComponent,
-    PerfilUserComponent
+    PerfilUserComponent,
+    PetListCategoryComponent,
+    PetListUserComponent
   ],
   exports: [
     HomeComponent,

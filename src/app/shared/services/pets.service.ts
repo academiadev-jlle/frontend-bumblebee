@@ -26,6 +26,10 @@ export class PetsService {
         return this.http.get<PetOptions[]>(this.url);
     }
 
+    getPetsUser(): Observable<PetOptions[]> {
+        return this.http.get<PetOptions[]>(this.url);
+    }
+
     // ============= SAIU FORA, MAS ESTÁ AÍ PARA CONSULTA =============
 
     // getLost(): Observable<PetOptions[]> {
