@@ -9,12 +9,22 @@ import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { IsAdoptedPipe } from './pipes/is-adopted.pipe';
 import { NormalFontWeightDirective } from './directives/normal-font-weight.directives';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
-        AngularFontAwesomeModule
+
+        // bootstrap & font-awesome
+        AngularFontAwesomeModule,
+        BsDropdownModule.forRoot(),
+        CollapseModule.forRoot(),
+
+        // events
+        ClickOutsideModule,
     ],
     declarations: [
         PetListItemComponent,

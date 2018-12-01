@@ -11,6 +11,8 @@ import { ListPetsResolver } from './public/pet-list-category/list-pets.resolver'
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ListPetsUserResolver } from './public/pet-list-user/pet-list-user.resolver';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     SharedModule,
     PublicModule,
     AppRoutingModule,
+
+    // events
+    ClickOutsideModule,
+
+    // bootstrap & font-awesome
+    AngularFontAwesomeModule,
+    BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
-    AngularFontAwesomeModule
   ],
   providers: [
     // LostPetsResolver,
