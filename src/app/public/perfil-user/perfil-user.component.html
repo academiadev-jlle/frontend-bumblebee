@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-6 col-md-8 col-sm-12 text-center mt-5 bumblebee-perfil">
+
+      <h2 class="title m-4"><i class="fa fa-user mr-2"></i> Seu perfil</h2>
+
+      <hr />
+
+      <div class="row mt-5">
+        <div class="col text-right" style="height: 100px; border-right: 1px solid rgb(192, 192, 192)">
+          <p><strong>Nome de usuário</strong></p>
+          <p><strong>E-mail</strong></p>
+        </div>
+
+        <div class="col text-left" style="height: 200px;">
+          <p>Wagner Esser</p>
+          <p>waesser@gmail.com</p>
+        </div>
+      </div>
+
+      <a [routerLink]="['/edit/perfil/user']" class="btn btn-dark mb-3">
+        <i class="fa fa-pencil mr-2"></i> Editar perfil
+      </a><br/>
+      <a [routerLink]="['/edit/password/user']">
+        <i class="fa fa-key"></i> Alterar senha
+      </a>
+    </div>
+  </div>
+</div>

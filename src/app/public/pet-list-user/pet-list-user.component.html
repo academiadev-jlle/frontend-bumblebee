@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-12 col-md-12 col-sm-12 mt-5 bumblebee-cad">
+      <div class="text-center">
+        <h2 class="title mb-4">
+          <fa name="paw mr-1"></fa>
+          Seus pets
+        </h2>
+      </div>
+
+      <hr />
+
+      <div class="media" *ngFor="let pet of listPetsUser">
+        <a [routerLink]="['/pet', pet.id]">
+          <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
+        </a>
+        <div class="media-body">
+          <h5 class="mt-0">
+            <a [routerLink]="['/pet', pet.id]">
+              {{ pet.nome }}
+            </a>
+          </h5>
+          {{ pet.descricao }}
+        </div>
+        <a [routerLink]="['/edit/pet', 1]" class="float-right">
+          <button type="button" class="btn btn-dark">
+            <fa name="pencil"></fa> Editar
+          </button>
+        </a>
+      </div>
+
+      <hr />
+
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="listPetsUser.length == 0">
+        Nenhum pet cadastrado.
+      </div>
+
+      <div class="row">
+        <div class="mx-auto">
+          <nav aria-label="Page navigation example mx-auto">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

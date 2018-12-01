@@ -1,0 +1,12 @@
+.bumblebee-card-image-pet {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 180px;
+    margin: -70px auto auto auto;
+    transition: width 0.1s, border-radius 0.1s;
+}
+
+.bumblebee-card-image-pet:hover {
+    border-radius: 5%;
+    width: 230px;
+}
