@@ -10,81 +10,15 @@
         </h2>
       </div>
 
-      <hr class="mt-4 mb-4"/>
+      <hr class="mt-4" />
 
-      <div class="row">
+      <form class="mx-auto mb-4">
+        <div class="row">
 
-        <div class="col-12 col-lg-6 mt-3 mt-lg-0">
-          <div class="row">
-            <div class="col text-center">
-              <p><strong>Categoria atual: </strong> {{ categoria }}</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mx-auto col-12 col-md-8 col-lg-11 col-xl-10">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option value="">Todos...</option>
-                  <option value="1">Perdidos</option>
-                  <option value="2">Achados</option>
-                  <option value="3">Devolvidos</option>
-                  <option value="4">Para adoção</option>
-                  <option value="5">Adotados</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-6">
-          <div class="row">
-            <div class="col text-center">
-              <p><strong>Busca atual: </strong> texto da busca do usuário</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <form class="form-inline mx-auto">
-              <input class="form-control ml-3 mr-3 mr-sm-2" type="search" placeholder="Pesquise aqui um pet..."
-                aria-label="Procurar">
-              <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Pesquisar</button>
-            </form>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- <div class="row">
-        <div class="col text-center">
-          <p><strong>Busca atual: </strong> texto da busca do usuário</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <form class="form-inline mx-auto">
-          <input class="form-control ml-3 mr-3 mr-sm-2" type="search" placeholder="Pesquise aqui um pet..." aria-label="Procurar">
-          <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Pesquisar</button>
-        </form>
-      </div>
-
-      <div class="row mt-4">
-        <div class="col text-center">
-          <p><strong>Categoria atual: </strong> {{ categoria }}</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="mx-auto col-12 col-md-8 col-lg-6 col-xl-4">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect01">Options</label>
-            </div>
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="inputGroupSelect01"><strong>Categoria</strong></label>
             <select class="custom-select" id="inputGroupSelect01">
-              <option value="">Todos...</option>
+              <option value="">Selecione uma categoria...</option>
               <option value="1">Perdidos</option>
               <option value="2">Achados</option>
               <option value="3">Devolvidos</option>
@@ -92,10 +26,33 @@
               <option value="5">Adotados</option>
             </select>
           </div>
-        </div>
-      </div> -->
 
-      <hr />
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="inputGroupSelect02"><strong>Espécie</strong></label>            
+            <select class="custom-select" id="inputGroupSelect02">
+              <option value="">Selecione uma espécie...</option>
+              <option value="1">Ave</option>
+              <option value="2">Cão</option>
+              <option value="3">Gato</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="inputSearch"><strong>Pesquise seu pet</strong></label>
+            <input class="form-control mr-3 mr-sm-2" type="search" placeholder="Pesquise aqui um pet..."
+              aria-label="Procurar" id="inputSearch" />
+          </div>
+
+          <div class="col-12 mt-4">
+            <button class="btn btn-outline-dark btn-block my-2 my-sm-0" type="submit">
+              Pesquisar
+            </button>
+          </div>
+
+        </div>
+      </form>
+
+      <hr class="mt-4" />
 
       <div class="row">
         <div class="bumblebee-card-group">
