@@ -16,6 +16,7 @@ import { ListPetsUserResolver } from './public/pet-list-user/pet-list-user.resol
 import { EditPasswordUserComponent } from './public/edit-password-user/edit-password-user.component';
 import { EditPerfilUserComponent } from './public/edit-perfil-user/edit-perfil-user.component';
 import { PetEditComponent } from './public/pet-edit/pet-edit.component';
+import { LostPasswordComponent } from './public/lost-password/lost-password.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'edit/pet/:id', component: PetEditComponent },
   { path: 'cad/user', component: UserCadComponent },
   { path: 'edit/password/user', component: EditPasswordUserComponent },
+  { path: 'senha/perdida', component: LostPasswordComponent },
   { path: 'perfil/user', component: PerfilUserComponent },
   { path: 'edit/perfil/user', component: EditPerfilUserComponent },
   {
