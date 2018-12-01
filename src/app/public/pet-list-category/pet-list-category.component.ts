@@ -11,6 +11,7 @@ import { debounceTime } from 'rxjs/operators';
 export class PetListCategoryComponent implements OnInit, OnDestroy {
   listPets = [];
   filter = '';
+  categoria = '';
   filterSubject: Subject<string> = new Subject();
 
   constructor(
@@ -19,6 +20,7 @@ export class PetListCategoryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.listPets = this.router.snapshot.data.listPets;
+    this.categoria = this.router.snapshot.params.category;
     this.filterSubject
         .pipe(
             debounceTime(300)
