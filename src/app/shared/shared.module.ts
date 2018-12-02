@@ -12,6 +12,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { ImageRoundedDirective } from './directives/image-rounded.directive';
 
 @NgModule({
     imports: [
@@ -31,8 +32,13 @@ import { ClickOutsideModule } from 'ng-click-outside';
         HeaderComponent,
         FooterComponent,
         PetDetailComponent,
+
+        // pipes
         IsAdoptedPipe,
-        NormalFontWeightDirective
+
+        // diretivas
+        NormalFontWeightDirective,
+        ImageRoundedDirective
     ],
     exports: [
         PetListItemComponent,

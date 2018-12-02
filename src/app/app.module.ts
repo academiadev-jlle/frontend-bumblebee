@@ -13,6 +13,7 @@ import { ListPetsUserResolver } from './public/pet-list-user/pet-list-user.resol
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { ImageRoundedDirective } from './shared/directives/image-rounded.directive';
 
 @NgModule({
   declarations: [

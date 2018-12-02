@@ -1,10 +1,10 @@
 <a [routerLink]="['/pet', pet.id]">
-    <img class="card-img-top bumblebee-card-image-pet" [src]="photo" alt="Card image cap">
+    <div appImageRounded="{{ photo }}"></div>
 </a>
 <div class="card-body">
     <h5 class="card-title"><a [routerLink]="['/pet', pet.id]">{{ pet.nome }}</a></h5>
-    <p class="card-text">{{ pet.descricao }} lorem lorem lorem lorem lorem lorem lorem lorem lorem 
-            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+    <p class="card-text">{{ pet.descricao }} lorem lorem lorem lorem lorem lorem lorem lorem lorem
+        lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
     </p>
     <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
 </div>
