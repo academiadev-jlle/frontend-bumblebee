@@ -28,7 +28,6 @@ export class NormalFontWeightDirective implements OnInit {
     }
 
     private hightlight(color: string) {
-        console.log(color);
         this.renderer.setStyle(this.el.nativeElement, 'background-color', color || this.defaultColor);
     }
 }

@@ -13,6 +13,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ImageRoundedDirective } from './directives/image-rounded.directive';
+import { BgColorDirective } from './directives/bg-color.directive';
 
 @NgModule({
     imports: [
@@ -38,13 +39,17 @@ import { ImageRoundedDirective } from './directives/image-rounded.directive';
 
         // diretivas
         NormalFontWeightDirective,
-        ImageRoundedDirective
+        ImageRoundedDirective,
+        BgColorDirective
     ],
     exports: [
         PetListItemComponent,
         HeaderComponent,
         FooterComponent,
-        PetDetailComponent
+        PetDetailComponent,
+
+        // diretivas
+        BgColorDirective
     ]
 })
 

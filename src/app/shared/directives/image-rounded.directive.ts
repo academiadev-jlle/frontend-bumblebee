@@ -8,7 +8,7 @@ export class ImageRoundedDirective implements OnInit {
   // tslint:disable-next-line:no-input-rename
   @Input('appImageRounded') image: string;
 
-  style = `
+  styleCommon = `
     width: 180px;
     height: 180px;
     margin: -70px auto auto auto;
@@ -16,7 +16,7 @@ export class ImageRoundedDirective implements OnInit {
   `;
 
   defaultStyle = `
-    ${this.style}
+    ${this.styleCommon}
     border-radius: 50%;
     border: 5px solid white;
     background-size: cover;
@@ -24,7 +24,7 @@ export class ImageRoundedDirective implements OnInit {
 
   @HostListener('mouseenter') onMouseEnter() {
     this.el.nativeElement.style = `
-      ${this.style}
+      ${this.styleCommon}
       border-radius: 5%;
       border: 2px solid white;
       width: 270px;

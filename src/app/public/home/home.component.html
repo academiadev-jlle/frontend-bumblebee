@@ -2,24 +2,26 @@
 
 <!-- LOST PETS -->
 <div class="bumblebee-card-group">
-  <div class="card-header text-center bumblebee-card-header">
+
+  <div class="card-header text-center">
     <a [routerLink]="['/pet/categoria/', 'perdidos']">
       <fa name="paw"></fa>
       Pets perdidos que estão a procura do seu lar
     </a>
   </div>
-  <div class="container bumblebee-card-container">
+
+  <div class="container">
     <div class="row">
 
-      <div *ngFor="let pet of lostPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of lostPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div *ngFor="let pet of lostPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of lostPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div *ngFor="let pet of lostPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of lostPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
       <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="lostPets.length == 0">
@@ -39,7 +41,7 @@
 
 <!-- ADOPTION PETS -->
 <div class="bumblebee-card-group">
-  <div class="card-header text-center bumblebee-card-header">
+  <div class="card-header text-center">
     <a [routerLink]="['/pet/categoria/', 'para-adocao']">
       <fa name="paw"></fa>
       Pets que estão procurando um novo lar
@@ -48,15 +50,15 @@
   <div class="container bumblebee-container-card">
     <div class="row">
 
-      <div *ngFor="let pet of adoptionPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of adoptionPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div *ngFor="let pet of adoptionPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of adoptionPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div *ngFor="let pet of adoptionPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of adoptionPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
       <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptionPets.length == 0">
@@ -76,7 +78,7 @@
 
 <!-- ADOPTED PETS -->
 <div class="bumblebee-card-group">
-  <div class="card-header text-center bumblebee-card-header">
+  <div class="card-header text-center">
     <a [routerLink]="['/pet/categoria/', 'adotados']">
       <fa name="paw"></fa>
       Dê uma olhada nos pets que já foram adotados através da nossa plataforma
@@ -85,15 +87,15 @@
   <div class="container bumblebee-container-card">
     <div class="row">
 
-      <div *ngFor="let pet of adoptedPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of adoptedPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div *ngFor="let pet of adoptedPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of adoptedPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div *ngFor="let pet of adoptedPets" class="bumblebee-card-single">
+      <div *ngFor="let pet of adoptedPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
       <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptedPets.length == 0">

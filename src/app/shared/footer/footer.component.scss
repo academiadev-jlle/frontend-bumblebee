@@ -1,19 +1,16 @@
 @import "../../../styles/variables";
 
-.my-footer {
-    background-color: #1c2331;
-    color: white;
-}
+.bumblebee-footer {
+    a {
+        color: $secondaryColor;
+    }
 
-.my-footer a {
-    color: yellow;
-}
+    hr {
+        width: 60px;
+        border-color: $secondaryColor;
+    }
 
-.my-footer hr {
-    width: 60px;
-    border-color: yellow;
-}
-
-.bumblebee-footer-copyright {
-    background-color: #141a24;
+    .footer-copyright {
+        background-color: $mainColorDarker;
+    }
 }

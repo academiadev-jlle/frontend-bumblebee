@@ -1,5 +1,6 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bumblebee-header" (clickOutside)="isCollapsed = true" >
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bumblebee-header"
+        appBgColor (clickOutside)="isCollapsed = true" >
     <div class="container">
 
       <a class="navbar-brand" [routerLink]="['/']">
@@ -45,7 +46,8 @@
               aria-haspopup="true" aria-expanded="false">
               Minha conta
             </a>
-            <div *dropdownMenu class="dropdown-menu bumblebee-dropdown-menu-user" aria-labelledby="navbarDropdown">
+            <div *dropdownMenu appBgColor class="dropdown-menu bumblebee-dropdown-menu-user"
+            aria-labelledby="navbarDropdown">
               <a class="dropdown-item" [routerLink]="['/perfil/user']">
                 <fa name="user mr-2"></fa>Meu perfil
               </a>
