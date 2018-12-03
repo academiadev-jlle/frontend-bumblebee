@@ -10,28 +10,144 @@
 
       <hr />
 
-      <div class="media" *ngFor="let pet of listPetsUser">
-        <a [routerLink]="['/pet', pet.id]">
-          <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
-        </a>
-        <div class="media-body">
-          <span class="badge badge-secondary mb-3">Perdidos</span>
-          <h5 class="mt-0">
+      <div class="container text-center text-md-left mb-5 mt-4">
+        <div class="row" *ngFor="let pet of listPetsUser">
+          <div class="col-12 col-md-4 col-lg-3 text-center">
             <a [routerLink]="['/pet', pet.id]">
-              {{ pet.nome }}
+              <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
             </a>
-          </h5>
-          {{ pet.descricao }} fsd gdfgdfs gdfg fsdg dfg dsfg sfdgs
-          dfgsdf gdfg f sdf sdfsd fsdd fsdf sd fsdf s
+          </div>
+          <div class="col-md-8 col-lg-9">
+            <div class="row">
+              <div class="col-12">
+                <span class="badge badge-secondary mb-3">Perdidos</span>
+              </div>
+              <div class="col-12">
+                <h5 class="mt-0">
+                  <a [routerLink]="['/pet', pet.id]">
+                    {{ pet.nome }}
+                  </a>
+                </h5>
+              </div>
+              <div class="col-12">
+                {{ pet.descricao }} fsd gdfgdfs gdfg fsdg dfg dsfg sfdgs
+                dfgsdf gdfg f sdf sdfsd fsdd fsdf sd fsdf s
+              </div>
+              <div class="col-12 mt-3">
+                <a [routerLink]="['/edit/pet', 1]">
+                  <button type="button" class="btn btn-dark">
+                    <fa name="pencil"></fa> Editar
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <a [routerLink]="['/edit/pet', 1]" class="float-right">
-          <button type="button" class="btn btn-dark">
-            <fa name="pencil"></fa> Editar
-          </button>
-        </a>
-      </div>
 
-      <hr />
+        <hr />
+        <div class="row" *ngFor="let pet of listPetsUser">
+          <div class="col-12 col-md-4 col-lg-3 text-center">
+            <a [routerLink]="['/pet', pet.id]">
+              <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
+            </a>
+          </div>
+          <div class="col-md-8 col-lg-9">
+            <div class="row">
+              <div class="col-12">
+                <span class="badge badge-secondary mb-3">Perdidos</span>
+              </div>
+              <div class="col-12">
+                <h5 class="mt-0">
+                  <a [routerLink]="['/pet', pet.id]">
+                    {{ pet.nome }}
+                  </a>
+                </h5>
+              </div>
+              <div class="col-12">
+                {{ pet.descricao }} fsd gdfgdfs gdfg fsdg dfg dsfg sfdgs
+                dfgsdf gdfg f sdf sdfsd fsdd fsdf sd fsdf s
+              </div>
+              <div class="col-12 mt-3">
+                <a [routerLink]="['/edit/pet', 1]">
+                  <button type="button" class="btn btn-dark">
+                    <fa name="pencil"></fa> Editar
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <div class="row" *ngFor="let pet of listPetsUser">
+          <div class="col-12 col-md-4 col-lg-3 text-center">
+            <a [routerLink]="['/pet', pet.id]">
+              <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
+            </a>
+          </div>
+          <div class="col-md-8 col-lg-9">
+            <div class="row">
+              <div class="col-12">
+                <span class="badge badge-secondary mb-3">Perdidos</span>
+              </div>
+              <div class="col-12">
+                <h5 class="mt-0">
+                  <a [routerLink]="['/pet', pet.id]">
+                    {{ pet.nome }}
+                  </a>
+                </h5>
+              </div>
+              <div class="col-12">
+                {{ pet.descricao }} fsd gdfgdfs gdfg fsdg dfg dsfg sfdgs
+                dfgsdf gdfg f sdf sdfsd fsdd fsdf sd fsdf s
+              </div>
+              <div class="col-12 mt-3">
+                <a [routerLink]="['/edit/pet', 1]">
+                  <button type="button" class="btn btn-dark">
+                    <fa name="pencil"></fa> Editar
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <div class="row" *ngFor="let pet of listPetsUser">
+          <div class="col-12 col-md-4 col-lg-3 text-center">
+            <a [routerLink]="['/pet', pet.id]">
+              <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
+            </a>
+          </div>
+          <div class="col-md-8 col-lg-9">
+            <div class="row">
+              <div class="col-12">
+                <span class="badge badge-secondary mb-3">Perdidos</span>
+              </div>
+              <div class="col-12">
+                <h5 class="mt-0">
+                  <a [routerLink]="['/pet', pet.id]">
+                    {{ pet.nome }}
+                  </a>
+                </h5>
+              </div>
+              <div class="col-12">
+                {{ pet.descricao }} fsd gdfgdfs gdfg fsdg dfg dsfg sfdgs
+                dfgsdf gdfg f sdf sdfsd fsdd fsdf sd fsdf s
+              </div>
+              <div class="col-12 mt-3">
+                <a [routerLink]="['/edit/pet', 1]">
+                  <button type="button" class="btn btn-dark">
+                    <fa name="pencil"></fa> Editar
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+      </div>
 
       <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="listPetsUser.length == 0">
         Nenhum pet cadastrado.
