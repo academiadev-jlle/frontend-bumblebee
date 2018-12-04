@@ -1,20 +1,23 @@
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-lg-6 col-md-8 col-sm-12 text-center mt-5 bumblebee-box">
-            <h2 class="title"><fa name="sign-in mr-2"></fa> Login</h2>
+            <h2 class="title">
+                <fa name="sign-in mr-2"></fa> Login
+            </h2>
             <hr />
             <form [formGroup]="loginForm" class="form-group">
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1"><fa name="at"></fa></span>
+                            <span class="input-group-text" id="basic-addon1">
+                                <fa name="at"></fa>
+                            </span>
                         </div>
-                        <input formControlName="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1" autofocus>
+                        <input formControlName="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail"
+                            aria-describedby="basic-addon1" autofocus>
                     </div>
 
-                    <small
-                        *ngIf="loginForm.get('email').errors?.required"
-                        class="text-danger d-block">
+                    <small *ngIf="loginForm.get('email').errors?.required " class="text-danger d-block">
                         Por favor digite o email
                     </small>
                 </div>
@@ -24,19 +27,38 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
                         </div>
-                        <input formControlName="password" type="password" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="basic-addon1">
+                        <input formControlName="password" type="password" class="form-control" placeholder="Senha"
+                            aria-label="Senha" aria-describedby="basic-addon1">
                     </div>
-                    
-                    <small
-                        *ngIf="loginForm.get('password').errors?.required"
-                        class="text-danger d-block">
+
+                    <small *ngIf="loginForm.get('password').errors?.required" class="text-danger d-block">
                         Por favor digite a senha
                     </small>
                 </div>
 
-                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-success container-fluid">Cadastrar</button>
+                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-success container-fluid">Entrar</button>
 
                 <div class="container mt-3">
+                    <div class="row text-muted">
+                        <div class="col mx-auto">
+                            Ou faça login com
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5 text-muted mt-3 bumblebee-rede-social mx-auto">
+                            <a href>
+                                <fa name='google mr-3'></fa> Google
+                            </a>
+                        </div>
+                        <div class="col-5 text-muted mt-3 bumblebee-rede-social mx-auto">
+                            <a href>
+                                <fa name='facebook mr-3'></fa> Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-4">
                     <a [routerLink]="['/senha/perdida']">Esqueceu sua senha?</a>
                     <br />
                     <a [routerLink]="['/cad/user']">Cadastre-se!</a>
