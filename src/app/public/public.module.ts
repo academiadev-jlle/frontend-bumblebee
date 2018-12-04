@@ -19,6 +19,7 @@ import { EditPerfilUserComponent } from './edit-perfil-user/edit-perfil-user.com
 import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { LostPasswordComponent } from './lost-password/lost-password.component';
 import { LoginModule } from './login/login.module';
+import { PetCadModule } from './pet-cad/pet-cad.module';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { LoginModule } from './login/login.module';
     CarouselModule,
     AngularFontAwesomeModule,
 
-    LoginModule
+    LoginModule,
+    PetCadModule
   ],
   declarations: [
     HomeComponent,
@@ -38,7 +40,7 @@ import { LoginModule } from './login/login.module';
     UserCadComponent,
     // LoginComponent,
     SliderComponent,
-    PetCadComponent,
+    // PetCadComponent,
     PerfilUserComponent,
     PetListCategoryComponent,
     PetListUserComponent,

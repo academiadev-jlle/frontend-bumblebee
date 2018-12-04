@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms'
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './login.component';
+import { PetCadComponent } from './pet-cad.component';
 
 @NgModule({
   imports: [
@@ -12,9 +12,9 @@ import { LoginComponent } from './login.component';
     RouterModule,
     AngularFontAwesomeModule
   ],
-  declarations: [ LoginComponent ],
+  declarations: [ PetCadComponent ],
   exports: [
-    LoginComponent
+    PetCadComponent
   ]
 })
-export class LoginModule { }
+export class PetCadModule { }
