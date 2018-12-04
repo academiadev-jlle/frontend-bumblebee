@@ -46,3 +46,34 @@ code {
     margin-left: -6px;
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
+
+// ============ AUTO CONTRASTE ============ //
+
+.bumblebee-auto-contraste-icon {
+    position: relative;
+    right: 20px;
+    top: -35px;
+    cursor: pointer;
+}
+
+.autoContraste * {
+    background-color: $mainColorDarker !important;
+    color: white !important;
+    border-color: white !important;
+    .text-muted { color: white !important; }
+    .main.container { background-color: none !important; }
+    a { color: yellow !important; }
+    a:hover { color: white !important; }
+    .btn {
+        background-color: whitesmoke !important;
+        color: $mainColorDarker !important;
+    } 
+    .btn:hover {
+        background-color: $mainColorDarker !important;
+        color: whitesmoke !important;
+    }
+    ::-webkit-input-placeholder { color: white !important; }     
+    :-moz-placeholder { color: white !important; }
+    ::-moz-placeholder { color: white !important; }
+    :-ms-input-placeholder { color: white !important; }
+}
