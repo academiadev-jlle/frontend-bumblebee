@@ -2,4 +2,12 @@
     box-shadow: 1px 1px 3px gray;
     border-radius: 5px;
     padding: 5px;
+
+    a {
+        color: gray;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #007bff;
+    }
 }
