@@ -14,6 +14,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ImageRoundedDirective } from './directives/image-rounded.directive';
 import { BgColorDirective } from './directives/bg-color.directive';
+import { ImageGaleryDirective } from './directives/image-galery.directive';
 
 @NgModule({
     imports: [
@@ -40,6 +41,7 @@ import { BgColorDirective } from './directives/bg-color.directive';
         // diretivas
         NormalFontWeightDirective,
         ImageRoundedDirective,
+        ImageGaleryDirective,
         BgColorDirective
     ],
     exports: [

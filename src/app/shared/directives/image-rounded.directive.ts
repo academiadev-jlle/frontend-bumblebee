@@ -12,7 +12,7 @@ export class ImageRoundedDirective implements OnInit {
     width: 180px;
     height: 180px;
     margin: -70px auto auto auto;
-    transition: width 0.5s, border-radius 0.2s;
+    transition: width 0.3s, height 0.3s, border-radius 0.2s;
   `;
 
   defaultStyle = `
@@ -32,6 +32,7 @@ export class ImageRoundedDirective implements OnInit {
       background-size: contain;
       background-repeat: no-repeat;
       background-color: whitesmoke;
+      background-position: center;
       box-shadow: 0px 0px 5px gray;
       background-image: url("${this.image}");
     `;
