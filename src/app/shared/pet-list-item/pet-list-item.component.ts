@@ -10,5 +10,5 @@ export class PetListItemComponent {
     @Input() pet: PetOptions;
 
     // tslint:disable-next-line:max-line-length
-    photo = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRIh_Lo1WiWd35K2nHcgXo0Q6T6WBqIzrIK7mXgEIKJ4M7CVk_Eg';
+    photo = 'http://www.slupsk.pl/wp-content/uploads/2018/05/dog-1210559_960_720.jpg';
 }

@@ -10,12 +10,11 @@ export class NormalFontWeightDirective implements OnInit {
     // tslint:disable-next-line:no-input-rename
     @Input('appNormalFontWeight') appHightLightColor: string;
 
-    @HostListener('mouseenter')
-    onMouseEnter() {
+    @HostListener('mouseenter') onMouseEnter() {
         this.hightlight(this.appHightLightColor);
     }
-    @HostListener('mouseleave')
-    onMouseLeave() {
+
+    @HostListener('mouseleave') onMouseLeave() {
         this.hightlight('initial');
     }
 
@@ -25,7 +24,7 @@ export class NormalFontWeightDirective implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.renderer.setStyle(this.el.nativeElement, 'font-weight', 'normal');
+        this.renderer.setStyle(this.el.nativeElement, 'font-weight', 'bold');
     }
 
     private hightlight(color: string) {

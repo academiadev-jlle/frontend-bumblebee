@@ -1,61 +1,54 @@
+@import "../../../styles/variables";
+
 .bumblebee-card-group {
     margin-top: 50px;
     margin-bottom: 20px;
-    border-radius: 3px;
     background-color: rgba(245, 245, 245, 0.93);
-}
 
-.bumblebee-card-header {
-    font-weight: bold;
-    font-size:  20px;
-}
-
-.bumblebee-card-header a {
-    color: #1c2331;
-}
-
-.bumblebee-card-header a:hover {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.bumblebee-card-container {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.bumblebee-card-single {
-    text-align: center;
-    margin: 80px 20px 30px 20px;
-    min-height: 300px;
-    border: 2px solid rgb(223, 223, 223);
-    background-color: #fff;
-}
-
-@media (min-width: 576px) {
-    .bumblebee-card-single{
-        width: 320px;
-        margin-left: auto;
-        margin-right: auto;
+    .card-header {
+        font-weight: bold;
+        font-size:  20px;
+    
+        a {
+            color: $mainColor;
+            
+        }
+        a:hover {
+            text-decoration: none;
+            color: #007bff;
+        }
     }
-}
 
-@media (min-width: 768px) {
-    .bumblebee-card-single{
-        width: 310px;
-    }
-    .bumblebee-card-container {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-@media (min-width: 992px) {
-    .bumblebee-card-single{
-        width: 280px;
-    }
-}
-@media (min-width: 1200px) {
-    .bumblebee-card-single{
-        width: 320px;
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        @media (min-width: 768px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .row > div {
+            text-align: center;
+            margin: 80px 20px 30px 20px;
+            min-height: 300px;
+            border: 2px solid rgb(223, 223, 223);
+            background-color: #fff;
+
+            @media (min-width: 576px) {
+                width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media (min-width: 768px) {
+                width: 310px;
+            }
+            @media (min-width: 992px) {
+                width: 280px;
+            }
+            @media (min-width: 1200px) {
+                width: 320px;
+            }
+        }
     }
 }

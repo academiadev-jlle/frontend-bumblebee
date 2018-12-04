@@ -1,88 +1,24 @@
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col-lg-12 col-md-12 col-sm-12 mt-5 bumblebee-cad text-center">
+    <div class="col-lg-12 col-md-12 col-sm-12 mt-5 bumblebee-box text-center">
 
       <div class="text-center">
         <h2 class="title mb-4">
           <fa name="paw mr-1"></fa>
-          <fa name="search mr-2" class="bumblebee-icon-plus-pet"></fa>
+          <fa name="search mr-2" class="bumblebee-icon-join"></fa>
           Encontre seu pet
         </h2>
       </div>
 
-      <div class="row">
+      <hr class="mt-4" />
 
-        <div class="col-12 col-lg-6">
-          <div class="row">
-            <div class="col text-center">
-              <p><strong>Busca atual: </strong> texto da busca do usuário</p>
-            </div>
-          </div>
+      <form class="mx-auto mb-4">
+        <div class="row">
 
-          <div class="row">
-            <form class="form-inline mx-auto">
-              <input class="form-control ml-3 mr-3 mr-sm-2" type="search" placeholder="Pesquise aqui um pet..."
-                aria-label="Procurar">
-              <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Pesquisar</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-6 mt-3 mt-lg-0">
-          <div class="row">
-            <div class="col text-center">
-              <p><strong>Categoria atual: </strong> {{ categoria }}</p>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="mx-auto col-12 col-md-8 col-lg-11 col-xl-10">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option value="">Todos...</option>
-                  <option value="1">Perdidos</option>
-                  <option value="2">Achados</option>
-                  <option value="3">Devolvidos</option>
-                  <option value="4">Para adoção</option>
-                  <option value="5">Adotados</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- <div class="row">
-        <div class="col text-center">
-          <p><strong>Busca atual: </strong> texto da busca do usuário</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <form class="form-inline mx-auto">
-          <input class="form-control ml-3 mr-3 mr-sm-2" type="search" placeholder="Pesquise aqui um pet..." aria-label="Procurar">
-          <button class="btn btn-outline-success my-2 my-sm-0 mx-auto" type="submit">Pesquisar</button>
-        </form>
-      </div>
-
-      <div class="row mt-4">
-        <div class="col text-center">
-          <p><strong>Categoria atual: </strong> {{ categoria }}</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="mx-auto col-12 col-md-8 col-lg-6 col-xl-4">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <label class="input-group-text" for="inputGroupSelect01">Options</label>
-            </div>
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="inputGroupSelect01"><strong>Categoria</strong></label>
             <select class="custom-select" id="inputGroupSelect01">
-              <option value="">Todos...</option>
+              <option value="">Selecione uma categoria...</option>
               <option value="1">Perdidos</option>
               <option value="2">Achados</option>
               <option value="3">Devolvidos</option>
@@ -90,56 +26,73 @@
               <option value="5">Adotados</option>
             </select>
           </div>
-        </div>
-      </div> -->
 
-      <hr />
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="inputGroupSelect02"><strong>Espécie</strong></label>
+            <select class="custom-select" id="inputGroupSelect02">
+              <option value="">Selecione uma espécie...</option>
+              <option value="1">Ave</option>
+              <option value="2">Cão</option>
+              <option value="3">Gato</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-lg-4 mt-3">
+            <label for="inputSearch"><strong>Pesquise seu pet</strong></label>
+            <input class="form-control mr-3 mr-sm-2" type="search" placeholder="Pesquise aqui um pet..." aria-label="Procurar"
+              id="inputSearch" />
+          </div>
+
+          <div class="col-12 mt-4">
+            <button class="btn btn-outline-dark btn-block my-2 my-sm-0" type="submit">
+              Pesquisar
+            </button>
+          </div>
+
+        </div>
+      </form>
+
+      <hr class="mt-4" />
 
       <div class="row">
-        <div class="bumblebee-card-group">
-          <div class="container bumblebee-container-card">
-            <div class="row">
 
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-              <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-                <app-pet-list-item [pet]="pet"></app-pet-list-item>
-              </div>
-
-              <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="listPets.length == 0">
-                Não há pets para mostrar.
-              </div>
-
-            </div>
-          </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
         </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+          <app-pet-list-item [pet]="pet"></app-pet-list-item>
+        </div>
+
+        <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="listPets.length == 0">
+          Não há pets para mostrar.
+        </div>
+
       </div>
 
       <div class="row">
         <div class="mx-auto">
-          <nav aria-label="Page navigation example mx-auto">
+          <nav aria-label="Page navigation example">
             <ul class="pagination">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">

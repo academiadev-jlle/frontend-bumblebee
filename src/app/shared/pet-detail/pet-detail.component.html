@@ -1,7 +1,7 @@
 <div *ngIf='pet'>
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col-sm-12 col-md-12 col-lg-8 text-center mt-5 bumblebee-pet">
+            <div class="col-sm-12 col-md-12 col-lg-8 text-center mt-5 bumblebee-box">
 
                 <img class="img-thumbnail mb-4" [src]="photo" alt="Card image cap">
 
@@ -52,12 +52,42 @@
                             </p>
                             Pequeno
                         </div>
+                    </div>
+                </div>
 
-                        <div class="col-12 col-md-12 mb-3">
+                <h4 class="title mb-5 mt-5">
+                    <fa name="map-marker mr-2"></fa> Local
+                </h4>
+
+                <div class="container">
+                    <div class="row mb-4">
+
+                        <div class='col-12 col-md-6 mb-3'>
                             <p class="mb-0 pb-0">
-                                <strong>Espécie</strong>
+                                <strong>Rua</strong>
                             </p>
-                            {{ pet.especie }}
+                            {{ pet.localizacao.logradouro }}
+                        </div>
+
+                        <div class="col-12 col-md-6 mb-3">
+                            <p class="mb-0 pb-0">
+                                <strong>Ponto de referência</strong>
+                            </p>
+                            {{ pet.localizacao.referencia }}
+                        </div>
+
+                        <div class='col-12 col-md-6 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <strong>Bairro</strong>
+                            </p>
+                            {{ pet.localizacao.bairro }}
+                        </div>
+
+                        <div class="col-12 col-md-6 mb-3">
+                            <p class="mb-0 pb-0">
+                                <strong>Cidade/Estado</strong>
+                            </p>
+                            {{ pet.localizacao.cidade.nome }}/{{ pet.localizacao.cidade.uf.uf }}
                         </div>
                     </div>
                 </div>
@@ -92,6 +122,55 @@
                         </div>
                     </div>
                 </div>
+
+                <hr />
+
+                <h5 class="title mb-5 mt-5 text-left">
+                    <fa name="comment mr-2"></fa> 2 Comentários
+                </h5>
+
+                <div class="container text-left mb-4">
+                    <div class="row p-3 bumblebee-box-comment">
+                        <div class="col-12 col-md-6">
+                            <h5>
+                                <fa name="user mr-2"></fa> Maria
+                            </h5>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2 text-left text-md-right">
+                            <small class="text-muted">
+                                20 de setembro de 2018
+                            </small>
+                        </div>
+                        <div class="col-12 mt-3 text-justify">
+                            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                            of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container text-left mb-4">
+                    <div class="row p-3 bumblebee-box-comment">
+                        <div class="col-12 col-md-6">
+                            <h5>
+                                <fa name="user mr-2"></fa> José
+                            </h5>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2 text-left text-md-right">
+                            <small class="text-muted">
+                                20 de setembro de 2018
+                            </small>
+                        </div>
+                        <div class="col-12 mt-3 text-justify">
+                            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                            of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
