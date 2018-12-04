@@ -3,22 +3,38 @@
         <div class="col-lg-6 col-md-8 col-sm-12 text-center mt-5 bumblebee-box">
             <h2 class="title"><fa name="sign-in mr-2"></fa> Login</h2>
             <hr />
-            <form clas="form-group">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"><fa name="at"></fa></span>
+            <form [formGroup]="loginForm" class="form-group">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><fa name="at"></fa></span>
+                        </div>
+                        <input formControlName="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1" autofocus>
                     </div>
-                    <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
+
+                    <small
+                        *ngIf="loginForm.get('email').errors?.required"
+                        class="text-danger d-block">
+                        Por favor digite o email
+                    </small>
                 </div>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
+                        </div>
+                        <input formControlName="password" type="password" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="basic-addon1">
                     </div>
-                    <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="basic-addon1">
+                    
+                    <small
+                        *ngIf="loginForm.get('password').errors?.required"
+                        class="text-danger d-block">
+                        Por favor digite a senha
+                    </small>
                 </div>
 
-                <button type="submit" class="btn btn-success container-fluid">Cadastrar</button>
+                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-success container-fluid">Cadastrar</button>
 
                 <div class="container mt-3">
                     <a [routerLink]="['/senha/perdida']">Esqueceu sua senha?</a>
