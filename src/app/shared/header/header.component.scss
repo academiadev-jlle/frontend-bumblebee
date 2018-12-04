@@ -1,13 +1,13 @@
+@import "../../../styles/variables";
+
 .bumblebee-header {
-    background-color: #1c2331;
-}
+    a {
+        color: white;
+    }
 
-.bumblebee-header a {
-    color: white;
-}
-
-.bumblebee-header a:hover {
-    color: yellow;
+    a:hover {
+        color: $secondaryColor;
+    }
 }
 
 .bumblebee-logo {
@@ -22,11 +22,10 @@
 }
 
 .bumblebee-dropdown-menu-user{
-    border: 1px solid whitesmoke;
-    background-color: #1c2331;
-}
-
-.bumblebee-dropdown-menu-user a:hover {
-    background-color: #ffc30b;
-    color: black;
+    border: 1px solid white;
+    
+    a:hover {
+        background-color: $secondaryColorDarker;
+        color: black;
+    }
 }
