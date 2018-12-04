@@ -9,14 +9,15 @@ import { AuthService } from 'src/app/core/auth.service';
 })
 export class PetCadComponent implements OnInit {
 
-  petCadForm: FormGroup
+  petCadForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService) { }
+    private authService: AuthService
+  ) { }
 
   selectedFile: File = null;
-  onFileSelected(event){
+  onFileSelected(event) {
     this.selectedFile = <File>event.target.files[0];
     // console.log(event);
   }
@@ -24,7 +25,7 @@ export class PetCadComponent implements OnInit {
   ngOnInit() {
     this.petCadForm = this.formBuilder.group({
       nome: [''],
-      categoria : ['perdido'],
+      categoria: ['perdido'],
       descricao: [''],
       porte: ['pequeno'],
       especie: ['cao'],
@@ -33,7 +34,7 @@ export class PetCadComponent implements OnInit {
 
   }
 
-  createPet(){
+  createPet() {
     const nome = this.petCadForm.get('nome').value;
     const categoria = this.petCadForm.get('categoria').value;
     const descricao = this.petCadForm.get('descricao').value;
@@ -41,16 +42,16 @@ export class PetCadComponent implements OnInit {
     const especie = this.petCadForm.get('especie').value;
 
     const imagem = this.selectedFile;
-    
+
     this.authService
-      .createPet(nome, categoria, descricao, porte, especie, imagem)
-      /*.subscribe(
-        () => console.log('sucesso'),
-        err => {
-          console.log(err);
-          this.petCadForm.reset;
-        } 
-      );*/
+      .createPet(nome, categoria, descricao, porte, especie, imagem);
+    /*.subscribe(
+      () => console.log('sucesso'),
+      err => {
+        console.log(err);
+        this.petCadForm.reset;
+      }
+    );*/
   }
 
 }
