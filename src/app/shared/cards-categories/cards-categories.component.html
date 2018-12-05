@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-4 bumblebee-card-home">
+      <a [routerLink]="['/pet/categoria/', 'perdidos']">
+        <div [appCardHome]="card_1"></div>
+      </a>
+    </div>
+    <div class="col-lg-4 bumblebee-card-home">
+      <a [routerLink]="['/pet/categoria/', 'para-adocao']">
+        <div [appCardHome]="card_2"></div>
+      </a>
+    </div>
+    <div class="col-lg-4 bumblebee-card-home">
+      <a [routerLink]="['/pet/categoria/', 'adotados']">
+        <div [appCardHome]="card_3"></div>
+      </a>
+    </div>
+  </div>
+</div>

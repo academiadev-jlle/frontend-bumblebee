@@ -1,0 +1,11 @@
+@import "../../../styles/variables";
+
+.bumblebee-card-home {
+    padding: 0px;
+    margin-bottom: 10px;
+
+    @media (min-width: $lgSize){
+        border: 3px solid whitesmoke;
+        margin-bottom: none;
+    }
+}

@@ -18,6 +18,8 @@ import { ImageGaleryDirective } from './directives/image-galery.directive';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NguCarouselModule } from '@ngu/carousel';
 import 'hammerjs';
+import { CardsCategoriesComponent } from './cards-categories/cards-categories.component';
+import { CardHomeDirective } from './directives/card-home.directive';
 
 @NgModule({
     imports: [
@@ -47,7 +49,9 @@ import 'hammerjs';
         NormalFontWeightDirective,
         ImageRoundedDirective,
         ImageGaleryDirective,
-        BgColorDirective
+        BgColorDirective,
+        CardsCategoriesComponent,
+        CardHomeDirective
     ],
     exports: [
         PetListItemComponent,
@@ -55,6 +59,7 @@ import 'hammerjs';
         FooterComponent,
         PetDetailComponent,
         CarouselComponent,
+        CardsCategoriesComponent,
 
         // diretivas
         BgColorDirective

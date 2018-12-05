@@ -16,7 +16,7 @@
         <div class="row">
 
           <div class="col-12 col-lg-4 mt-3">
-            <label for="categoriaDoPet"><strong>Categoria</strong></label>
+            <label for="categoriaDoPet"><strong>Categoria</strong><span *ngIf="categoria"> | Atual: {{ categoria }}</span></label>
             <select  class="custom-select" id="categoriaDoPet">
               <option value="">Selecione uma categoria...</option>
               <option *ngFor="let cat of listCategorias" value="{{ cat.id }}">{{ cat.descricao }}</option>
