@@ -11,14 +11,16 @@ import { PorteService } from 'src/app/shared/services/porte.service';
   styleUrls: ['./pet-cad.component.scss']
 })
 export class PetCadComponent implements OnInit {
-  petCadForm: FormGroup;
   listCategorias = [];
   listEspecies = [];
   listPortes = [];
 
+  petCadForm: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
+
     private categorias: CategoriaService,
     private especies: EspecieService,
     private portes: PorteService,
@@ -34,15 +36,15 @@ export class PetCadComponent implements OnInit {
     this.listCategorias = this.categorias.getCategorias();
     this.listEspecies = this.especies.getEspecies();
     this.listPortes = this.portes.getPortes();
+
     this.petCadForm = this.formBuilder.group({
       nome: [''],
-      categoria: ['perdido'],
+      categoria: [''],
       descricao: [''],
-      porte: ['pequeno'],
-      especie: ['cao'],
+      porte: [''],
+      especie: [''],
       sexo: []
     });
-
   }
 
   createPet() {
