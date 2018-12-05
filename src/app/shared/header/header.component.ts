@@ -10,16 +10,30 @@ export class HeaderComponent implements OnInit {
   bumblebee = '../../assets/bumblebee.png';
   logo = '../../assets/logo-4.png';
   isCollapsed = true;
-  body: any;
+  tamanho_fonte = 12;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  // ============ ACESSIBILIDADE ============ //
+
   autoContraste() {
-    this.body = document.getElementById('body');
-    this.body.className = this.body.className === '' ? 'autoContraste' : '';
+    const body = document.getElementById('body');
+    body.className = body.className === '' ? 'autoContraste' : '';
+  }
+
+  alterarFonte(opcao: string) {
+    if (opcao === 'mais') {
+      this.tamanho_fonte++;
+    } else if (opcao === 'menos') {
+      this.tamanho_fonte--;
+    } else {
+      this.tamanho_fonte = 12;
+    }
+    const body = document.getElementById('body');
+    body.style.fontSize = this.tamanho_fonte + 'pt';
   }
 
 }
