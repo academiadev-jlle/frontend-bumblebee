@@ -7,13 +7,24 @@ import { EspecieOptions } from '../options/especie.options';
   providedIn: 'root'
 })
 export class EspecieService {
-  private url = 'https://test-bumblebeepets.herokuapp.com/pet/especies/';
+  // private url = 'https://test-bumblebeepets.herokuapp.com/pet/especies/';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  especies: EspecieOptions[] = [];
 
-  getEspecies(): Observable<EspecieOptions[]> {
-    return this.http.get<EspecieOptions[]>(this.url);
+  constructor() {
+    this.especies.push(...[{
+      id: 1,
+      descricao: 'Ave'
+    }, {
+      id: 2,
+      descricao: 'Cão',
+    }, {
+      id: 3,
+      descricao: 'Gato'
+    }]);
+  }
+
+  getEspecies(): EspecieOptions[] {
+    return this.especies;
   }
 }

@@ -14,16 +14,12 @@
 
       <form class="mx-auto mb-4">
         <div class="row">
-
+          
           <div class="col-12 col-lg-4 mt-3">
             <label for="inputGroupSelect01"><strong>Categoria</strong></label>
             <select class="custom-select" id="inputGroupSelect01">
               <option value="">Selecione uma categoria...</option>
-              <option value="1">Perdidos</option>
-              <option value="2">Achados</option>
-              <option value="3">Devolvidos</option>
-              <option value="4">Para adoção</option>
-              <option value="5">Adotados</option>
+              <option *ngFor="let cat of listCategorias" value="{{ cat.id }}">{{ cat.descricao }}</option>
             </select>
           </div>
 
@@ -31,9 +27,7 @@
             <label for="inputGroupSelect02"><strong>Espécie</strong></label>
             <select class="custom-select" id="inputGroupSelect02">
               <option value="">Selecione uma espécie...</option>
-              <option value="1">Ave</option>
-              <option value="2">Cão</option>
-              <option value="3">Gato</option>
+              <option *ngFor="let esp of listEspecies" value="{{ esp.id }}">{{ esp.descricao }}</option>
             </select>
           </div>
 
