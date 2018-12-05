@@ -49,13 +49,6 @@ code {
 
 // ============ AUTO CONTRASTE ============ //
 
-.bumblebee-auto-contraste-icon {
-    position: relative;
-    right: 20px;
-    top: -35px;
-    cursor: pointer;
-}
-
 .autoContraste * {
     background-color: $mainColorDarker !important;
     color: white !important;
