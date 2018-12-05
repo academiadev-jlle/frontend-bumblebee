@@ -15,6 +15,11 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { ImageRoundedDirective } from './directives/image-rounded.directive';
 import { BgColorDirective } from './directives/bg-color.directive';
 import { ImageGaleryDirective } from './directives/image-galery.directive';
+import { CarouselComponent } from './carousel/carousel.component';
+import { NguCarouselModule } from '@ngu/carousel';
+import 'hammerjs';
+import { CardsCategoriesComponent } from './cards-categories/cards-categories.component';
+import { CardHomeDirective } from './directives/card-home.directive';
 
 @NgModule({
     imports: [
@@ -25,6 +30,7 @@ import { ImageGaleryDirective } from './directives/image-galery.directive';
         AngularFontAwesomeModule,
         BsDropdownModule.forRoot(),
         CollapseModule.forRoot(),
+        NguCarouselModule,
 
         // events
         ClickOutsideModule,
@@ -34,6 +40,7 @@ import { ImageGaleryDirective } from './directives/image-galery.directive';
         HeaderComponent,
         FooterComponent,
         PetDetailComponent,
+        CarouselComponent,
 
         // pipes
         IsAdoptedPipe,
@@ -42,13 +49,17 @@ import { ImageGaleryDirective } from './directives/image-galery.directive';
         NormalFontWeightDirective,
         ImageRoundedDirective,
         ImageGaleryDirective,
-        BgColorDirective
+        BgColorDirective,
+        CardsCategoriesComponent,
+        CardHomeDirective
     ],
     exports: [
         PetListItemComponent,
         HeaderComponent,
         FooterComponent,
         PetDetailComponent,
+        CarouselComponent,
+        CardsCategoriesComponent,
 
         // diretivas
         BgColorDirective

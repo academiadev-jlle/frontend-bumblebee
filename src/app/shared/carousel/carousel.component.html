@@ -1,0 +1,9 @@
+<ngu-carousel #myCarousel [inputs]="carouselTile" (carouselLoad)="carouselTileLoad()" [dataSource]="carouselTileItems">
+  <ngu-tile *nguCarouselDef="let item; let i = index">
+    <div class="tile" [style.background]="'url(' + item + ')'" style="min-height: 200px">
+      <h1>{{i}}</h1>
+    </div>
+  </ngu-tile>
+
+</ngu-carousel>
+

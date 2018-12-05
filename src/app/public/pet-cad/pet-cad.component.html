@@ -21,9 +21,8 @@
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
             <label for="categoriaDoPet">Como se encontra?</label>
             <select formControlName="categoria" class="form-control" id="categoriaDoPet">
-              <option value="perdido">Perdido</option>
-              <option value="adocao">Para adoção</option>
-              <option value="encontrado">Encontrado</option>
+              <option value="">Selecione uma categoria...</option>
+              <option *ngFor="let cat of listCategorias" value="{{ cat.id }}">{{ cat.descricao }}</option>
             </select>
           </div>
         </div>
@@ -37,19 +36,15 @@
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <label for="porte">Qual o porte?</label>
             <select formControlName="porte" class="form-control" id="porte">
-              <option value="pequeno">Pequeno</option>
-              <option value="medio">Médio</option>
-              <option value="grande">Grande</option>
+              <option value="">Selecione um porte...</option>
+              <option *ngFor="let porte of listPortes" value="{{ porte.id }}">{{ porte.descricao }}</option>
             </select>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
             <label for="especie">Qual a espécie?</label>
             <select formControlName="especie" class="form-control" id="especie">
-              <option value="cao">Cão</option>
-              <option value="gato">Gato</option>
-              <option value="cavalo">Cavalo</option>
-              <option value="passaro">Pássaro</option>
-              <option value="outros">Outros</option>
+              <option value="">Selecione uma espécie...</option>
+              <option *ngFor="let esp of listEspecies" value="{{ esp.id }}">{{ esp.descricao }}</option>
             </select>
           </div>
         </div>
@@ -66,7 +61,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
             <p>&ensp;</p>
             <div class="custom-control custom-radio custom-control-inline">
