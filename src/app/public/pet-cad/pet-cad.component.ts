@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
+import { EspecieService } from 'src/app/shared/services/especie.service';
+import { CategoriaService } from 'src/app/shared/services/categoria.service';
+import { PorteService } from 'src/app/shared/services/porte.service';
 
 @Component({
   selector: 'app-pet-cad',
@@ -8,12 +11,19 @@ import { AuthService } from 'src/app/core/auth.service';
   styleUrls: ['./pet-cad.component.scss']
 })
 export class PetCadComponent implements OnInit {
+  listCategorias = [];
+  listEspecies = [];
+  listPortes = [];
 
   petCadForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+
+    private categorias: CategoriaService,
+    private especies: EspecieService,
+    private portes: PorteService,
   ) { }
 
   selectedFile: File = null;
@@ -23,15 +33,18 @@ export class PetCadComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.listCategorias = this.categorias.getCategorias();
+    this.listEspecies = this.especies.getEspecies();
+    this.listPortes = this.portes.getPortes();
+
     this.petCadForm = this.formBuilder.group({
       nome: [''],
-      categoria: ['perdido'],
+      categoria: [''],
       descricao: [''],
-      porte: ['pequeno'],
-      especie: ['cao'],
+      porte: [''],
+      especie: [''],
       sexo: []
     });
-
   }
 
   createPet() {
