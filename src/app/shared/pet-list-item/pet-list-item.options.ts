@@ -1,7 +1,7 @@
 export interface PetOptions {
     id: number;
-    name: string;
-    description: string;
-    isAdoption: boolean;
-    isLost: boolean;
+    nome: string;
+    descricao: string;
+    categoria: string;
+    especie: string;
 }

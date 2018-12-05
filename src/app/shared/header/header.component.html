@@ -1,30 +1,71 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bumblebee-header" appBgColor (clickOutside)="isCollapsed = true">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">PetCodes</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+      <a class="navbar-brand" [routerLink]="['/']">
+        <img [src]="bumblebee" alt="Bumblebee" class="rounded-circle bumblebee-logo" />
+        <img [src]="logo" alt="Bumblebee Pets" class="bumblebee-logo-text" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" attr-aria-expanded="false" aria-label="Toggle navigation"
+        (click)="isCollapsed = !isCollapsed">
+        Menu <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+      <div class="collapse navbar-collapse" [collapse]="isCollapsed">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/']">Início <span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['/']">
+              <fa name="home"></fa> Início <span class="sr-only">(current)</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/lost']">Pets perdidos</a>
+            <a class="nav-link" [routerLink]="['/pet/categoria/todos']">Buscar pets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/user/cad']">Cadastre-se</a>
+            <a class="nav-link" [routerLink]="['/cad/pet']">Cadastrar um pet</a>
           </li>
+        </ul>
+
+        <!-- NÃO AUTENTICADO -->
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/pet/cad']">Cadastrar um pet</a>
+            <a class="nav-link" [routerLink]="['/cad/user']">Cadastre-se</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/login']">Login</a>
           </li>
         </ul>
+
+        <!-- AUTENTICADO -->
+        <ul class="navbar-nav">
+          <li class="dropdown" dropdown>
+            <a class="nav-link dropdown-toggle" dropdownToggle (click)="false" href id="navbarDropdown" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Minha conta
+            </a>
+            <div *dropdownMenu appBgColor class="dropdown-menu bumblebee-dropdown-menu-user" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['/perfil/user']">
+                <fa name="user mr-2"></fa>Meu perfil
+              </a>
+              <a class="dropdown-item" [routerLink]="['/user/pets']">
+                <fa name="paw mr-2"></fa>Meus pets
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">
+                <fa name="power-off mr-2"></fa>Sair
+              </a>
+            </div>
+          </li>
+        </ul>
+
       </div>
+
+      <div class="bumblebee-auto-contraste-icon" (click)="autoContraste()">
+        <fa name="adjust"></fa>
+      </div>
+
     </div>
   </nav>
 </header>

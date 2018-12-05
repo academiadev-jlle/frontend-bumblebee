@@ -1,9 +1,10 @@
-<div class="card mb-4 box-shadow">
-    <img class="card-img-top" [src]="photo" alt="Card image cap">
-    <div class="card-body">
-        <h3 class="mb-0">
-        <a class="text-dark" [routerLink]="['/pet', pet.id, pet.name]">{{ pet.name }}</a>
-        </h3>
-        <p class="card-text mb-auto">{{ pet.description }}</p>
-    </div>
+<a [routerLink]="['/pet', pet.id]">
+    <div [appImageRounded]="photo"></div>
+</a>
+<div class="card-body">
+    <h5 class="card-title"><a [routerLink]="['/pet', pet.id]">{{ pet.nome }}</a></h5>
+    <p class="card-text">{{ pet.descricao }} lorem lorem lorem lorem lorem lorem lorem lorem lorem
+        lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+    </p>
+    <p class="card-text"><small class="text-muted">Cadastrado dia 01/01/2018</small></p>
 </div>

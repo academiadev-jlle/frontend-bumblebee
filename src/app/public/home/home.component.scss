@@ -1,0 +1,54 @@
+@import "../../../styles/variables";
+
+.bumblebee-card-group {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: rgba(245, 245, 245, 0.93);
+
+    .card-header {
+        font-weight: bold;
+        font-size:  20px;
+    
+        a {
+            color: $mainColor;
+            
+        }
+        a:hover {
+            text-decoration: none;
+            color: #007bff;
+        }
+    }
+
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        
+        @media (min-width: $mdSize) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .row > div {
+            text-align: center;
+            margin: 80px 20px 30px 20px;
+            min-height: 300px;
+            border: 2px solid rgb(223, 223, 223);
+            background-color: #fff;
+
+            @media (min-width: $smSize) {
+                width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media (min-width: $mdSize) {
+                width: 310px;
+            }
+            @media (min-width: $lgSize) {
+                width: 280px;
+            }
+            @media (min-width: $xlSize) {
+                width: 320px;
+            }
+        }
+    }
+}

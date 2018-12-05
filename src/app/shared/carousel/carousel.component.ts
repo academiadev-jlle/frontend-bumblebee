@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'sample',
   templateUrl: './carousel.component.html'
 })
@@ -13,7 +14,7 @@ export class CarouselComponent implements OnInit {
     'https://picsum.photos/350/200/?image=653',
     'https://picsum.photos/350/200/?image=654',
     'https://picsum.photos/350/200/?image=655'
-  ]
+  ];
   public carouselTileItems: Array<any> = [];
   public carouselTile: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md: 3, lg: 3, all: 0 },

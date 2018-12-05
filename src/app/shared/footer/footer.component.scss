@@ -1,0 +1,16 @@
+@import "../../../styles/variables";
+
+.bumblebee-footer {
+    a {
+        color: $secondaryColor;
+    }
+
+    hr {
+        width: 60px;
+        border-color: $secondaryColor;
+    }
+
+    .footer-copyright {
+        background-color: $mainColorDarker;
+    }
+}

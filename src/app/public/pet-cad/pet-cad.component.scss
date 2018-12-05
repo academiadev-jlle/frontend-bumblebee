@@ -1,0 +1,9 @@
+@import "../../../styles/variables";
+
+.bumblebee-box > form > .form-row > div {
+    margin-top: 20px;
+
+    @media (min-width: $mdSize){
+        margin-top: inherit;
+    }
+}

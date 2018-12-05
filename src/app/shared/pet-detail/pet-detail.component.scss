@@ -1,0 +1,44 @@
+@import "../../../styles/variables";
+
+.bumblebee-box-comment {
+    box-shadow: 0px 0px 3px gray;
+    border-radius: 5px;
+}
+
+.bumblebee-img-galery {
+    width: 135px;
+    height: 135px;
+    border-radius: 5%;
+    background-size: cover;
+
+    @media(min-width: $mdSize) and (max-width: $lgSize) {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.bumblebee-img-galery-zoom {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: whitesmoke;
+    background-position: center;
+    border-radius: 20px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 5px gray;
+    z-index: 1;
+
+    @media(min-width: $smSize) {
+        width: 300px;
+        height: 300px;
+    }
+    @media(min-width: $mdSize) {
+        width: 400px;
+        height: 400px;
+    }
+}

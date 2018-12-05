@@ -1,5 +1,227 @@
-<h1 appNormalFontWeight>{{ pet.name | uppercase | lowercase }}</h1>
+<div *ngIf='pet'>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-12 col-md-12 col-lg-10 col-xl-8 text-center mt-5 bumblebee-box">
 
-<p>{{ pet.isAdoption | isadopted }}</p>
+                <div class="mb-3">
+                    <small class="text-muted">
+                        Cadastrado dia {{ pet.dataPostagem }}
+                    </small></div>
 
-{{ pet | json }}
+                <img class="img-thumbnail mb-4" [src]="photo1" alt="Card image cap">
+
+                <h2 class="title">
+                    <fa name="paw mr-2"></fa> {{ pet.nome }}
+                </h2>
+
+                <p class="mt-5">
+                    <fa name="comment mr-3"></fa>
+                    {{ pet.descricao }}
+                </p>
+
+                <hr />
+
+                <h4 class="title mb-5 mt-5">
+                    <fa name="asterisk mr-2"></fa> Características
+                </h4>
+
+                <div class="container">
+                    <div class="row mb-4">
+
+                        <div class='col-12 col-md-6 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <strong>Categoria</strong>
+                            </p>
+                            {{ pet.categoria }}
+                        </div>
+
+                        <div class="col-12 col-md-6 mb-3">
+                            <p class="mb-0 pb-0">
+                                <strong>Espécie</strong>
+                            </p>
+                            {{ pet.especie }}
+                        </div>
+
+                        <div class='col-12 col-md-6 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <strong>Sexo</strong>
+                            </p>
+                            {{ pet.sexo }}
+                        </div>
+
+                        <div class="col-12 col-md-6 mb-3">
+                            <p class="mb-0 pb-0">
+                                <strong>Porte</strong>
+                            </p>
+                            {{ pet.porte }}
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="title mb-5 mt-5">
+                    <fa name="map-marker mr-2"></fa> Local
+                </h4>
+
+                <div class="container">
+                    <div class="row mb-4">
+
+                        <div class='col-12 col-md-6 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <strong>Rua</strong>
+                            </p>
+                            {{ pet.localizacao.logradouro }}
+                        </div>
+
+                        <div class="col-12 col-md-6 mb-3">
+                            <p class="mb-0 pb-0">
+                                <strong>Ponto de referência</strong>
+                            </p>
+                            {{ pet.localizacao.referencia }}
+                        </div>
+
+                        <div class='col-12 col-md-6 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <strong>Bairro</strong>
+                            </p>
+                            {{ pet.localizacao.bairro }}
+                        </div>
+
+                        <div class="col-12 col-md-6 mb-3">
+                            <p class="mb-0 pb-0">
+                                <strong>Cidade/Estado</strong>
+                            </p>
+                            {{ pet.localizacao.cidade.nome }}/{{ pet.localizacao.cidade.uf.uf }}
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <h4 class="title mb-5 mt-5">
+                    <fa name="envelope"></fa>
+                    <fa name="phone bumblebee-icon-join mr-2"></fa>
+                    Entre em contato e ajude-o(a)
+                </h4>
+
+                <div class="container text-center">
+                    <div class="row mb-4">
+                        <div class='col-12 col-md-6 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <fa name="user mr-2"></fa><strong>Cadastrado por</strong>
+                            </p>
+                            {{ pet.usuario.nome }}
+                        </div>
+
+                        <div class='col-12 col-md-6 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <fa name="phone mr-2"></fa><strong>Telefone:</strong>
+                            </p>
+                            {{ pet.usuario.telefone }}
+                        </div>
+
+                        <div class='col-12 col-md-12 mb-3'>
+                            <p class="mb-0 pb-0">
+                                <fa name="envelope mr-2"></fa><strong>E-mail</strong>
+                            </p>
+                            {{ pet.usuario.email }}
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <h4 class="title mb-5 mt-5">
+                    <fa name="image"></fa>
+                    <fa name="image bumblebee-icon-join mr-2"></fa>
+                    Mais fotos
+                </h4>
+
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo1" class="mx-auto bumblebee-img-galery">
+                            </div>
+                        </div>
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo2" class="mx-auto bumblebee-img-galery"></div>
+                        </div>
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo3" class="mx-auto bumblebee-img-galery"></div>
+                        </div>
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo4" class="mx-auto bumblebee-img-galery"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <h5 class="title mb-5 mt-5 text-left">
+                    <fa name="comments mr-2"></fa> 2 Comentários
+                </h5>
+
+                <div class="container text-left mb-4">
+                    <div class="row p-3 bumblebee-box-comment">
+                        <div class="col-12 col-md-6">
+                            <h5>
+                                <fa name="user mr-2"></fa> Maria
+                            </h5>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2 text-left text-md-right">
+                            <small class="text-muted">
+                                20 de setembro de 2018
+                            </small>
+                        </div>
+                        <div class="col-12 mt-3 text-justify">
+                            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                            of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container text-left mb-4">
+                    <div class="row p-3 bumblebee-box-comment">
+                        <div class="col-12 col-md-6">
+                            <h5>
+                                <fa name="user mr-2"></fa> José
+                            </h5>
+                        </div>
+                        <div class="col-12 col-md-6 mb-2 text-left text-md-right">
+                            <small class="text-muted">
+                                20 de setembro de 2018
+                            </small>
+                        </div>
+                        <div class="col-12 mt-3 text-justify">
+                            is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                            of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries, but also the leap into electronic typesetting, remaining
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <h5 class="title mb-5 mt-5 text-left">
+                    <fa name="comment mr-2"></fa>
+                    Comentar
+                </h5>
+
+                <div class="container text-left mb-4">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Digite seu comentário</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <a href>
+                            <button class="btn btn-success container-fluid">Enviar</button>
+                        </a>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

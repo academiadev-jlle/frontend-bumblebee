@@ -8,33 +8,56 @@ import { FooterComponent } from './footer/footer.component';
 import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { IsAdoptedPipe } from './pipes/is-adopted.pipe';
 import { NormalFontWeightDirective } from './directives/normal-font-weight.directives';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ClickOutsideModule } from 'ng-click-outside';
+import { ImageRoundedDirective } from './directives/image-rounded.directive';
+import { BgColorDirective } from './directives/bg-color.directive';
+import { ImageGaleryDirective } from './directives/image-galery.directive';
 import { CarouselComponent } from './carousel/carousel.component';
-
 import { NguCarouselModule } from '@ngu/carousel';
 import 'hammerjs';
-
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
-        NguCarouselModule
+
+        // bootstrap & font-awesome
+        AngularFontAwesomeModule,
+        BsDropdownModule.forRoot(),
+        CollapseModule.forRoot(),
+        NguCarouselModule,
+
+        // events
+        ClickOutsideModule,
     ],
     declarations: [
         PetListItemComponent,
         HeaderComponent,
         FooterComponent,
         PetDetailComponent,
+        CarouselComponent,
+
+        // pipes
         IsAdoptedPipe,
+
+        // diretivas
         NormalFontWeightDirective,
-        CarouselComponent
+        ImageRoundedDirective,
+        ImageGaleryDirective,
+        BgColorDirective
     ],
     exports: [
         PetListItemComponent,
         HeaderComponent,
         FooterComponent,
         PetDetailComponent,
-        CarouselComponent
+        CarouselComponent,
+
+        // diretivas
+        BgColorDirective
     ]
 })
 

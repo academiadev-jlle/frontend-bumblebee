@@ -1,80 +1,114 @@
-<div class="container mt-3">
-  <div class="card">
-    <carousel>
-      <slide>
-        <img src="https://picsum.photos/1200/300/?image=136" alt="first slide" style="display: block; width: 100%;">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </slide>
-      <slide>
-        <img src="https://picsum.photos/1200/300/?image=435" alt="second slide" style="display: block; width: 100%;">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </slide>
-      <slide>
-        <img src="https://picsum.photos/1200/300/?image=434" alt="third slide" style="display: block; width: 100%;">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </div>
-      </slide>
-    </carousel>
+<app-slider></app-slider>
+
+<!-- LOST PETS -->
+<div class="bumblebee-card-group">
+
+  <div class="card-header text-center">
+    <a [routerLink]="['/pet/categoria/', 'perdidos']">
+      <fa name="paw"></fa>
+      Pets perdidos que estão a procura do seu lar
+    </a>
   </div>
-</div>
-<hr />
 
-<sample></sample>
+  <div class="container">
+    <div class="row">
 
-<hr />
-<div class="container mt-3">
-  <div class="card">
-    <div class="card-header">Perdidos</div>
-    <div class="card-body">
-      <div class="row">
-        <div *ngFor="let pet of lostPets" class="col-md-4">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div class="alert alert-info" role="alert" *ngIf="lostPets.length == 0">
-          Não há pets para mostrar.
-        </div>
+      <div *ngFor="let pet of lostPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
+
+      <div *ngFor="let pet of lostPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+
+      <div *ngFor="let pet of lostPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="lostPets.length == 0">
+        Não há pets para mostrar.
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" *ngIf="lostPets.length > 0">
+      <button type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</button>
     </div>
   </div>
 </div>
+<!-- ./LOST PETS -->
 
-<div class="container mt-3">
-  <div class="card">
-    <div class="card-header">Para adoção</div>
-    <div class="card-body">
-      <div class="row">
-        <div *ngFor="let pet of adoptionPets" class="col-md-4">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div class="alert alert-info" role="alert" *ngIf="adoptionPets.length == 0">
-          Não há pets para mostrar.
-        </div>
+<!-- ADOPTION PETS -->
+<div class="bumblebee-card-group">
+  <div class="card-header text-center">
+    <a [routerLink]="['/pet/categoria/', 'para-adocao']">
+      <fa name="paw"></fa>
+      Pets que estão procurando um novo lar
+    </a>
+  </div>
+  <div class="container bumblebee-container-card">
+    <div class="row">
+
+      <div *ngFor="let pet of adoptionPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
+
+      <div *ngFor="let pet of adoptionPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+
+      <div *ngFor="let pet of adoptionPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptionPets.length == 0">
+        Não há pets para mostrar.
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" *ngIf="lostPets.length > 0">
+      <button type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</button>
     </div>
   </div>
 </div>
+<!-- ./ADOPTION PETS -->
 
+<!-- ADOPTED PETS -->
+<div class="bumblebee-card-group">
+  <div class="card-header text-center">
+    <a [routerLink]="['/pet/categoria/', 'adotados']">
+      <fa name="paw"></fa>
+      Dê uma olhada nos pets que já foram adotados através da nossa plataforma
+    </a>
+  </div>
+  <div class="container bumblebee-container-card">
+    <div class="row">
 
-<div class="container mt-3">
-  <div class="card">
-    <div class="card-header">Dê uma olhada nos pets que foram adotados</div>
-    <div class="card-body">
-      <div class="row">
-        <div *ngFor="let pet of adoptedPets" class="col-md-4">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div class="alert alert-info" role="alert" *ngIf="adoptedPets.length == 0">
-          Não há pets para mostrar.
-        </div>
+      <div *ngFor="let pet of adoptedPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
+
+      <div *ngFor="let pet of adoptedPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+
+      <div *ngFor="let pet of adoptedPets">
+        <app-pet-list-item [pet]="pet"></app-pet-list-item>
+      </div>
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptedPets.length == 0">
+        Não há pets para mostrar.
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" *ngIf="lostPets.length > 0">
+      <button type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</button>
     </div>
   </div>
 </div>
+<!-- ./ADOPTED PETS -->
