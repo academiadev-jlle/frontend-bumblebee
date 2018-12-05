@@ -7,13 +7,24 @@ import { PorteOptions } from '../options/porte.options';
   providedIn: 'root'
 })
 export class PorteService {
-  private url = 'https://test-bumblebeepets.herokuapp.com/pet/portes/';
+  // private url = 'https://test-bumblebeepets.herokuapp.com/pet/portes/';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  portes: PorteOptions[] = [];
 
-  getPortes(): Observable<PorteOptions[]> {
-    return this.http.get<PorteOptions[]>(this.url);
+  constructor() {
+    this.portes.push(...[{
+      id: 1,
+      descricao: 'Pequeno'
+    }, {
+      id: 2,
+      descricao: 'Médio',
+    }, {
+      id: 3,
+      descricao: 'Grande'
+    }]);
+  }
+
+  getPortes(): PorteOptions[] {
+    return this.portes;
   }
 }
