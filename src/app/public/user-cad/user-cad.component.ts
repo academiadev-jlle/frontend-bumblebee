@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-cad',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCadComponent implements OnInit {
 
-  constructor() { }
+  cadastroForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.cadastroForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      nome: ['', Validators.required],
+      telefone: ['', Validators.required],
+      senha: ['', Validators.required],
+      confirmacaoSenha: ['', Validators.required],
+    });
   }
+
 
 }
