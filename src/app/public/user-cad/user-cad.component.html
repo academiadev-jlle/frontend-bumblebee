@@ -3,7 +3,7 @@
     <div class="col-lg-6 col-md-8 col-sm-12 text-center mt-5 bumblebee-box">
       <h2 class="title"><fa name="user-plus mr-2"></fa> Cadastre-se</h2>
       <hr />
-      <form [formGroup]="cadastroForm" class="form-group">
+      <form [formGroup]="cadastroForm" class="form-group" (submit)="cadastraUsuario()">
           <div class="form-group">
               <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -82,7 +82,7 @@
                       aria-describedby="basic-addon1" autofocus>
               </div>
 
-              <small *ngIf="cadastroForm.get('senha').errors?.required " class="text-danger d-block">
+              <small *ngIf="cadastroForm.get('confirmacaoSenha').errors?.required " class="text-danger d-block">
                   Por favor confirme a senha
               </small>
           </div>
