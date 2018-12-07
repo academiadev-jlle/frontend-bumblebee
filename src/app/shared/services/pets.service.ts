@@ -9,7 +9,7 @@ import { PetOptions } from '../pet-list-item/pet-list-item.options';
 })
 export class PetsService {
 
-    private url = 'https://test-bumblebeepets.herokuapp.com/pet/';
+    private url = 'https://bumblebeepets.herokuapp.com/pet/';
 
     constructor(
         private http: HttpClient

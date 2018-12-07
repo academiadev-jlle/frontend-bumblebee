@@ -20,6 +20,7 @@ import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { LostPasswordComponent } from './lost-password/lost-password.component';
 import { LoginModule } from './login/login.module';
 import { PetCadModule } from './pet-cad/pet-cad.module';
+import { UserCadModule } from './user-cad/user-cad.module';
 
 @NgModule({
   imports: [
@@ -30,14 +31,15 @@ import { PetCadModule } from './pet-cad/pet-cad.module';
     AngularFontAwesomeModule,
 
     LoginModule,
-    PetCadModule
+    PetCadModule,
+    UserCadModule
   ],
   declarations: [
     HomeComponent,
     // LostPetsComponent,
     FilterPipe,
 
-    UserCadComponent,
+    // UserCadComponent,
     // LoginComponent,
     SliderComponent,
     // PetCadComponent,
@@ -54,7 +56,8 @@ import { PetCadModule } from './pet-cad/pet-cad.module';
     // LostPetsComponent,
 
     UserCadComponent,
-    LoginComponent
+    LoginComponent,
+    UserCadComponent
   ]
 })
 
