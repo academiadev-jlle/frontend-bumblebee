@@ -17,7 +17,7 @@ export class PetCadComponent implements OnInit {
   listCategorias = [];
   listEspecies = [];
   listPortes = [];
-  listUF = []
+  listUF = [];
 
   petCadForm: FormGroup;
 
@@ -89,18 +89,18 @@ export class PetCadComponent implements OnInit {
 
   updateCidadeAndUF() {
     const cep = this.petCadForm.get('cep').value;
-    if(cep!=null){
+    if (cep != null) {
       this.cepService
-      .getCidadeAndUF(cep)
-      .subscribe(
-        resp => {
-          this.petCadForm.patchValue({
-            cidade: resp.localidade,
-            uf: resp.uf
-          });
-          
-        }
-      );
+        .getCidadeAndUF(cep)
+        .subscribe(
+          resp => {
+            this.petCadForm.patchValue({
+              cidade: resp.localidade,
+              uf: resp.uf
+            });
+
+          }
+        );
     }
   }
 
