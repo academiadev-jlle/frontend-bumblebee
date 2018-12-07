@@ -82,24 +82,39 @@
         <hr />
 
         <div class="form-row">
+
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <label for="exampleFormControlInput1">Rua</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
+            <label for="cep">Cep</label>
+            <input type="text" formControlName="cep" class="form-control" id="cep" placeholder="Onde você perdeu/encontrou"
+              (focusout)="updateCidadeAndUF()">
           </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
-            <label for="exampleFormControlInput1">Referência</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+            <label for="rua">Rua</label>
+            <input type="text" class="form-control" id="rua" placeholder="Onde você perdeu/encontrou">
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+            <label for="referencia">Referência</label>
+            <input type="text" class="form-control" id="referencia" placeholder="Onde você perdeu/encontrou">
           </div>
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
-            <label for="exampleFormControlInput1">Bairro</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
+            <label for="bairro">Bairro</label>
+            <input type="text" class="form-control" id="bairro" placeholder="Onde você perdeu/encontrou">
           </div>
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
-            <label for="exampleFormControlInput1">Cidade</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
+            <label for="cidade">Cidade</label>
+            <input type="text" formControlName="cidade" class="form-control" id="cidade" placeholder="Onde você perdeu/encontrou">
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+            <label for="uf">UF</label>
+            <select formControlName="uf" class="form-control" id="uf">
+              <option value="">Selecione uma UF...</option>
+              <option *ngFor="let uf of listUF" [ngValue]="uf">{{ uf }}</option>
+            </select>
           </div>
         </div>
 
