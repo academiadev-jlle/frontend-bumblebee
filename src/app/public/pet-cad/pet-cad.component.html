@@ -82,12 +82,18 @@
         <hr />
 
         <div class="form-row">
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+              <label for="exampleFormControlInput1">Cep</label>
+              <input type="text" formControlName="cep" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou" (focusout)="updateCidadeAndUF()">
+          </div>
+
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <label for="exampleFormControlInput1">Rua</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
           </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
             <label for="exampleFormControlInput1">Referência</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
           </div>
@@ -99,9 +105,18 @@
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
             <label for="exampleFormControlInput1">Cidade</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
+            <input type="text" formControlName="cidade" class="form-control" id="exampleFormControlInput1" placeholder="Onde você perdeu/encontrou">
           </div>
         </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
+            <label for="uf">UF: </label>
+            <select formControlName="uf" class="form-control" id="uf">
+              <option value="">Selecione uma UF...</option>
+              <option *ngFor="let uf of listUF" [ngValue]="uf">{{ uf }}</option>
+            </select>
+        </div>
+        
 
         <button type="submit" class="btn btn-success container-fluid mt-5">Cadastrar</button>
       </form>

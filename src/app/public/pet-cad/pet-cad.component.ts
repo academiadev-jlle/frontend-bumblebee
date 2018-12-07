@@ -4,6 +4,9 @@ import { AuthService } from 'src/app/core/auth.service';
 import { EspecieService } from 'src/app/shared/services/especie.service';
 import { CategoriaService } from 'src/app/shared/services/categoria.service';
 import { PorteService } from 'src/app/shared/services/porte.service';
+import { ViacepService } from 'src/app/dependencies/viacep.service';
+import { IbgeUFService } from 'src/app/dependencies/ibge-uf.service';
+import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Component({
   selector: 'app-pet-cad',
@@ -14,6 +17,7 @@ export class PetCadComponent implements OnInit {
   listCategorias = [];
   listEspecies = [];
   listPortes = [];
+  listUF = []
 
   petCadForm: FormGroup;
 
@@ -24,6 +28,9 @@ export class PetCadComponent implements OnInit {
     private categorias: CategoriaService,
     private especies: EspecieService,
     private portes: PorteService,
+    private uf: IbgeUFService,
+
+    private cepService: ViacepService
   ) { }
 
   selectedFile: File = null;
@@ -37,13 +44,26 @@ export class PetCadComponent implements OnInit {
     this.listEspecies = this.especies.getEspecies();
     this.listPortes = this.portes.getPortes();
 
+    this.uf.getUFs().subscribe(
+      resp => {
+        let ufs = resp
+          .map(resp => resp.sigla)
+          .sort();
+        this.listUF = ufs;
+        this.petCadForm.controls['uf'].patchValue('');
+      }
+    );
+
     this.petCadForm = this.formBuilder.group({
       nome: [''],
       categoria: [''],
       descricao: [''],
       porte: [''],
       especie: [''],
-      sexo: []
+      sexo: [],
+      cep: [''],
+      cidade: [''],
+      uf: []
     });
   }
 
@@ -65,6 +85,23 @@ export class PetCadComponent implements OnInit {
         this.petCadForm.reset;
       }
     );*/
+  }
+
+  updateCidadeAndUF() {
+    const cep = this.petCadForm.get('cep').value;
+    if(cep!=null){
+      this.cepService
+      .getCidadeAndUF(cep)
+      .subscribe(
+        resp => {
+          this.petCadForm.patchValue({
+            cidade: resp.localidade,
+            uf: resp.uf
+          });
+          
+        }
+      );
+    }
   }
 
 }
