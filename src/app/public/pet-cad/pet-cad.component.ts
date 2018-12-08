@@ -8,6 +8,8 @@ import { ViacepService } from 'src/app/dependencies/viacep.service';
 import { IbgeUFService } from 'src/app/dependencies/ibge-uf.service';
 import { CompileShallowModuleMetadata } from '@angular/compiler';
 
+import { ViaCep } from '../../shared/options/viacep.options';
+
 @Component({
   selector: 'app-pet-cad',
   templateUrl: './pet-cad.component.html',
@@ -43,16 +45,8 @@ export class PetCadComponent implements OnInit {
     this.listCategorias = this.categorias.getCategorias();
     this.listEspecies = this.especies.getEspecies();
     this.listPortes = this.portes.getPortes();
-
-    this.uf.getUFs().subscribe(
-      resp => {
-        let ufs = resp
-          .map(resp => resp.sigla)
-          .sort();
-        this.listUF = ufs;
-        this.petCadForm.controls['uf'].patchValue('');
-      }
-    );
+    this.listUF = this.uf.getUFs();
+    this.petCadForm.controls['uf'].patchValue('');
 
     this.petCadForm = this.formBuilder.group({
       nome: [''],
@@ -93,7 +87,7 @@ export class PetCadComponent implements OnInit {
       this.cepService
         .getCidadeAndUF(cep)
         .subscribe(
-          resp => {
+          (resp: ViaCep) => {
             this.petCadForm.patchValue({
               cidade: resp.localidade,
               uf: resp.uf

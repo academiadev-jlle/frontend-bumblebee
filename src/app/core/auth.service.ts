@@ -14,4 +14,13 @@ export class AuthService {
     console.log({ nome, categoria, descricao, porte, especie, imagem });
     //  return this.http.post(API_URL + '/pet', {nome, categoria, descricao, porte, especie, imagem })
   }
+
+  cadastraUsuario(email: string, nome: string, contato: string, senha: string) {
+    return this.http.post(API_URL + '/usuario', {contato, email, nome, senha});
+  }
+
+  authenticate(email: string, senha: string) {
+    return this.http.post(API_URL + '/oauth/token', {email, senha});
+  }
+
 }
