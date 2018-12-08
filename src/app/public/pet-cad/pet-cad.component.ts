@@ -57,7 +57,9 @@ export class PetCadComponent implements OnInit {
       sexo: [, Validators.required],
       cep: [''],
       cidade: [''],
-      uf: []
+      uf: [],
+      rua: [''],
+      bairro: []
     });
   }
 
@@ -90,7 +92,9 @@ export class PetCadComponent implements OnInit {
           (resp: ViaCep) => {
             this.petCadForm.patchValue({
               cidade: resp.localidade,
-              uf: resp.uf
+              uf: resp.uf,
+              bairro: resp.bairro,
+              rua: resp.logradouro
             });
 
           }
