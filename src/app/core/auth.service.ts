@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const API_URL = 'https://test-bumblebeepets.herokuapp.com';
 
@@ -20,7 +20,18 @@ export class AuthService {
   }
 
   authenticate(email: string, senha: string) {
-    return this.http.post(API_URL + '/oauth/token', {email, senha});
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Basic ' + btoa('academiadev-front:fronfront')
+      })
+    };
+
+    const data = new FormData();
+    data.append('username', email);
+    data.append('password', senha);
+    data.append('grant_type', 'password');
+
+    return this.http.post(API_URL + '/oauth/token', data, httpOptions);
   }
 
 }
