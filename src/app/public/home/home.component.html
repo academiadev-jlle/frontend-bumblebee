@@ -10,7 +10,7 @@
   <div class="card-header text-center">
     <a [routerLink]="['/pet/categoria/', 'perdidos']">
       <fa name="paw"></fa>
-      Pets perdidos que estão a procura do seu lar
+      Pets perdidos que estão à procura do seu lar
     </a>
   </div>
 
@@ -37,7 +37,7 @@
 
   <div class="container">
     <div class="row" *ngIf="lostPets.length > 0">
-      <button type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</button>
+      <a [routerLink]="['/pet/categoria/', 'perdidos']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</a>
     </div>
   </div>
 </div>
@@ -73,8 +73,8 @@
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="lostPets.length > 0">
-      <button type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</button>
+    <div class="row" *ngIf="adoptionPets.length > 0">
+      <a [routerLink]="['/pet/categoria/', 'adotados']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</a>
     </div>
   </div>
 </div>

@@ -27,4 +27,7 @@ export class PorteService {
   getPortes(): PorteOptions[] {
     return this.portes;
   }
+  // getPortes(): Observable<PorteOptions[]> {
+  //   return this.http.get<PorteOptions[]>(this.url);
+  // }
 }

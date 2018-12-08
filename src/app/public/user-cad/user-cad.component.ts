@@ -14,7 +14,7 @@ export class UserCadComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.cadastroForm = this.formBuilder.group({
