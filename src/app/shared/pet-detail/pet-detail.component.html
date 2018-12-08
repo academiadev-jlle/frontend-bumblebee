@@ -1,9 +1,14 @@
 <div *ngIf='pet'>
     <div class="container">
         <div class="row justify-content-md-center">
-            <div class="col-sm-12 col-md-12 col-lg-8 text-center mt-5 bumblebee-box">
+            <div class="col-sm-12 col-md-12 col-lg-10 col-xl-8 text-center mt-5 bumblebee-box">
 
-                <img class="img-thumbnail mb-4" [src]="photo" alt="Card image cap">
+                <div class="mb-3">
+                    <small class="text-muted">
+                        Cadastrado dia {{ pet.dataPostagem }}
+                    </small></div>
+
+                <img class="img-thumbnail mb-4" [src]="photo1" alt="Card image cap">
 
                 <h2 class="title">
                     <fa name="paw mr-2"></fa> {{ pet.nome }}
@@ -12,8 +17,6 @@
                 <p class="mt-5">
                     <fa name="comment mr-3"></fa>
                     {{ pet.descricao }}
-                    . Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dolor ante, porttitor id nulla
-                    eget, sagittis semper dolor. Nullam vitae.
                 </p>
 
                 <hr />
@@ -27,7 +30,7 @@
 
                         <div class='col-12 col-md-6 mb-3'>
                             <p class="mb-0 pb-0">
-                                <strong>Situação</strong>
+                                <strong>Categoria</strong>
                             </p>
                             {{ pet.categoria }}
                         </div>
@@ -43,14 +46,14 @@
                             <p class="mb-0 pb-0">
                                 <strong>Sexo</strong>
                             </p>
-                            Macho
+                            {{ pet.sexo }}
                         </div>
 
                         <div class="col-12 col-md-6 mb-3">
                             <p class="mb-0 pb-0">
                                 <strong>Porte</strong>
                             </p>
-                            Pequeno
+                            {{ pet.porte }}
                         </div>
                     </div>
                 </div>
@@ -95,7 +98,9 @@
                 <hr />
 
                 <h4 class="title mb-5 mt-5">
-                    <fa name="phone mr-2"></fa> Entre em contato e ajude-o(a)
+                    <fa name="envelope"></fa>
+                    <fa name="phone bumblebee-icon-join mr-2"></fa>
+                    Entre em contato e ajude-o(a)
                 </h4>
 
                 <div class="container text-center">
@@ -104,21 +109,47 @@
                             <p class="mb-0 pb-0">
                                 <fa name="user mr-2"></fa><strong>Cadastrado por</strong>
                             </p>
-                            Joãozinho tristão
+                            {{ pet.usuario.nome }}
                         </div>
 
                         <div class='col-12 col-md-6 mb-3'>
                             <p class="mb-0 pb-0">
                                 <fa name="phone mr-2"></fa><strong>Telefone:</strong>
                             </p>
-                            +55 (47) 99999-9999
+                            {{ pet.usuario.telefone }}
                         </div>
 
                         <div class='col-12 col-md-12 mb-3'>
                             <p class="mb-0 pb-0">
                                 <fa name="envelope mr-2"></fa><strong>E-mail</strong>
                             </p>
-                            joaozinho_tristao@gmail.com
+                            {{ pet.usuario.email }}
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <h4 class="title mb-5 mt-5">
+                    <fa name="image"></fa>
+                    <fa name="image bumblebee-icon-join mr-2"></fa>
+                    Mais fotos
+                </h4>
+
+                <div class="container">
+                    <div class="row mb-4">
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo1" class="mx-auto bumblebee-img-galery">
+                            </div>
+                        </div>
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo2" class="mx-auto bumblebee-img-galery"></div>
+                        </div>
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo3" class="mx-auto bumblebee-img-galery"></div>
+                        </div>
+                        <div class='col-12 col-sm-6 col-md-3 mb-4'>
+                            <div [appImageGalery]="photo4" class="mx-auto bumblebee-img-galery"></div>
                         </div>
                     </div>
                 </div>

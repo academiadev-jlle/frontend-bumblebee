@@ -36,7 +36,7 @@ code {
     padding: 5%;
     box-shadow: 0px 0px 5px rgb(192, 192, 192);
     
-    @media (min-width: 576px){
+    @media (min-width: $smSize){
         padding: 80px;
     }
 }
@@ -48,13 +48,6 @@ code {
 }
 
 // ============ AUTO CONTRASTE ============ //
-
-.bumblebee-auto-contraste-icon {
-    position: relative;
-    right: 20px;
-    top: -35px;
-    cursor: pointer;
-}
 
 .autoContraste * {
     background-color: $mainColorDarker !important;

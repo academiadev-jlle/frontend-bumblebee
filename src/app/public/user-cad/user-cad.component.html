@@ -3,44 +3,91 @@
     <div class="col-lg-6 col-md-8 col-sm-12 text-center mt-5 bumblebee-box">
       <h2 class="title"><fa name="user-plus mr-2"></fa> Cadastre-se</h2>
       <hr />
-      <form clas="form-group">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><fa name="at"></fa> </span>
-          </div>
-          <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
-        </div>
+      <form [formGroup]="cadastroForm" class="form-group" (submit)="cadastraUsuario()">
+          <div class="form-group">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                          <fa name="at"></fa>
+                      </span>
+                  </div>
+                  <input formControlName="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail"
+                      aria-describedby="basic-addon1" autofocus>
+              </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+              <small *ngIf="cadastroForm.get('email').errors?.required " class="text-danger d-block">
+                  Por favor digite o email
+              </small>
           </div>
-          <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1">
-        </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
+
+          <div class="form-group">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                          <fa name="at"></fa>
+                      </span>
+                  </div>
+                  <input formControlName="nome" type="text" class="form-control" placeholder="Nome" aria-label="nome"
+                      aria-describedby="basic-addon1" autofocus>
+              </div>
+
+              <small *ngIf="cadastroForm.get('nome').errors?.required " class="text-danger d-block">
+                  Por favor digite o nome
+              </small>
           </div>
-          <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
-        </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
+
+          <div class="form-group">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                          <fa name="at"></fa>
+                      </span>
+                  </div>
+                  <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone" aria-label="telefone"
+                      aria-describedby="basic-addon1" autofocus>
+              </div>
+
+              <small *ngIf="cadastroForm.get('telefone').errors?.required " class="text-danger d-block">
+                  Por favor digite o telefone
+              </small>
           </div>
-          <input type="text" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="basic-addon1">
-        </div>
 
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
+
+          <div class="form-group">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                          <fa name="at"></fa>
+                      </span>
+                  </div>
+                  <input formControlName="senha" type="password" class="form-control" placeholder="Senha" aria-label="senha"
+                      aria-describedby="basic-addon1" autofocus>
+              </div>
+
+              <small *ngIf="cadastroForm.get('senha').errors?.required " class="text-danger d-block">
+                  Por favor digite a senha
+              </small>
           </div>
-          <input type="text" class="form-control" placeholder="Repita a senha" aria-label="Repita a senha"
-            aria-describedby="basic-addon1">
-        </div>
 
-        <button type="submit" class="btn btn-success container-fluid">Cadastrar</button>
+          <div class="form-group">
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">
+                          <fa name="at"></fa>
+                      </span>
+                  </div>
+                  <input formControlName="confirmacaoSenha" type="password" class="form-control" placeholder="Senha" aria-label="senha"
+                      aria-describedby="basic-addon1" autofocus>
+              </div>
+
+              <small *ngIf="cadastroForm.get('confirmacaoSenha').errors?.required " class="text-danger d-block">
+                  Por favor confirme a senha
+              </small>
+          </div>
+
+        <button [disabled]="cadastroForm.invalid" type="submit" class="btn btn-success container-fluid">Cadastrar</button>
 
         <div class="container mt-3">
             <!-- <a class="nav-link" [routerLink]="['/login']">Login</a> -->

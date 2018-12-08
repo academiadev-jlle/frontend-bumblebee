@@ -12,35 +12,29 @@
 
       <hr class="mt-4" />
 
-      <form class="mx-auto mb-4">
+      <form class="mx-auto mb-4" >
         <div class="row">
 
           <div class="col-12 col-lg-4 mt-3">
-            <label for="inputGroupSelect01"><strong>Categoria</strong></label>
-            <select class="custom-select" id="inputGroupSelect01">
+            <label for="categoriaDoPet"><strong>Categoria</strong><span *ngIf="categoria"> | Atual: {{ categoria }}</span></label>
+            <select  class="custom-select" id="categoriaDoPet">
               <option value="">Selecione uma categoria...</option>
-              <option value="1">Perdidos</option>
-              <option value="2">Achados</option>
-              <option value="3">Devolvidos</option>
-              <option value="4">Para adoção</option>
-              <option value="5">Adotados</option>
+              <option *ngFor="let cat of listCategorias" value="{{ cat.id }}">{{ cat.descricao }}</option>
             </select>
           </div>
 
           <div class="col-12 col-lg-4 mt-3">
-            <label for="inputGroupSelect02"><strong>Espécie</strong></label>
-            <select class="custom-select" id="inputGroupSelect02">
+            <label for="especieDoPet"><strong>Espécie</strong></label>
+            <select  class="custom-select" id="especieDoPet">
               <option value="">Selecione uma espécie...</option>
-              <option value="1">Ave</option>
-              <option value="2">Cão</option>
-              <option value="3">Gato</option>
+              <option *ngFor="let esp of listEspecies" value="{{ esp.id }}">{{ esp.descricao }}</option>
             </select>
           </div>
 
           <div class="col-12 col-lg-4 mt-3">
-            <label for="inputSearch"><strong>Pesquise seu pet</strong></label>
-            <input class="form-control mr-3 mr-sm-2" type="search" placeholder="Pesquise aqui um pet..." aria-label="Procurar"
-              id="inputSearch" />
+            <label for="buscaDoPet"><strong>Pesquise seu pet</strong></label>
+            <input  class="form-control mr-3 mr-sm-2" id="buscaDoPet" type="search" placeholder="Pesquise aqui um pet..."
+              aria-label="Procurar" />
           </div>
 
           <div class="col-12 mt-4">
