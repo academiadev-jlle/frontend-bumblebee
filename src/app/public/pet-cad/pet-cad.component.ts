@@ -57,7 +57,7 @@ export class PetCadComponent implements OnInit {
       sexo: [, Validators.required],
       cep: [''],
       cidade: [''],
-      uf: [],
+      uf: [''],
       rua: [''],
       bairro: []
     });

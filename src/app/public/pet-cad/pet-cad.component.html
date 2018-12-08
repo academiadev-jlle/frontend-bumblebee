@@ -85,8 +85,8 @@
               <label class="custom-control-label" for="radioFemea">Fêmea</label>
             </div>
             <small *ngIf="petCadForm.get('sexo').errors?.required && petCadForm.get('sexo').touched" class="text-danger d-block">
-                Por favor selecione o sexo do seu pet
-              </small>
+              Por favor selecione o sexo do seu pet
+            </small>
           </div>
         </div>
 
@@ -109,20 +109,6 @@
             <input type="text" formControlName="rua" class="form-control" id="rua" placeholder="Onde você perdeu/encontrou">
           </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-            <label for="referencia">Referência</label>
-            <input type="text" class="form-control" id="referencia" placeholder="Onde você perdeu/encontrou">
-          </div>
-
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
-            <label for="bairro">Bairro</label>
-            <input type="text" formControlName="bairro" class="form-control" id="bairro" placeholder="Onde você perdeu/encontrou">
-          </div>
-
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
-            <label for="cidade">Cidade</label>
-            <input type="text" formControlName="cidade" class="form-control" id="cidade" placeholder="Onde você perdeu/encontrou">
-          </div>
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
             <label for="uf">UF</label>
@@ -131,6 +117,25 @@
               <option *ngFor="let uf of listUF" [ngValue]="uf">{{ uf }}</option>
             </select>
           </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+            <label for="cidade">Cidade</label>
+            <select formControlName="cidade" class="form-control" id="cidade">
+              <option value="">Selecione uma cidade...</option>
+              <option *ngFor="let cidade of listCidades" [ngValue]="cidade">{{ cidade }}</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
+            <label for="bairro">Bairro</label>
+            <input type="text" formControlName="bairro" class="form-control" id="bairro" placeholder="Onde você perdeu/encontrou">
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+            <label for="referencia">Referência</label>
+            <input type="text" class="form-control" id="referencia" placeholder="Onde você perdeu/encontrou">
+          </div>
+
         </div>
 
         <button [disabled]="petCadForm.invalid" type="submit" class="btn btn-success container-fluid mt-5">Cadastrar</button>

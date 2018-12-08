@@ -15,7 +15,7 @@
                       aria-describedby="basic-addon1" autofocus>
               </div>
 
-              <small *ngIf="cadastroForm.get('email').errors?.required " class="text-danger d-block">
+              <small *ngIf="cadastroForm.get('email').errors?.required && cadastroForm.get('email').touched" class="text-danger d-block">
                   Por favor digite o email
               </small>
           </div>
@@ -25,14 +25,14 @@
               <div class="input-group mb-3">
                   <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">
-                          <fa name="at"></fa>
+                          <fa name="user"></fa>
                       </span>
                   </div>
                   <input formControlName="nome" type="text" class="form-control" placeholder="Nome" aria-label="nome"
                       aria-describedby="basic-addon1" autofocus>
               </div>
 
-              <small *ngIf="cadastroForm.get('nome').errors?.required " class="text-danger d-block">
+              <small *ngIf="cadastroForm.get('nome').errors?.required && cadastroForm.get('nome').touched" class="text-danger d-block">
                   Por favor digite o nome
               </small>
           </div>
@@ -42,14 +42,14 @@
               <div class="input-group mb-3">
                   <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">
-                          <fa name="at"></fa>
+                          <fa name="phone"></fa>
                       </span>
                   </div>
                   <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone" aria-label="telefone"
                       aria-describedby="basic-addon1" autofocus>
               </div>
 
-              <small *ngIf="cadastroForm.get('telefone').errors?.required " class="text-danger d-block">
+              <small *ngIf="cadastroForm.get('telefone').errors?.required && cadastroForm.get('telefone').touched" class="text-danger d-block">
                   Por favor digite o telefone
               </small>
           </div>
@@ -59,14 +59,14 @@
               <div class="input-group mb-3">
                   <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">
-                          <fa name="at"></fa>
+                          <fa name="key"></fa>
                       </span>
                   </div>
                   <input formControlName="senha" type="password" class="form-control" placeholder="Senha" aria-label="senha"
                       aria-describedby="basic-addon1" autofocus>
               </div>
 
-              <small *ngIf="cadastroForm.get('senha').errors?.required " class="text-danger d-block">
+              <small *ngIf="cadastroForm.get('senha').errors?.required && cadastroForm.get('senha').touched" class="text-danger d-block">
                   Por favor digite a senha
               </small>
           </div>
@@ -75,14 +75,14 @@
               <div class="input-group mb-3">
                   <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">
-                          <fa name="at"></fa>
+                          <fa name="key"></fa>
                       </span>
                   </div>
                   <input formControlName="confirmacaoSenha" type="password" class="form-control" placeholder="Senha" aria-label="senha"
                       aria-describedby="basic-addon1" autofocus>
               </div>
 
-              <small *ngIf="cadastroForm.get('confirmacaoSenha').errors?.required " class="text-danger d-block">
+              <small *ngIf="cadastroForm.get('confirmacaoSenha').errors?.required && cadastroForm.get('confirmacaoSenha').touched" class="text-danger d-block">
                   Por favor confirme a senha
               </small>
           </div>
@@ -90,7 +90,6 @@
         <button [disabled]="cadastroForm.invalid" type="submit" class="btn btn-success container-fluid">Cadastrar</button>
 
         <div class="container mt-3">
-            <!-- <a class="nav-link" [routerLink]="['/login']">Login</a> -->
           Já tem cadastro? <a [routerLink]="['/login']">Acesse aqui!</a>
         </div>
       </form>
