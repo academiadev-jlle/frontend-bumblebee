@@ -17,7 +17,7 @@
                             aria-describedby="basic-addon1" autofocus>
                     </div>
 
-                    <small *ngIf="loginForm.get('email').errors?.required " class="text-danger d-block">
+                    <small *ngIf="loginForm.get('email').errors?.required && loginForm.get('email').touched" class="text-danger d-block">
                         Por favor digite o email
                     </small>
                 </div>
@@ -31,7 +31,7 @@
                             aria-label="Senha" aria-describedby="basic-addon1">
                     </div>
 
-                    <small *ngIf="loginForm.get('senha').errors?.required" class="text-danger d-block">
+                    <small *ngIf="loginForm.get('senha').errors?.required && loginForm.get('senha').touched" class="text-danger d-block">
                         Por favor digite a senha
                     </small>
                 </div>

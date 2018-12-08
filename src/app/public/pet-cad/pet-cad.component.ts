@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
 import { EspecieService } from 'src/app/shared/services/especie.service';
 import { CategoriaService } from 'src/app/shared/services/categoria.service';
@@ -46,15 +46,15 @@ export class PetCadComponent implements OnInit {
     this.listEspecies = this.especies.getEspecies();
     this.listPortes = this.portes.getPortes();
     this.listUF = this.uf.getUFs();
-    this.petCadForm.controls['uf'].patchValue('');
+    // this.petCadForm.controls['uf'].patchValue('');
 
     this.petCadForm = this.formBuilder.group({
-      nome: [''],
-      categoria: [''],
-      descricao: [''],
-      porte: [''],
-      especie: [''],
-      sexo: [],
+      nome: ['', Validators.required],
+      categoria: ['', Validators.required],
+      descricao: ['', Validators.required],
+      porte: ['', Validators.required],
+      especie: ['', Validators.required],
+      sexo: [, Validators.required],
       cep: [''],
       cidade: [''],
       uf: []
