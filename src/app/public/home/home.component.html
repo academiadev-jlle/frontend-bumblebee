@@ -74,7 +74,7 @@
 
   <div class="container">
     <div class="row" *ngIf="adoptionPets.length > 0">
-      <a [routerLink]="['/pet/categoria/', 'adotados']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</a>
+      <a [routerLink]="['/pet/categoria/', 'para-adocao']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</a>
     </div>
   </div>
 </div>
@@ -85,7 +85,7 @@
   <div class="card-header text-center">
     <a [routerLink]="['/pet/categoria/', 'adotados']">
       <fa name="paw"></fa>
-      Dê uma olhada nos pets que já foram adotados através da nossa plataforma
+      Dê uma olhada nos pets que já foram adotados
     </a>
   </div>
   <div class="container bumblebee-container-card">
@@ -110,7 +110,7 @@
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="lostPets.length > 0">
+    <div class="row" *ngIf="adoptedPets.length > 0">
       <button type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</button>
     </div>
   </div>
