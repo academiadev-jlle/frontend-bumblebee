@@ -46,7 +46,7 @@ export class PetCadComponent implements OnInit {
     this.listEspecies = this.especies.getEspecies();
     this.listPortes = this.portes.getPortes();
     this.listUF = this.uf.getUFs();
-    this.petCadForm.controls['uf'].patchValue('');
+    // this.petCadForm.controls['uf'].patchValue('');
 
     this.petCadForm = this.formBuilder.group({
       nome: [''],
