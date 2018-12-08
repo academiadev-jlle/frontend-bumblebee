@@ -5,7 +5,7 @@
                 <fa name="sign-in mr-2"></fa> Login
             </h2>
             <hr />
-            <form [formGroup]="loginForm" class="form-group">
+            <form [formGroup]="loginForm" class="form-group" (submit)="logar()">
                 <div class="form-group">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -27,11 +27,11 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-key"></i></span>
                         </div>
-                        <input formControlName="password" type="password" class="form-control" placeholder="Senha"
+                        <input formControlName="senha" type="password" class="form-control" placeholder="Senha"
                             aria-label="Senha" aria-describedby="basic-addon1">
                     </div>
 
-                    <small *ngIf="loginForm.get('password').errors?.required" class="text-danger d-block">
+                    <small *ngIf="loginForm.get('senha').errors?.required" class="text-danger d-block">
                         Por favor digite a senha
                     </small>
                 </div>

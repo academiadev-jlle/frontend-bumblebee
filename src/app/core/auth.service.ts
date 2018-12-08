@@ -16,9 +16,11 @@ export class AuthService {
   }
 
   cadastraUsuario(email: string, nome: string, contato: string, senha: string) {
-    // tslint:disable-next-line:max-line-length
-    return this.http.post('https://test-bumblebeepets.herokuapp.com/usuario', {contato: '9471284', email: 'b@gmail.com', nome: 'DreadHot', senha: 'oieusouadreadhoteestouaovivo'});
-    // return this.http.post('https://hmmstats.herokuapp.com/media_minuto',{partidas: [1, 2]});
+    return this.http.post(API_URL + '/usuario', {contato, email, nome, senha});
+  }
+
+  authenticate(email: string, senha: string) {
+    return this.http.post(API_URL + '/oauth/token', {email, senha});
   }
 
 }
