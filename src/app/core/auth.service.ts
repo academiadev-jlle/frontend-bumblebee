@@ -10,9 +10,27 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  createPet(nome: string, categoria: string, descricao: string, porte: string, especie: string, imagem: File) {
-    console.log({ nome, categoria, descricao, porte, especie, imagem });
-    //  return this.http.post(API_URL + '/pet', {nome, categoria, descricao, porte, especie, imagem })
+  createPet(nome: string, categoria: string, descricao: string,
+    porte: string, especie: string, sexo: string,
+    imagem: File,
+    cep: string, rua: string, referencia: string, bairro: string, cidade: string, uf: string) {
+
+    return this.http.post(API_URL + '/pet/usuario/1', {
+        categoria,
+        descricao,
+        especie,
+        localizacao: {
+          bairro,
+          cep,
+          cidade,
+          logradouro: rua,
+          referencia,
+          uf
+        },
+        nome,
+        porte,
+        sexo
+    });
   }
 
   cadastraUsuario(email: string, nome: string, contato: string, senha: string) {
