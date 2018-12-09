@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PetEditComponent } from './pet-edit.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PetEditComponent', () => {
   let component: PetEditComponent;
@@ -8,9 +9,10 @@ describe('PetEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PetEditComponent ]
+      declarations: [PetEditComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

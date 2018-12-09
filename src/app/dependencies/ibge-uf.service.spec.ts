@@ -1,11 +1,13 @@
-import { TestBed, inject } from '@angular/core/testing';
-
+import { inject, TestBed } from '@angular/core/testing';
 import { IbgeUFService } from './ibge-uf.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 describe('IbgeUFService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [IbgeUFService]
+      providers: [IbgeUFService],
+      imports: [HttpClientModule]
     });
   });
 

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditPerfilUserComponent } from './edit-perfil-user.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PageEditPerfilComponent', () => {
   let component: EditPerfilUserComponent;
@@ -8,9 +9,10 @@ describe('PageEditPerfilComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditPerfilUserComponent ]
+      declarations: [EditPerfilUserComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

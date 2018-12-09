@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { DadosabertosbrCidadesService } from './dadosabertosbr-cidades.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('DadosabertosbrCidadesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DadosabertosbrCidadesService]
+      providers: [DadosabertosbrCidadesService],
+      imports: [HttpClientModule]
     });
   });
 
