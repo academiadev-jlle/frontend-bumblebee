@@ -10,8 +10,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  createPet(nome: string, categoria: string, descricao: string,
-    porte: string, especie: string, sexo: string,
+  createPet(nome: string, categoria: number, descricao: string,
+    porte: number, especie: number, sexo: string,
     imagem: File,
     cep: string, rua: string, referencia: string, bairro: string, cidade: string, uf: string) {
 
