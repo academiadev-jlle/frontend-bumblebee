@@ -20,6 +20,7 @@ export class PetCadComponent implements OnInit {
   listEspecies = [];
   listPortes = [];
   listUF = [];
+  listCidades = [];
 
   petCadForm: FormGroup;
 
