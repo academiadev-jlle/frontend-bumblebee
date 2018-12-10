@@ -20,6 +20,7 @@ import { LostPasswordComponent } from './lost-password/lost-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PetCadComponent } from './pet-cad/pet-cad.component';
 import { PasswordRecoveryComponent } from './password-recovery/password-recovery.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { PasswordRecoveryComponent } from './password-recovery/password-recovery
     EditPerfilUserComponent,
     PetEditComponent,
     LostPasswordComponent,
-    PasswordRecoveryComponent
+    PasswordRecoveryComponent,
+    PageNotFoundComponent
   ],
   exports: [
     HomeComponent,
@@ -55,7 +57,8 @@ import { PasswordRecoveryComponent } from './password-recovery/password-recovery
 
     UserCadComponent,
     LoginComponent,
-    UserCadComponent
+    UserCadComponent,
+    PageNotFoundComponent
   ]
 })
 
