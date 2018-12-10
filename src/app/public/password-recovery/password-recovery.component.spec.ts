@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PasswordRecoveryComponent } from './password-recovery.component';
-import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('PasswordRecoveryComponent', () => {
   let component: PasswordRecoveryComponent;
@@ -10,7 +11,8 @@ describe('PasswordRecoveryComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PasswordRecoveryComponent ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [ReactiveFormsModule]
     })
     .compileComponents();
   }));
