@@ -16,9 +16,11 @@
                         <input formControlName="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail"
                             aria-describedby="basic-addon1" autofocus>
                     </div>
-
                     <small *ngIf="loginForm.get('email').errors?.required && loginForm.get('email').touched" class="text-danger d-block">
                         Por favor digite o email
+                    </small>
+                    <small *ngIf="loginForm.get('email').errors?.email && loginForm.get('email').touched" class="text-danger d-block">
+                        Por favor digite um e-mail válido
                     </small>
                 </div>
 
