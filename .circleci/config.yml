@@ -13,4 +13,4 @@ jobs:
           key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run test -- --single-run --no-progress --browser=ChromeHeadlessCI
+      - run: npm run test --single-run --no-progress --browser=ChromeHeadlessCI
