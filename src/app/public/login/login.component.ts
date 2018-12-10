@@ -28,11 +28,22 @@ export class LoginComponent implements OnInit {
 
     this.authService.authenticate(email, senha)
       .subscribe(
-        certo => console.log(certo),
+        certo => {
+          console.log(certo);
+        }
+          ,
         err => {
           console.log(err);
           this.loginForm.reset();
         }
+      );
+  }
+
+  pegarInfos() {
+    this.authService.getInfo()
+    .subscribe(
+      good => console.log(good),
+      err => console.log(err)
       );
   }
 }
