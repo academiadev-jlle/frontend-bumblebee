@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cards-categories.component.scss']
 })
 export class CardsCategoriesComponent implements OnInit {
-  card_1 = '../../../assets/card-dog.png';
-  card_2 = '../../../assets/card-cat.png';
-  card_3 = '../../../assets/card-bird.png';
+  card_1 = '../../../assets/card-dog.jpg';
+  card_2 = '../../../assets/card-cat.jpg';
+  card_3 = '../../../assets/card-bird.jpg';
 
   constructor() { }
 
