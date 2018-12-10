@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PetOptions } from './pet-list-item.options';
+import { PetOptions } from '../options/pet-list-item.options';
 
 @Component({
     selector: 'app-pet-list-item',
