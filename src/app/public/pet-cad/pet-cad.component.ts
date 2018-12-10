@@ -6,7 +6,6 @@ import { CategoriaService } from 'src/app/shared/services/categoria.service';
 import { PorteService } from 'src/app/shared/services/porte.service';
 import { ViacepService } from 'src/app/dependencies/viacep.service';
 import { IbgeUFService } from 'src/app/dependencies/ibge-uf.service';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 import { ViaCep } from '../../shared/options/viacep.options';
 
