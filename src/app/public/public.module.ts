@@ -19,6 +19,7 @@ import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { LostPasswordComponent } from './lost-password/lost-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PetCadComponent } from './pet-cad/pet-cad.component';
+import { PasswordRecoveryComponent } from './password-recovery/password-recovery.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { PetCadComponent } from './pet-cad/pet-cad.component';
     EditPasswordUserComponent,
     EditPerfilUserComponent,
     PetEditComponent,
-    LostPasswordComponent
+    LostPasswordComponent,
+    PasswordRecoveryComponent
   ],
   exports: [
     HomeComponent,
