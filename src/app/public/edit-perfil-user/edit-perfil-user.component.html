@@ -1,32 +1,55 @@
 <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-lg-6 col-md-8 col-sm-12 text-center mt-5 bumblebee-box">
-        <h2 class="title"><fa name="pencil mr-2"></fa> Altere seus dados</h2>
-        <hr />
-        <form class="form-group" [formGroup]="editarPerfilForm" >
+  <div class="row justify-content-md-center">
+    <div class="col-lg-6 col-md-8 col-sm-12 text-center mt-5 bumblebee-box">
+      <h2 class="title">
+        <fa name="pencil mr-2"></fa> Altere seus dados
+      </h2>
+      <hr />
+      <form class="form-group" [formGroup]="editarPerfilForm" (submit)="editarPerfil()">
+        <div class="form-group">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"><fa name="at"></fa> </span>
+              <span class="input-group-text" id="basic-addon1">
+                <fa name="at"></fa>
+              </span>
             </div>
-            <input type="text" class="form-control" placeholder="E-mail" aria-label="E-mail" aria-describedby="basic-addon1">
+            <input formControlName="email" type="text" class="form-control" placeholder="E-mail" aria-label="E-mail"
+              aria-describedby="basic-addon1" autofocus>
           </div>
-  
+          <small *ngIf="editarPerfilForm.get('email').errors?.required && editarPerfilForm.get('email').touched" class="text-danger d-block">
+            Por favor digite seu e-mail
+          </small>
+          <small *ngIf="editarPerfilForm.get('email').errors?.email && editarPerfilForm.get('email').touched" class="text-danger d-block">
+            Por favor digite um e-mail válido
+          </small>
+        </div>
+
+        <div class="form-group">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1">
+            <input formControlName="nome" type="text" class="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1">
           </div>
-  
+          <small *ngIf="editarPerfilForm.get('nome').errors?.required && editarPerfilForm.get('nome').touched" class="text-danger d-block">
+            Por favor digite seu nome
+          </small>
+        </div>
+
+        <div class="form-group">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
+            <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
           </div>
-  
-          <button type="submit" class="btn btn-success container-fluid">Atualizar</button>
-        </form>
-      </div>
+          <small *ngIf="editarPerfilForm.get('telefone').errors?.required && editarPerfilForm.get('telefone').touched" class="text-danger d-block">
+              Por favor digite seu telefone
+            </small>
+        </div>
+
+        <button [disabled]="editarPerfilForm.invalid" type="submit" class="btn btn-success container-fluid">Atualizar</button>
+      </form>
     </div>
   </div>
+</div>
