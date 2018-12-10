@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditPasswordUserComponent } from './edit-password-user.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('EditPasswordUserComponent', () => {
   let component: EditPasswordUserComponent;
@@ -10,7 +11,8 @@ describe('EditPasswordUserComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [EditPasswordUserComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [ReactiveFormsModule]
     })
       .compileComponents();
   }));

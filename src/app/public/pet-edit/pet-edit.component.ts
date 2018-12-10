@@ -12,6 +12,7 @@ export class PetEditComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.editarPetForm = this.formBuilder.group({});
   }
 
 }

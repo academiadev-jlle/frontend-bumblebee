@@ -13,6 +13,7 @@ export class EditPasswordUserComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.editarSenhaForm = this.formBuilder.group({});
   }
 
 }

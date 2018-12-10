@@ -12,6 +12,7 @@ export class LostPasswordComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.senhaPerdidaForm = this.formBuilder.group({});
   }
 
 }

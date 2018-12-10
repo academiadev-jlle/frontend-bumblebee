@@ -12,6 +12,7 @@ export class EditPerfilUserComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.editarPerfilForm = this.formBuilder.group({});
   }
 
 }
