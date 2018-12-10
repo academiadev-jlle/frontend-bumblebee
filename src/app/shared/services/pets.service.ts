@@ -9,15 +9,46 @@ import { PetOptions } from '../pet-list-item/pet-list-item.options';
 })
 export class PetsService {
 
+    // ========== PARA TESTES ==========
+    pets: PetOptions[] = [];
+    constructor(private http: HttpClient) {
+        this.pets.push(...[{
+            id: 1,
+            nome: 'Diguinho',
+            descricao: 'Fofo e simpático',
+            categoria: 'PERDIDOS',
+            especie: 'CAO'
+        },
+        {
+            id: 2,
+            nome: 'diguinho',
+            descricao: 'fofo e simpático',
+            categoria: 'PERDIDOS',
+            especie: 'CAO'
+        },
+        {
+            id: 3,
+            nome: 'diguinho',
+            descricao: 'fofo e simpático',
+            categoria: 'PERDIDOS',
+            especie: 'CAO'
+        },
+        ])
+    }
+    getPets(): PetOptions[] {
+        return this.pets;
+    }
+    // ========== ./PARA TESTES ==========
+
     private url = 'https://test-bumblebeepets.herokuapp.com/pet/pet';
 
-    constructor(
-        private http: HttpClient
-    ) { }
+    // constructor(
+    //     private http: HttpClient
+    // ) { }
 
-    get(): Observable<PetOptions[]> {
-        return this.http.get<PetOptions[]>(this.url);
-    }
+    // get(): Observable<PetOptions[]> {
+    //     return this.http.get<PetOptions[]>(this.url);
+    // }
 
     getPetsByCategory(category: string): Observable<PetOptions[]> {
         const url = `${this.url}categoria/${category}/`;

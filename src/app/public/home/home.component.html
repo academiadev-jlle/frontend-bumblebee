@@ -21,16 +21,6 @@
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <!-- para teste -->
-      <div *ngFor="let pet of lostPets">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-
-      <!-- para teste -->
-      <div *ngFor="let pet of lostPets">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-
       <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="lostPets.length == 0">
         Não há pets para mostrar.
       </div>
@@ -61,16 +51,6 @@
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <!-- para teste -->
-      <div *ngFor="let pet of adoptionPets">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-
-      <!-- para teste -->
-      <div *ngFor="let pet of adoptionPets">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-
       <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptionPets.length == 0">
         Não há pets para mostrar.
       </div>
@@ -97,16 +77,6 @@
   <div class="container bumblebee-container-card">
     <div class="row">
 
-      <div *ngFor="let pet of adoptedPets">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-
-      <!-- para teste -->
-      <div *ngFor="let pet of adoptedPets">
-        <app-pet-list-item [pet]="pet"></app-pet-list-item>
-      </div>
-
-      <!-- para teste -->
       <div *ngFor="let pet of adoptedPets">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
