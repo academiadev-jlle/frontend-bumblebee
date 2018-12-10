@@ -5,6 +5,7 @@ import { debounceTime } from 'rxjs/operators';
 import { CategoriaService } from 'src/app/shared/services/categoria.service';
 import { EspecieService } from 'src/app/shared/services/especie.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { PetsService } from 'src/app/shared/services/pets.service';
 
 @Component({
   selector: 'app-pet-list-category',
@@ -25,13 +26,16 @@ export class PetListCategoryComponent implements OnInit {
     private formBuilder: FormBuilder,
 
     private router: ActivatedRoute,
+
+    private pets: PetsService,
     private categorias: CategoriaService,
     private especies: EspecieService,
   ) { }
 
   ngOnInit() {
-    this.listPets = this.router.snapshot.data.listPets;
-    this.categoria = this.router.snapshot.params.category;
+    this.listPets = this.pets.getPets();
+    // this.listPets = this.router.snapshot.data.listPets;
+    // this.categoria = this.router.snapshot.params.category;
     this.listCategorias = this.categorias.getCategorias();
     this.listEspecies = this.especies.getEspecies();
 
@@ -48,7 +52,7 @@ export class PetListCategoryComponent implements OnInit {
     //   .subscribe(value => this.filter = value);
   }
 
-  searchPets() {
+  filtrarPets() {
     const categoria = this.searchForm.get('categoria').value;
     const especie = this.searchForm.get('especie').value;
     const busca = this.searchForm.get('busca').value;

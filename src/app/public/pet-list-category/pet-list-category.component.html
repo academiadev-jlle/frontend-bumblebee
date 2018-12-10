@@ -12,7 +12,7 @@
 
       <hr class="mt-4" />
 
-      <form [formGroup]="searchForm" class="mx-auto mb-4" >
+      <form [formGroup]="searchForm" class="mx-auto mb-4" (click)="filtrarPets()">
         <div class="row">
 
           <div class="col-12 col-lg-4 mt-3">
@@ -50,32 +50,6 @@
 
       <div class="row">
 
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-
-        <!-- para testes -->
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
-          <app-pet-list-item [pet]="pet"></app-pet-list-item>
-        </div>
         <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
           <app-pet-list-item [pet]="pet"></app-pet-list-item>
         </div>

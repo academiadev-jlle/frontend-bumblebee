@@ -15,21 +15,21 @@ export class PetsService {
         this.pets.push(...[{
             id: 1,
             nome: 'Diguinho',
-            descricao: 'Fofo e simpático',
+            descricao: 'Fofo, pequenininho, quase não late, tá sempre abanando o rabo, e tem medo da rua.',
             categoria: 'PERDIDOS',
             especie: 'CAO'
         },
         {
             id: 2,
-            nome: 'diguinho',
-            descricao: 'fofo e simpático',
+            nome: 'Dunga',
+            descricao: 'Grandão, pelos claros cor creme, muit dócil e simpático.',
             categoria: 'PERDIDOS',
             especie: 'CAO'
         },
         {
             id: 3,
-            nome: 'diguinho',
-            descricao: 'fofo e simpático',
+            nome: 'Joca',
+            descricao: 'Estou desesperada para encontrá-lo, ele é bobinho, bate em tudo quando anda, é tonto, e é muito lindo, muito.',
             categoria: 'PERDIDOS',
             especie: 'CAO'
         },

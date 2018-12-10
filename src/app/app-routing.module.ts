@@ -38,9 +38,9 @@ const routes: Routes = [
   {
     path: 'pet/categoria/:category',
     component: PetListCategoryComponent,
-    resolve: {
-      listPets: ListPetsResolver
-    }
+    // resolve: {
+    //   listPets: ListPetsResolver
+    // }
   },
   {
     path: 'user/pets',
