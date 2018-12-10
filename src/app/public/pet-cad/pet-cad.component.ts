@@ -35,10 +35,25 @@ export class PetCadComponent implements OnInit {
     private cepService: ViacepService
   ) { }
 
-  selectedFile: File = null;
+  selectedFileIds: Array<number> = [];
   onFileSelected(event) {
-    this.selectedFile = <File>event.target.files[0];
-    // console.log(event);
+    const files = event.target.files;
+    const file = files[0];
+
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+
+    this.authService.trocaFotoPorId(formData)
+      .subscribe(
+        (good: number) => {
+          console.log(good);
+          this.selectedFileIds.push( good );
+          console.log(this.selectedFileIds);
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
 
   ngOnInit() {
@@ -72,7 +87,7 @@ export class PetCadComponent implements OnInit {
     const especie = this.petCadForm.get('especie').value;
     const sexo = this.petCadForm.get('sexo').value;
 
-    const imagem = this.selectedFile;
+    const imagemId = this.selectedFileIds;
 
     const cep = this.petCadForm.get('cep').value;
     const rua = this.petCadForm.get('rua').value;
@@ -84,7 +99,7 @@ export class PetCadComponent implements OnInit {
     this.authService
       .createPet(nome, categoria, descricao,
         porte, especie, sexo,
-        imagem,
+        imagemId,
         cep, rua, referencia, bairro, cidade, uf)
     .subscribe(
       good => console.log(good),
