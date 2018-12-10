@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
+import { TokenService } from './token.service';
 
 const API_URL = 'https://test-bumblebeepets.herokuapp.com';
 
@@ -8,19 +10,60 @@ const API_URL = 'https://test-bumblebeepets.herokuapp.com';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private tokenService: TokenService) { }
 
-  createPet(nome: string, categoria: string, descricao: string, porte: string, especie: string, imagem: File) {
-    console.log({ nome, categoria, descricao, porte, especie, imagem });
-    //  return this.http.post(API_URL + '/pet', {nome, categoria, descricao, porte, especie, imagem })
+  createPet(nome: string, categoria: number, descricao: string,
+    porte: number, especie: number, sexo: string,
+    imagem: File,
+    cep: string, rua: string, referencia: string, bairro: string, cidade: string, uf: string) {
+
+    return this.http.post(API_URL + '/pet/usuario/1', {
+      categoria,
+      descricao,
+      especie,
+      localizacao: {
+        bairro,
+        cep,
+        cidade,
+        logradouro: rua,
+        referencia,
+        uf
+      },
+      nome,
+      porte,
+      sexo
+    });
   }
 
-  cadastraUsuario(email: string, nome: string, contato: string, senha: string) {
-    return this.http.post(API_URL + '/usuario', {contato, email, nome, senha});
+  cadastraUsuario(email: string, nome: string, contato: number, senha: string) {
+    return this.http.post(API_URL + '/usuario', { contato, email, nome, senha });
   }
 
   authenticate(email: string, senha: string) {
-    return this.http.post(API_URL + '/oauth/token', {email, senha});
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': 'Basic ' + btoa('academiadev-front:fronfront')
+      }),
+      observe: 'response'
+    };
+
+    const data = new FormData();
+    data.append('username', email);
+    data.append('password', senha);
+    data.append('grant_type', 'password');
+
+    return this.http.post(API_URL + '/oauth/token', data, {
+      headers: new HttpHeaders({
+        'Authorization': 'Basic ' + btoa('academiadev-front:fronfront')
+      }),
+      observe: 'response'
+    })
+      .pipe(tap(res => {
+        const authToken = res['body']['access_token'];
+        this.tokenService.setToken(authToken);
+      }));
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PetOptions } from './pet-list-item.options';
+import { PetOptions } from '../options/pet-list-item.options';
 
 @Component({
     selector: 'app-pet-list-item',
@@ -9,6 +9,7 @@ import { PetOptions } from './pet-list-item.options';
 export class PetListItemComponent {
     @Input() pet: PetOptions;
 
-    // tslint:disable-next-line:max-line-length
-    photo = '../../../assets/dog-example.jpg';
+    // se não existir foto, usar esta
+    photo = '../../../assets/sem-imagem.jpg';
+
 }

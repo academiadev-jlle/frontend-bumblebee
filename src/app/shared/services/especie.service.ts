@@ -11,15 +11,17 @@ export class EspecieService {
 
   especies: EspecieOptions[] = [];
 
-  constructor() {
+  constructor(
+    private http: HttpClient
+  ) {
     this.especies.push(...[{
-      id: 1,
+      id: 0,
       descricao: 'Ave'
     }, {
-      id: 2,
-      descricao: 'Cão',
+      id: 1,
+      descricao: 'Cachorro',
     }, {
-      id: 3,
+      id: 2,
       descricao: 'Gato'
     }]);
   }
@@ -28,3 +30,7 @@ export class EspecieService {
     return this.especies;
   }
 }
+
+//   getEspecies(): Observable<EspecieOptions[]> {
+//     return this.http.get<EspecieOptions[]>(this.url);
+//   }

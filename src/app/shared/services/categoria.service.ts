@@ -11,14 +11,14 @@ export class CategoriaService {
 
   constructor() {
     this.categorias.push(...[{
+      id: 0,
+      descricao: 'Para adoção',
+    }, {
       id: 1,
       descricao: 'Perdidos'
     }, {
       id: 2,
-      descricao: 'Para adoção',
-    }, {
-      id: 3,
-      descricao: 'Adotados'
+      descricao: 'Encontrados'
     }]);
   }
 

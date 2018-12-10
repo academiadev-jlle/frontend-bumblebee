@@ -9,7 +9,6 @@ import { UserCadComponent } from './user-cad/user-cad.component';
 import { LoginComponent } from './login/login.component';
 import { PetListCategoryComponent } from './pet-list-category/pet-list-category.component';
 import { SliderComponent } from './slider/slider.component';
-import { PetCadComponent } from './pet-cad/pet-cad.component';
 import { PerfilUserComponent } from './perfil-user/perfil-user.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PetListUserComponent } from './pet-list-user/pet-list-user.component';
@@ -18,9 +17,11 @@ import { EditPasswordUserComponent } from './edit-password-user/edit-password-us
 import { EditPerfilUserComponent } from './edit-perfil-user/edit-perfil-user.component';
 import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { LostPasswordComponent } from './lost-password/lost-password.component';
-import { LoginModule } from './login/login.module';
-import { PetCadModule } from './pet-cad/pet-cad.module';
-import { UserCadModule } from './user-cad/user-cad.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PetCadComponent } from './pet-cad/pet-cad.component';
+import { PasswordRecoveryComponent } from './password-recovery/password-recovery.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 @NgModule({
   imports: [
@@ -29,27 +30,26 @@ import { UserCadModule } from './user-cad/user-cad.module';
     RouterModule,
     CarouselModule,
     AngularFontAwesomeModule,
-
-    LoginModule,
-    PetCadModule,
-    UserCadModule
+    ReactiveFormsModule
   ],
   declarations: [
     HomeComponent,
     // LostPetsComponent,
     FilterPipe,
 
-    // UserCadComponent,
-    // LoginComponent,
+    UserCadComponent,
+    LoginComponent,
+    PetCadComponent,
     SliderComponent,
-    // PetCadComponent,
     PerfilUserComponent,
     PetListCategoryComponent,
     PetListUserComponent,
     EditPasswordUserComponent,
     EditPerfilUserComponent,
     PetEditComponent,
-    LostPasswordComponent
+    LostPasswordComponent,
+    PasswordRecoveryComponent,
+    PageNotFoundComponent
   ],
   exports: [
     HomeComponent,
@@ -57,7 +57,8 @@ import { UserCadModule } from './user-cad/user-cad.module';
 
     UserCadComponent,
     LoginComponent,
-    UserCadComponent
+    UserCadComponent,
+    PageNotFoundComponent
   ]
 })
 

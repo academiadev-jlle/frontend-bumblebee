@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { PorteOptions } from '../options/porte.options';
 
 @Injectable({
@@ -13,13 +11,13 @@ export class PorteService {
 
   constructor() {
     this.portes.push(...[{
-      id: 1,
+      id: 0,
       descricao: 'Pequeno'
     }, {
-      id: 2,
+      id: 1,
       descricao: 'Médio',
     }, {
-      id: 3,
+      id: 2,
       descricao: 'Grande'
     }]);
   }
@@ -27,4 +25,7 @@ export class PorteService {
   getPortes(): PorteOptions[] {
     return this.portes;
   }
+  // getPortes(): Observable<PorteOptions[]> {
+  //   return this.http.get<PorteOptions[]>(this.url);
+  // }
 }

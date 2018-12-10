@@ -16,7 +16,10 @@
         <div class="form-row">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
             <label for="nomeDoPet">Nome do seu pet</label>
-            <input formControlName="nome" type="text" class="form-control" id="nomeDoPet" placeholder="Como você o(a) chama">
+            <input formControlName="nome" autofocus type="text" class="form-control" id="nomeDoPet" placeholder="Como você o(a) chama">
+            <small *ngIf="petCadForm.get('nome').errors?.required && petCadForm.get('nome').touched" class="text-danger d-block">
+              Por favor digite o nome do pet
+            </small>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
             <label for="categoriaDoPet">Como se encontra?</label>
@@ -24,12 +27,18 @@
               <option value="">Selecione uma categoria...</option>
               <option *ngFor="let cat of listCategorias" value="{{ cat.id }}">{{ cat.descricao }}</option>
             </select>
+            <small *ngIf="petCadForm.get('categoria').errors?.required && petCadForm.get('categoria').touched" class="text-danger d-block">
+              Por favor selecione uma categoria onde seu pet se encaixe
+            </small>
           </div>
         </div>
 
         <div class="form-group mt-4">
-          <label for="descricaoDoPet">Descreva um pouco seu pet</label>
+          <label for="descricaoDoPet">Descreva um pouco seu pet e/ou adicione observações</label>
           <textarea formControlName="descricao" class="form-control" id="descricaoDoPet" rows="3"></textarea>
+          <small *ngIf="petCadForm.get('descricao').errors?.required && petCadForm.get('descricao').touched" class="text-danger d-block">
+            Por favor descreva um pouco seu pet
+          </small>
         </div>
 
         <div class="form-row">
@@ -39,6 +48,9 @@
               <option value="">Selecione um porte...</option>
               <option *ngFor="let porte of listPortes" value="{{ porte.id }}">{{ porte.descricao }}</option>
             </select>
+            <small *ngIf="petCadForm.get('porte').errors?.required && petCadForm.get('porte').touched" class="text-danger d-block">
+              Por favor selecione o porte de seu pet
+            </small>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
             <label for="especie">Qual a espécie?</label>
@@ -46,20 +58,20 @@
               <option value="">Selecione uma espécie...</option>
               <option *ngFor="let esp of listEspecies" value="{{ esp.id }}">{{ esp.descricao }}</option>
             </select>
+            <small *ngIf="petCadForm.get('especie').errors?.required && petCadForm.get('especie').touched" class="text-danger d-block">
+              Por favor selecione a espécie de seu pet
+            </small>
           </div>
         </div>
 
         <div class="form-row mt-4">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Fotos</span>
-              </div>
-              <div class="custom-file">
-                <input type="file" multiple class="custom-file-input" id="fotoPet" (change)="onFileSelected($event)">
-                <label class="custom-file-label" for="fotoPet">Escolher fotos...</label>
-              </div>
-            </div>
+            <label for="fotoPet">Envie até 5 fotos do seu pet...</label>
+            <br />
+            <input type="file" multiple id="fotoPet" (change)="onFileSelected($event)">
+            <small class="text-info d-block mt-2">
+              *Obs.: a primeira foto selecionada será a foto principal do seu pet!
+            </small>
           </div>
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center">
@@ -72,6 +84,9 @@
               <input type="radio" formControlName="sexo" value="femea" id="radioFemea" name="sexo" class="custom-control-input">
               <label class="custom-control-label" for="radioFemea">Fêmea</label>
             </div>
+            <small *ngIf="petCadForm.get('sexo').errors?.required && petCadForm.get('sexo').touched" class="text-danger d-block">
+              Por favor selecione o sexo do seu pet
+            </small>
           </div>
         </div>
 
@@ -91,23 +106,9 @@
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <label for="rua">Rua</label>
-            <input type="text" class="form-control" id="rua" placeholder="Onde você perdeu/encontrou">
+            <input type="text" formControlName="rua" class="form-control" id="rua" placeholder="Onde você perdeu/encontrou">
           </div>
 
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-            <label for="referencia">Referência</label>
-            <input type="text" class="form-control" id="referencia" placeholder="Onde você perdeu/encontrou">
-          </div>
-
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
-            <label for="bairro">Bairro</label>
-            <input type="text" class="form-control" id="bairro" placeholder="Onde você perdeu/encontrou">
-          </div>
-
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
-            <label for="cidade">Cidade</label>
-            <input type="text" formControlName="cidade" class="form-control" id="cidade" placeholder="Onde você perdeu/encontrou">
-          </div>
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
             <label for="uf">UF</label>
@@ -116,9 +117,28 @@
               <option *ngFor="let uf of listUF" [ngValue]="uf">{{ uf }}</option>
             </select>
           </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+            <label for="cidade">Cidade</label>
+            <select formControlName="cidade" class="form-control" id="cidade">
+              <option value="">Selecione uma cidade...</option>
+              <option *ngFor="let cidade of listCidades" [ngValue]="cidade">{{ cidade }}</option>
+            </select>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3 ">
+            <label for="bairro">Bairro</label>
+            <input type="text" formControlName="bairro" class="form-control" id="bairro" placeholder="Onde você perdeu/encontrou">
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+            <label for="referencia">Referência</label>
+            <input formControlName="referencia" type="text" class="form-control" id="referencia" placeholder="Onde você perdeu/encontrou">
+          </div>
+
         </div>
 
-        <button type="submit" class="btn btn-success container-fluid mt-5">Cadastrar</button>
+        <button [disabled]="petCadForm.invalid" type="submit" class="btn btn-success container-fluid mt-5">Cadastrar</button>
       </form>
     </div>
   </div>
