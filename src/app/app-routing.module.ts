@@ -18,8 +18,13 @@ import { EditPerfilUserComponent } from './public/edit-perfil-user/edit-perfil-u
 import { PetEditComponent } from './public/pet-edit/pet-edit.component';
 import { LostPasswordComponent } from './public/lost-password/lost-password.component';
 import { PasswordRecoveryComponent } from './public/password-recovery/password-recovery.component';
+import { PageNotFoundComponent } from './public/page-not-found/page-not-found.component';
+
 
 const routes: Routes = [
+  { path: '404', component: PageNotFoundComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'pet/:id', component: PetDetailComponent },
   { path: 'cad/pet', component: PetCadComponent },
@@ -44,20 +49,7 @@ const routes: Routes = [
       listPetsUser: ListPetsUserResolver
     }
   },
-  // {
-  //   path: 'lost',
-  //   component: LostPetsComponent,
-  //   resolve: {
-  //     lostPets: LostPetsResolver
-  //   }
-  // },
-  {
-    path: '**',
-    component: HomeComponent,
-    // resolve: {
-    //   lostPets: LostPetsComponent
-    // }
-  },
+  { path: '**', redirectTo: '404' }
 ];
 @NgModule({
   imports: [
