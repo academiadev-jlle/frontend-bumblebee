@@ -17,7 +17,7 @@
 
           <div class="col-12 col-lg-4 mt-3">
             <label for="categoriaDoPet"><strong>Categoria</strong><span *ngIf="categoria"> | Atual: {{ categoria }}</span></label>
-            <select  class="custom-select" id="categoriaDoPet">
+            <select formControlName="categoria" class="custom-select" id="categoriaDoPet">
               <option value="">Selecione uma categoria...</option>
               <option *ngFor="let cat of listCategorias" value="{{ cat.id }}">{{ cat.descricao }}</option>
             </select>
@@ -25,7 +25,7 @@
 
           <div class="col-12 col-lg-4 mt-3">
             <label for="especieDoPet"><strong>Espécie</strong></label>
-            <select  class="custom-select" id="especieDoPet">
+            <select formControlName="especie" class="custom-select" id="especieDoPet">
               <option value="">Selecione uma espécie...</option>
               <option *ngFor="let esp of listEspecies" value="{{ esp.id }}">{{ esp.descricao }}</option>
             </select>
@@ -33,7 +33,7 @@
 
           <div class="col-12 col-lg-4 mt-3">
             <label for="buscaDoPet"><strong>Pesquise seu pet</strong></label>
-            <input  class="form-control mr-3 mr-sm-2" id="buscaDoPet" type="search" placeholder="Pesquise aqui um pet..."
+            <input formControlName="busca" class="form-control mr-3 mr-sm-2" id="buscaDoPet" type="search" placeholder="Pesquise aqui um pet..."
               aria-label="Procurar" />
           </div>
 
@@ -53,6 +53,8 @@
         <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
           <app-pet-list-item [pet]="pet"></app-pet-list-item>
         </div>
+
+        <!-- para testes -->
         <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
           <app-pet-list-item [pet]="pet"></app-pet-list-item>
         </div>

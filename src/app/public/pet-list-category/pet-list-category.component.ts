@@ -49,8 +49,11 @@ export class PetListCategoryComponent implements OnInit {
   }
 
   searchPets() {
-    // falta fazer
-    console.log('Pesquisandooo....');
+    const categoria = this.searchForm.get('categoria').value;
+    const especie = this.searchForm.get('especie').value;
+    const busca = this.searchForm.get('busca').value;
+
+    // todo
   }
 
 }
