@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-lost-password',
@@ -12,7 +12,15 @@ export class LostPasswordComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.senhaPerdidaForm = this.formBuilder.group({});
+    this.senhaPerdidaForm = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])]
+    });
+  }
+
+  editarPerfil() {
+    const email = this.senhaPerdidaForm.get('email').value;
+
+    // todo
   }
 
 }

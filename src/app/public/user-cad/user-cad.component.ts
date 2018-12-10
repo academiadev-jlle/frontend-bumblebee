@@ -18,7 +18,7 @@ export class UserCadComponent implements OnInit {
 
   ngOnInit() {
     this.cadastroForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
       nome: ['', Validators.required],
       telefone: ['', Validators.required],
       senha: ['', Validators.required],

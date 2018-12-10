@@ -18,6 +18,9 @@
               <small *ngIf="cadastroForm.get('email').errors?.required && cadastroForm.get('email').touched" class="text-danger d-block">
                   Por favor digite o email
               </small>
+              <small *ngIf="cadastroForm.get('email').errors?.email && cadastroForm.get('email').touched" class="text-danger d-block">
+                  Por favor digite um e-mail válido
+              </small>
           </div>
 
 
@@ -29,7 +32,7 @@
                       </span>
                   </div>
                   <input formControlName="nome" type="text" class="form-control" placeholder="Nome" aria-label="nome"
-                      aria-describedby="basic-addon1" autofocus>
+                      aria-describedby="basic-addon1">
               </div>
 
               <small *ngIf="cadastroForm.get('nome').errors?.required && cadastroForm.get('nome').touched" class="text-danger d-block">
@@ -46,7 +49,7 @@
                       </span>
                   </div>
                   <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone" aria-label="telefone"
-                      aria-describedby="basic-addon1" autofocus>
+                      aria-describedby="basic-addon1">
               </div>
 
               <small *ngIf="cadastroForm.get('telefone').errors?.required && cadastroForm.get('telefone').touched" class="text-danger d-block">
@@ -63,7 +66,7 @@
                       </span>
                   </div>
                   <input formControlName="senha" type="password" class="form-control" placeholder="Senha" aria-label="senha"
-                      aria-describedby="basic-addon1" autofocus>
+                      aria-describedby="basic-addon1">
               </div>
 
               <small *ngIf="cadastroForm.get('senha').errors?.required && cadastroForm.get('senha').touched" class="text-danger d-block">
@@ -78,16 +81,20 @@
                           <fa name="key"></fa>
                       </span>
                   </div>
-                  <input formControlName="confirmacaoSenha" type="password" class="form-control" placeholder="Senha" aria-label="senha"
-                      aria-describedby="basic-addon1" autofocus>
+                  <input formControlName="confirmacaoSenha" type="password" class="form-control" placeholder="Repita a senha" aria-label="senha"
+                      aria-describedby="basic-addon1">
               </div>
-
-              <small *ngIf="cadastroForm.get('confirmacaoSenha').errors?.required && cadastroForm.get('confirmacaoSenha').touched" class="text-danger d-block">
-                  Por favor confirme a senha
-              </small>
+              <small *ngIf="cadastroForm.get('confirmacaoSenha').errors?.required && cadastroForm.get('confirmacaoSenha').touched"
+              class="text-danger d-block">
+              Por favor digite novamente sua nova senha
+            </small>
+            <small *ngIf="(cadastroForm.get('senha').touched && cadastroForm.get('confirmacaoSenha').touched) && cadastroForm.get('senha').value != cadastroForm.get('confirmacaoSenha').value"
+              class="text-danger d-block">
+              Senhas diferentes!
+            </small>
           </div>
 
-        <button [disabled]="cadastroForm.invalid" type="submit" class="btn btn-success container-fluid">Cadastrar</button>
+        <button [disabled]="cadastroForm.invalid || cadastroForm.get('senha').value != cadastroForm.get('confirmacaoSenha').value" type="submit" class="btn btn-success container-fluid">Cadastrar</button>
 
         <div class="container mt-3">
           Já tem cadastro? <a [routerLink]="['/login']">Acesse aqui!</a>
