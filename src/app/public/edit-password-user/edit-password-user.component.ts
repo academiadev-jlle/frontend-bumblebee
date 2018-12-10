@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-password-user',
@@ -7,13 +7,24 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./edit-password-user.component.scss']
 })
 export class EditPasswordUserComponent implements OnInit {
+  editarSenhaForm: FormGroup
 
-  editarSenhaForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit() {
-    this.editarSenhaForm = this.formBuilder.group({});
+    this.editarSenhaForm = this.formBuilder.group({
+      senhaAtual: ['', Validators.required],
+      senhaNova: ['', Validators.required],
+      senhaNovaRepita: ['', Validators.required]
+    });
   }
 
+  editarSenha() {
+    const senhaAtual = this.editarSenhaForm.get('senhaAtual').value;
+    const senhaNova = this.editarSenhaForm.get('senhaNova').value;
+
+    // todo
+  }
 }
