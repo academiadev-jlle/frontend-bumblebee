@@ -41,7 +41,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
             </div>
-            <input formControlName="telefone" type="text" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
+            <input formControlName="telefone" type="text" mask="(00) 00000-0000" [showMaskTyped]="true" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
           </div>
           <small *ngIf="editarPerfilForm.get('telefone').errors?.required && editarPerfilForm.get('telefone').touched" class="text-danger d-block">
               Por favor digite seu telefone
