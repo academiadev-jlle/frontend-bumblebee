@@ -16,25 +16,25 @@ export class AuthService {
     cep: string, rua: string, referencia: string, bairro: string, cidade: string, uf: string) {
 
     return this.http.post(API_URL + '/pet/usuario/1', {
-        categoria,
-        descricao,
-        especie,
-        localizacao: {
-          bairro,
-          cep,
-          cidade,
-          logradouro: rua,
-          referencia,
-          uf
-        },
-        nome,
-        porte,
-        sexo
+      categoria,
+      descricao,
+      especie,
+      localizacao: {
+        bairro,
+        cep,
+        cidade,
+        logradouro: rua,
+        referencia,
+        uf
+      },
+      nome,
+      porte,
+      sexo
     });
   }
 
-  cadastraUsuario(email: string, nome: string, contato: string, senha: string) {
-    return this.http.post(API_URL + '/usuario', {contato, email, nome, senha});
+  cadastraUsuario(email: string, nome: string, contato: number, senha: string) {
+    return this.http.post(API_URL + '/usuario', { contato, email, nome, senha });
   }
 
   authenticate(email: string, senha: string) {
