@@ -4,4 +4,5 @@ export interface PetOptions {
     descricao: string;
     categoria: string;
     especie: string;
+    dataCadastro: string;
 }
