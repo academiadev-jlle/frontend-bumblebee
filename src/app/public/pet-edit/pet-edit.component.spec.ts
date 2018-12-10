@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PetEditComponent } from './pet-edit.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PetEditComponent', () => {
   let component: PetEditComponent;
@@ -12,7 +13,7 @@ describe('PetEditComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PetEditComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      imports: [ReactiveFormsModule]
+      imports: [ReactiveFormsModule, HttpClientModule]
     })
       .compileComponents();
   }));
