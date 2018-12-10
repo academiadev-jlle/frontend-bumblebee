@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
+import { TokenService } from './token.service';
 
 const API_URL = 'https://test-bumblebeepets.herokuapp.com';
 
@@ -8,7 +10,9 @@ const API_URL = 'https://test-bumblebeepets.herokuapp.com';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private tokenService: TokenService) { }
 
   createPet(nome: string, categoria: number, descricao: string,
     porte: number, especie: number, sexo: string,
@@ -41,7 +45,8 @@ export class AuthService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': 'Basic ' + btoa('academiadev-front:fronfront')
-      })
+      }),
+      observe: 'response'
     };
 
     const data = new FormData();
@@ -49,7 +54,16 @@ export class AuthService {
     data.append('password', senha);
     data.append('grant_type', 'password');
 
-    return this.http.post(API_URL + '/oauth/token', data, httpOptions);
+    return this.http.post(API_URL + '/oauth/token', data, {
+      headers: new HttpHeaders({
+        'Authorization': 'Basic ' + btoa('academiadev-front:fronfront')
+      }),
+      observe: 'response'
+    })
+      .pipe(tap(res => {
+        const authToken = res['body']['access_token'];
+        this.tokenService.setToken(authToken);
+      }));
   }
 
 }
