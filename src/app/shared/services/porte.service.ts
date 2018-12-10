@@ -12,13 +12,16 @@ export class PorteService {
   constructor() {
     this.portes.push(...[{
       id: 0,
-      descricao: 'Pequeno'
+      descricao: 'Pequeno',
+      enum: 'PEQUENO'
     }, {
       id: 1,
       descricao: 'Médio',
+      enum: 'MEDIO'
     }, {
       id: 2,
-      descricao: 'Grande'
+      descricao: 'Grande',
+      enum: 'GRANDE'
     }]);
   }
 
