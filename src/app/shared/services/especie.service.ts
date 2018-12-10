@@ -16,13 +16,20 @@ export class EspecieService {
   ) {
     this.especies.push(...[{
       id: 0,
-      descricao: 'Ave'
+      descricao: 'Pássaro',
+      enum: 'PASSARO'
     }, {
       id: 1,
       descricao: 'Cachorro',
+      enum: 'CACHORRO'
     }, {
       id: 2,
-      descricao: 'Gato'
+      descricao: 'Gato',
+      enum: 'GATO'
+    }, {
+      id: 3,
+      descricao: 'Outros',
+      enum: 'OUTROS'
     }]);
   }
 
