@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
-  bumblebee = '../../assets/bumblebee.png';
+  bumblebee = '../../assets/bumblebee.jpg';
   logo = '../../assets/logo-4.png';
   isCollapsed = true;
   tamanho_fonte = 12;
