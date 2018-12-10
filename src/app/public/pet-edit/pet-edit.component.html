@@ -11,13 +11,13 @@
   
         <hr />
   
-        <form [formGroup]="petEditForm" class="form-group mt-4" (submit)="editPet()">
+        <form [formGroup]="editarPetForm" class="form-group mt-4" (submit)="editPet()">
   
           <div class="form-row">
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
               <label for="nomeDoPet">Nome do seu pet</label>
               <input formControlName="nome" autofocus type="text" class="form-control" id="nomeDoPet" placeholder="Como você o(a) chama">
-              <small *ngIf="petEditForm.get('nome').errors?.required && petEditForm.get('nome').touched" class="text-danger d-block">
+              <small *ngIf="editarPetForm.get('nome').errors?.required && editarPetForm.get('nome').touched" class="text-danger d-block">
                 Por favor digite o nome do pet
               </small>
             </div>
@@ -27,7 +27,7 @@
                 <option value="">Selecione uma categoria...</option>
                 <option *ngFor="let cat of listCategorias" value="{{ cat.id }}">{{ cat.descricao }}</option>
               </select>
-              <small *ngIf="petEditForm.get('categoria').errors?.required && petEditForm.get('categoria').touched" class="text-danger d-block">
+              <small *ngIf="editarPetForm.get('categoria').errors?.required && editarPetForm.get('categoria').touched" class="text-danger d-block">
                 Por favor selecione uma categoria onde seu pet se encaixe
               </small>
             </div>
@@ -36,7 +36,7 @@
           <div class="form-group mt-4">
             <label for="descricaoDoPet">Descreva um pouco seu pet e/ou adicione observações</label>
             <textarea formControlName="descricao" class="form-control" id="descricaoDoPet" rows="3"></textarea>
-            <small *ngIf="petEditForm.get('descricao').errors?.required && petEditForm.get('descricao').touched" class="text-danger d-block">
+            <small *ngIf="editarPetForm.get('descricao').errors?.required && editarPetForm.get('descricao').touched" class="text-danger d-block">
               Por favor descreva um pouco seu pet
             </small>
           </div>
@@ -48,7 +48,7 @@
                 <option value="">Selecione um porte...</option>
                 <option *ngFor="let porte of listPortes" value="{{ porte.id }}">{{ porte.descricao }}</option>
               </select>
-              <small *ngIf="petEditForm.get('porte').errors?.required && petEditForm.get('porte').touched" class="text-danger d-block">
+              <small *ngIf="editarPetForm.get('porte').errors?.required && editarPetForm.get('porte').touched" class="text-danger d-block">
                 Por favor selecione o porte de seu pet
               </small>
             </div>
@@ -58,7 +58,7 @@
                 <option value="">Selecione uma espécie...</option>
                 <option *ngFor="let esp of listEspecies" value="{{ esp.id }}">{{ esp.descricao }}</option>
               </select>
-              <small *ngIf="petEditForm.get('especie').errors?.required && petEditForm.get('especie').touched" class="text-danger d-block">
+              <small *ngIf="editarPetForm.get('especie').errors?.required && editarPetForm.get('especie').touched" class="text-danger d-block">
                 Por favor selecione a espécie de seu pet
               </small>
             </div>
@@ -84,7 +84,7 @@
                 <input type="radio" formControlName="sexo" value="femea" id="radioFemea" name="sexo" class="custom-control-input">
                 <label class="custom-control-label" for="radioFemea">Fêmea</label>
               </div>
-              <small *ngIf="petEditForm.get('sexo').errors?.required && petEditForm.get('sexo').touched" class="text-danger d-block">
+              <small *ngIf="editarPetForm.get('sexo').errors?.required && editarPetForm.get('sexo').touched" class="text-danger d-block">
                 Por favor selecione o sexo do seu pet
               </small>
             </div>
@@ -138,7 +138,7 @@
   
           </div>
   
-          <button [disabled]="petEditForm.invalid" type="submit" class="btn btn-success container-fluid mt-5">Cadastrar</button>
+          <button [disabled]="editarPetForm.invalid" type="submit" class="btn btn-success container-fluid mt-5">Cadastrar</button>
         </form>
       </div>
     </div>

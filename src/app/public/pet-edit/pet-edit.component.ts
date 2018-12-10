@@ -20,7 +20,7 @@ export class PetEditComponent implements OnInit {
   listUF = [];
   listCidades = [];
 
-  petEditForm: FormGroup;
+  editarPetForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -46,7 +46,7 @@ export class PetEditComponent implements OnInit {
     this.listPortes = this.portes.getPortes();
     this.listUF = this.uf.getUFs();
 
-    this.petEditForm = this.formBuilder.group({
+    this.editarPetForm = this.formBuilder.group({
       nome: ['', Validators.required],
       categoria: ['', Validators.required],
       descricao: ['', Validators.required],
@@ -63,22 +63,22 @@ export class PetEditComponent implements OnInit {
   }
 
   editPet() {
-    const nome = this.petEditForm.get('nome').value;
-    const categoria = this.petEditForm.get('categoria').value;
-    const descricao = this.petEditForm.get('descricao').value;
+    const nome = this.editarPetForm.get('nome').value;
+    const categoria = this.editarPetForm.get('categoria').value;
+    const descricao = this.editarPetForm.get('descricao').value;
 
-    const porte = this.petEditForm.get('porte').value;
-    const especie = this.petEditForm.get('especie').value;
-    const sexo = this.petEditForm.get('sexo').value;
+    const porte = this.editarPetForm.get('porte').value;
+    const especie = this.editarPetForm.get('especie').value;
+    const sexo = this.editarPetForm.get('sexo').value;
 
     const imagem = this.selectedFile;
 
-    const cep = this.petEditForm.get('cep').value;
-    const rua = this.petEditForm.get('rua').value;
-    const referencia = this.petEditForm.get('referencia').value;
-    const bairro = this.petEditForm.get('bairro').value;
-    const cidade = this.petEditForm.get('cidade').value;
-    const uf = this.petEditForm.get('uf').value;
+    const cep = this.editarPetForm.get('cep').value;
+    const rua = this.editarPetForm.get('rua').value;
+    const referencia = this.editarPetForm.get('referencia').value;
+    const bairro = this.editarPetForm.get('bairro').value;
+    const cidade = this.editarPetForm.get('cidade').value;
+    const uf = this.editarPetForm.get('uf').value;
 
     // this.authService
     //   .editPet(nome, categoria, descricao,
@@ -89,19 +89,19 @@ export class PetEditComponent implements OnInit {
     //   good => console.log(good),
     //   err => {
     //     console.log(err);
-    //     this.petEditForm.reset();
+    //     this.editarPetForm.reset();
     //   }
     // );
   }
 
   updateCidadeAndUF() {
-    const cep = this.petEditForm.get('cep').value;
+    const cep = this.editarPetForm.get('cep').value;
     if (cep != null) {
       this.cepService
         .getCidadeAndUF(cep)
         .subscribe(
           (resp: ViaCep) => {
-            this.petEditForm.patchValue({
+            this.editarPetForm.patchValue({
               cidade: resp.localidade,
               uf: resp.uf,
               bairro: resp.bairro,
