@@ -15,36 +15,38 @@ export class PetsService {
     constructor(
         private http: HttpClient,
         private userService: UserService
-    ) {
-        this.pets.push(...[{
-            id: 1,
-            nome: 'Diguinho',
-            descricao: 'Fofo, pequenininho, quase não late, tá sempre abanando o rabo, e tem medo da rua.',
-            categoria: 'PERDIDOS',
-            especie: 'CAO',
-            dataCadastro: '01/01/2018'
-        },
-        {
-            id: 2,
-            nome: 'Dunga',
-            descricao: 'Grandão, pelos claros cor creme, muit dócil e simpático.',
-            categoria: 'PERDIDOS',
-            especie: 'CAO',
-            dataCadastro: '01/01/2018'
-        },
-        {
-            id: 3,
-            nome: 'Joca',
-            descricao: 'Estou desesperada para encontrá-lo, ele é bobinho, bate em tudo quando anda, é tonto, e é muito lindo, muito.',
-            categoria: 'PERDIDOS',
-            especie: 'CAO',
-            dataCadastro: '01/01/2018'
-        },
-        ]);
-    }
-    getPets(): PetOptions[] {
-        return this.pets;
-    }
+    ) { }
+
+    // ) {
+    //     this.pets.push(...[{
+    //         id: 1,
+    //         nome: 'Diguinho',
+    //         descricao: 'Fofo, pequenininho, quase não late, tá sempre abanando o rabo, e tem medo da rua.',
+    //         categoria: 'PERDIDOS',
+    //         especie: 'CAO',
+    //         dataCadastro: '01/01/2018'
+    //     },
+    //     {
+    //         id: 2,
+    //         nome: 'Dunga',
+    //         descricao: 'Grandão, pelos claros cor creme, muit dócil e simpático.',
+    //         categoria: 'PERDIDOS',
+    //         especie: 'CAO',
+    //         dataCadastro: '01/01/2018'
+    //     },
+    //     {
+    //         id: 3,
+    //         nome: 'Joca',
+    //         descricao: 'Estou desesperada para encontrá-lo, ele é bobinho, bate em tudo quando anda, é tonto, e é muito lindo, muito.',
+    //         categoria: 'PERDIDOS',
+    //         especie: 'CAO',
+    //         dataCadastro: '01/01/2018'
+    //     },
+    //     ]);
+    // }
+    // getPets(): PetOptions[] {
+    //     return this.pets;
+    // }
 
 
     getPetsByCategory(category: string, tamanho: number = 10): Observable<PetOptions[]> {

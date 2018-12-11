@@ -33,8 +33,8 @@ export class PetListCategoryComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.listPets = this.pets.getPets();
-    // this.listPets = this.router.snapshot.data.listPets;
+    // this.listPets = this.pets.getPets();
+    this.listPets = this.router.snapshot.data.listPets;
     // this.categoria = this.router.snapshot.params.category;
     this.listCategorias = this.categorias.getCategorias();
     this.listEspecies = this.especies.getEspecies();

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/core/auth.service';
 import { CategoriaService } from 'src/app/shared/services/categoria.service';
 import { EspecieService } from 'src/app/shared/services/especie.service';
 import { PorteService } from 'src/app/shared/services/porte.service';
 import { IbgeUFService } from 'src/app/dependencies/ibge-uf.service';
 import { ViacepService } from 'src/app/dependencies/viacep.service';
 import { ViaCep } from 'src/app/shared/options/viacep.options';
+import { PetsService } from 'src/app/shared/services/pets.service';
+import { PetOptions } from 'src/app/shared/options/pet-list-item.options';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pet-edit',
@@ -19,18 +21,18 @@ export class PetEditComponent implements OnInit {
   listPortes = [];
   listUF = [];
   listCidades = [];
+  id_pet: number;
+  pet: Observable<PetOptions>;
 
   editarPetForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
-
     private categorias: CategoriaService,
     private especies: EspecieService,
     private portes: PorteService,
     private uf: IbgeUFService,
-
+    private petService: PetsService,
     private cepService: ViacepService
   ) { }
 
@@ -41,12 +43,17 @@ export class PetEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    // const id_pet = this.router.snapshot.data.id;
+    this.id_pet = 2;
+    this.pet = this.petService.getById(this.id_pet);
+
     this.listCategorias = this.categorias.getCategorias();
     this.listEspecies = this.especies.getEspecies();
     this.listPortes = this.portes.getPortes();
     this.listUF = this.uf.getUFs();
 
     this.editarPetForm = this.formBuilder.group({
+      id_pet: [this.id_pet],
       nome: ['', Validators.required],
       categoria: ['', Validators.required],
       descricao: ['', Validators.required],
