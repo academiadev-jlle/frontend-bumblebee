@@ -15,12 +15,13 @@ export class AuthService {
     private http: HttpClient,
     private tokenService: TokenService) { }
 
-  createPet(nome: string, categoria: number, descricao: string,
-    porte: number, especie: number, sexo: string,
-    idFotos: Array<number>,
-    cep: string, rua: string, referencia: string, bairro: string, cidade: string, uf: string) {
+    createPet(nome: string, categoria: number, descricao: string,
+      porte: number, especie: number, sexo: string,
+      idFotos: Array<number>,
+      cep: string, rua: string, referencia: string, bairro: string, cidade: string, uf: string) {
 
-    return this.http.post(API_URL + '/pet/usuario/1', {
+    const token = this.tokenService.getToken();
+    return this.http.post(API_URL + '/pet', {
       categoria,
       descricao,
       especie,
@@ -36,6 +37,11 @@ export class AuthService {
       nome,
       porte,
       sexo
+    }, {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      }),
+      observe: 'response'
     });
   }
 
