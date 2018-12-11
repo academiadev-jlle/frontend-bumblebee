@@ -1,5 +1,5 @@
 <a [routerLink]="['/pet', pet.id]">
-    <div [appImageRounded]="photo"></div>
+    <div [appImageRounded]="fotos[pet.id].foto"></div>
 </a>
 <div class="card-body">
     <h5 class="card-title"><a [routerLink]="['/pet', pet.id]">{{ pet.nome }}</a></h5>
