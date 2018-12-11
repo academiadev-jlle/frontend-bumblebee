@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    // private router: Router
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -29,9 +32,9 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(email, senha)
       .subscribe(
         certo => {
-          console.log(certo);
+          // this.router.navigate(['/home']);
         }
-          ,
+        ,
         err => {
           console.log(err);
           this.loginForm.reset();
@@ -41,9 +44,9 @@ export class LoginComponent implements OnInit {
 
   pegarInfos() {
     this.authService.getInfo()
-    .subscribe(
-      good => console.log(good),
-      err => console.log(err)
+      .subscribe(
+        good => console.log(good),
+        err => console.log(err)
       );
   }
 }
