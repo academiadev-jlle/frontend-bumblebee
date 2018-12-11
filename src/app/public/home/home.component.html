@@ -17,18 +17,18 @@
   <div class="container">
     <div class="row">
 
-      <div *ngFor="let pet of lostPets.content">
+      <div *ngFor="let pet of lostPets['content']">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="lostPets.content == 0">
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="lostPets['content'] == 0">
         Não há pets para mostrar.
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="lostPets.content">
+    <div class="row" *ngIf="lostPets['content']">
       <a [routerLink]="['/pet/categoria/', 'PERDIDOS']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i
           class="fa fa-plus"></i> Ver mais</a>
     </div>
@@ -47,18 +47,18 @@
   <div class="container bumblebee-container-card">
     <div class="row">
 
-      <div *ngFor="let pet of adoptionPets.content">
+      <div *ngFor="let pet of adoptionPets['content']">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptionPets.content == 0">
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptionPets['content'] == 0">
         Não há pets para mostrar.
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="adoptionPets.content">
+    <div class="row" *ngIf="adoptionPets['content']">
       <a [routerLink]="['/pet/categoria/', 'ADOCAO']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i
           class="fa fa-plus"></i> Ver mais</a>
     </div>
@@ -77,18 +77,18 @@
   <div class="container bumblebee-container-card">
     <div class="row">
 
-      <div *ngFor="let pet of adoptedPets.content">
+      <div *ngFor="let pet of adoptedPets['content']">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptedPets.content == 0">
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptedPets['content'] == 0">
         Não há pets para mostrar.
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="adoptedPets.content">
+    <div class="row" *ngIf="adoptedPets['content']">
       <a [routerLink]="['/pet/categoria/', 'ADOTADOS']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5">
         <i class="fa fa-plus"></i> Ver mais</a>
     </div>
