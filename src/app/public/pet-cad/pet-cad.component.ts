@@ -39,13 +39,19 @@ export class PetCadComponent implements OnInit {
   ) { }
 
   selectedFileIds: Array<number> = [];
+
   onFileSelected(event) {
     const files = event.target.files;
-    const file = files[0];
-
     const formData: FormData = new FormData();
-    formData.append('file', file, file.name);
 
+    for (const file of files) {
+      formData.append('file', file, file.id);
+      this.sendFiles(formData);
+      formData.delete('file');
+    }
+  }
+
+  sendFiles(formData) {
     this.authService.trocaFotoPorId(formData)
       .subscribe(
         (good: number) => {

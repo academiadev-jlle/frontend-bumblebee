@@ -44,7 +44,7 @@ export class AuthService {
   }
 
   trocaFotoPorId(foto) {
-    return this.http.post(API_URL + '/foto', foto);
+    return this.http.post(API_URL + '/foto/', foto);
   }
 
   authenticate(email: string, senha: string) {
@@ -67,7 +67,6 @@ export class AuthService {
 
   getInfo() {
     const token = this.tokenService.getToken();
-    console.log(token);
 
     return this.http.get(API_URL + '/oauth/info', {
       headers: new HttpHeaders({
@@ -75,11 +74,6 @@ export class AuthService {
       }),
       observe: 'response'
     });
-
-      // .pipe(tap(res => {
-      //   const authToken = res['body']['access_token'];
-      //   this.tokenService.setToken(authToken);
-      // }));
   }
 
 }
