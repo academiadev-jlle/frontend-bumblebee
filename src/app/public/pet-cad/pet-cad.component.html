@@ -112,7 +112,7 @@
 
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
             <label for="uf">UF</label>
-            <select formControlName="uf" class="form-control" id="uf">
+            <select formControlName="uf" class="form-control" id="uf" (change)="updateCidade()" >
               <option value="">Selecione uma UF...</option>
               <option *ngFor="let uf of listUF" [ngValue]="uf">{{ uf }}</option>
             </select>
