@@ -4,6 +4,6 @@ export interface PetOptions {
     descricao: string;
     categoria: string;
     especie: string;
-    dataCadastro: string;
+    datapostagem: string;
     content: any [];
 }

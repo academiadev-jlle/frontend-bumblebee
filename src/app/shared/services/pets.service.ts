@@ -54,7 +54,14 @@ export class PetsService {
 
 
     getPetsByCategory(category: string, tamanho: number = 10): Observable<PetOptions[]> {
-        const url = `${this.url}filtro?categoria=${category}&tamanho=${tamanho}`;
+        let filtro = '';
+        if (category === 'todos') {
+            filtro = `filtro?&tamanho=${tamanho}`;
+        } else {
+            filtro = `filtro?categoria=${category}&tamanho=${tamanho}`;
+        }
+        const url = `${this.url}${filtro}`;
+        console.log(url);
         return this.http.get<PetOptions[]>(url);
     }
 
