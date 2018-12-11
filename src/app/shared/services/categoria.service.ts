@@ -12,13 +12,28 @@ export class CategoriaService {
   constructor() {
     this.categorias.push(...[{
       id: 0,
-      descricao: 'Para adoção',
+      descricao: 'Achados', // pessoa que achou um pet
+      enum: 'ACHADOS'
     }, {
       id: 1,
-      descricao: 'Perdidos'
+      descricao: 'Devolvidos', // pessoa que achou um pet e devolveu
+      enum: 'DEVOLVIDOS'
     }, {
       id: 2,
-      descricao: 'Encontrados'
+      descricao: 'Perdidos', // pessoa que perdeu seu pet
+      enum: 'PERDIDOS'
+    }, {
+      id: 3,
+      descricao: 'Encontrados', // pessoa que encontrou seu pet perdido
+      enum: 'ENCONTRADOS'
+    }, {
+      id: 4,
+      descricao: 'Para adoção', // pets para adoção
+      enum: 'ADOCAO'
+    }, {
+      id: 5,
+      descricao: 'Adotados', // pets já adotados
+      enum: 'ADOTADOS'
     }]);
   }
 

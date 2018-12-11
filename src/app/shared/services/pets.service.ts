@@ -43,7 +43,7 @@ export class PetsService {
     // ========== ./PARA TESTES ==========
 
     // tslint:disable-next-line:member-ordering
-    private url = 'https://test-bumblebeepets.herokuapp.com/pet/pet';
+    private url = 'https://test-bumblebeepets.herokuapp.com/pet/';
 
     // constructor(
     //     private http: HttpClient

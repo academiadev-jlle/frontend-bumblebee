@@ -13,6 +13,7 @@ import { ListPetsUserResolver } from './public/pet-list-user/pet-list-user.resol
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
     SharedModule,
     PublicModule,
     AppRoutingModule,
+    NgxMaskModule.forRoot(),
 
     // events
     ClickOutsideModule,

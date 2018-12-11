@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PetCadComponent } from './pet-cad/pet-cad.component';
 import { PasswordRecoveryComponent } from './password-recovery/password-recovery.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterModule,
     CarouselModule,
     AngularFontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot()
   ],
   declarations: [
     HomeComponent,
