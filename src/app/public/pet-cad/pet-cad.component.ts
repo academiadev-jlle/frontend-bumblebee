@@ -8,7 +8,9 @@ import { ViacepService } from 'src/app/dependencies/viacep.service';
 import { IbgeUFService } from 'src/app/dependencies/ibge-uf.service';
 
 import { ViaCep } from '../../shared/options/viacep.options';
-
+import { ListaCidades } from '../../shared/options/cidade.options';
+import { DadosabertosbrCidadesService } from 'src/app/dependencies/dadosabertosbr-cidades.service';
+import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-pet-cad',
   templateUrl: './pet-cad.component.html',
@@ -32,6 +34,7 @@ export class PetCadComponent implements OnInit {
     private portes: PorteService,
     private uf: IbgeUFService,
 
+    private cidadeService: DadosabertosbrCidadesService,
     private cepService: ViacepService
   ) { }
 
@@ -110,6 +113,18 @@ export class PetCadComponent implements OnInit {
     );
   }
 
+  updateCidade() {
+    const unidadeFederativa = this.petCadForm.get('uf').value;
+    if (unidadeFederativa != null) {
+      this.cidadeService.getCidades(unidadeFederativa)
+      .subscribe(
+        (resp: Array<ListaCidades>) => {
+            this.listCidades = resp.map(lista => lista.nome);
+          }
+        );
+    }
+  }
+
   updateCidadeAndUF() {
     const cep = this.petCadForm.get('cep').value;
     if (cep != null) {
@@ -118,12 +133,14 @@ export class PetCadComponent implements OnInit {
         .subscribe(
           (resp: ViaCep) => {
             this.petCadForm.patchValue({
+              uf: resp.uf
+            });
+            this.updateCidade();
+            this.petCadForm.patchValue({
               cidade: resp.localidade,
-              uf: resp.uf,
               bairro: resp.bairro,
               rua: resp.logradouro
             });
-
           }
         );
     }
