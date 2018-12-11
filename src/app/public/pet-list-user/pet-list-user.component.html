@@ -11,9 +11,10 @@
       <hr />
 
       <div class="container text-center text-md-left mb-5 mt-4">
-        <div class="row" *ngFor="let pet of listPetsUser.content">
+        <div class="row bumblebee-list-pets-user" *ngFor="let pet of listPetsUser.content">
           <div class="col-12 col-md-4 col-lg-3 text-center">
             <a [routerLink]="['/pet', pet.id]">
+              <!-- {{ pet.foto.foto }} -->
               <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
             </a>
           </div>
@@ -42,8 +43,6 @@
             </div>
           </div>
         </div>
-
-        <hr />
       </div>
 
       <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="listPetsUser.length == 0">
