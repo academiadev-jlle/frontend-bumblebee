@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/core/auth.service';
 })
 
 export class HeaderComponent implements OnInit {
+  nome_do_usuario = 'Minha Conta';
   bumblebee = '../../assets/bumblebee.jpg';
   logo = '../../assets/logo-4.png';
   isCollapsed = true;
@@ -22,6 +23,12 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.authService.getInfo()
+      .subscribe(
+        (resp) => {
+          this.nome_do_usuario = resp['body']['nome'];
+        }
+      );
   }
 
   existeLogin() {

@@ -50,7 +50,7 @@
           <li class="dropdown" dropdown>
             <a class="nav-link dropdown-toggle" dropdownToggle (click)="false" href id="navbarDropdown" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              <fa name="user-circle"></fa> Minha conta
+              <fa name="user-circle"></fa> {{ nome_do_usuario }}
             </a>
             <div *dropdownMenu appBgColor class="dropdown-menu bumblebee-dropdown-menu-user" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" [routerLink]="['/perfil/user']" (click)="isCollapsed = !isCollapsed">
