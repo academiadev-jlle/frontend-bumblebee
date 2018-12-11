@@ -68,6 +68,7 @@ export class AuthService {
   logout() {
     const token = this.tokenService.getToken();
 
+    this.tokenService.removeToken();
     return this.http.get(API_URL + '/oauth/logout', {
       headers: new HttpHeaders({
         'Authorization': 'Bearer ' + token
@@ -75,7 +76,6 @@ export class AuthService {
       observe: 'response'
     });
 
-    this.tokenService.removeToken();
   }
   getInfo() {
     const token = this.tokenService.getToken();
