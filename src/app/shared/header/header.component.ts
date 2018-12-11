@@ -23,12 +23,10 @@ export class HeaderComponent implements OnInit {
   }
 
   existeLogin() {
-    console.log('existe login?');
     return this.tokenService.hasToken();
   }
 
   logout() {
-    console.log('logout');
     this.tokenService.removeToken();
     this.router.navigate(['/home']);
   }
