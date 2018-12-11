@@ -65,6 +65,18 @@ export class AuthService {
       }));
   }
 
+  logout() {
+    const token = this.tokenService.getToken();
+
+    return this.http.get(API_URL + '/oauth/logout', {
+      headers: new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      }),
+      observe: 'response'
+    });
+
+    this.tokenService.removeToken();
+  }
   getInfo() {
     const token = this.tokenService.getToken();
 
