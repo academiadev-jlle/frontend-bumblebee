@@ -48,13 +48,6 @@ export class AuthService {
   }
 
   authenticate(email: string, senha: string) {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': 'Basic ' + btoa('academiadev-front:fronfront')
-      }),
-      observe: 'response'
-    };
-
     const data = new FormData();
     data.append('username', email);
     data.append('password', senha);
