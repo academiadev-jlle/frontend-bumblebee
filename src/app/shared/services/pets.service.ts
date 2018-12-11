@@ -53,11 +53,9 @@ export class PetsService {
     //     return this.http.get<PetOptions[]>(this.url);
     // }
 
-    getPetsByCategory(category: string): Observable<PetOptions[]> {
-        const url = `${this.url}categoria/${category}/`;
-        // console.log(url);
-        // return this.http.get<PetOptions[]>(url);
-        return this.http.get<PetOptions[]>(this.url);
+    getPetsByCategory(category: string, tamanho: number = 10): Observable<PetOptions[]> {
+        const url = `${this.url}filtro?categoria=${category}&tamanho=${tamanho}`;
+        return this.http.get<PetOptions[]>(url);
     }
 
     getPetsUser(): Observable<PetOptions[]> {

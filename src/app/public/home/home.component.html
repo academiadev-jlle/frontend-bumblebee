@@ -17,18 +17,18 @@
   <div class="container">
     <div class="row">
 
-      <div *ngFor="let pet of lostPets">
+      <div *ngFor="let pet of lostPets.content">
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="lostPets.length == 0">
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="lostPets.content == 0">
         Não há pets para mostrar.
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="lostPets.length > 0">
+    <div class="row" *ngIf="lostPets.content">
       <a [routerLink]="['/pet/categoria/', 'perdidos']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i
           class="fa fa-plus"></i> Ver mais</a>
     </div>
@@ -51,14 +51,14 @@
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptionPets.length == 0">
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptionPets.content == 0">
         Não há pets para mostrar.
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="adoptionPets.length > 0">
+    <div class="row" *ngIf="adoptionPets.content > 0">
       <a [routerLink]="['/pet/categoria/', 'para-adocao']" type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i
           class="fa fa-plus"></i> Ver mais</a>
     </div>
@@ -81,14 +81,14 @@
         <app-pet-list-item [pet]="pet"></app-pet-list-item>
       </div>
 
-      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptedPets.length == 0">
+      <div class="alert alert-info container-fluid mx-5 mt-5 text-center" role="alert" *ngIf="adoptedPets">
         Não há pets para mostrar.
       </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="row" *ngIf="adoptedPets.length > 0">
+    <div class="row" *ngIf="adoptedPets.content > 0">
       <button type="button" class="btn btn-outline-dark mb-5 btn-block mr-5 ml-5"><i class="fa fa-plus"></i> Ver mais</button>
     </div>
   </div>

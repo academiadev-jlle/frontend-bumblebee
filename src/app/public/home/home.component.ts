@@ -19,10 +19,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private petService: PetsService) { }
 
-  // this.listCategorias = this.categorias.getCategorias();
-
   ngOnInit() {
-    this.lostPets = this.petService.getPets();
+    this.petService.getPetsByCategory('PERDIDOS', 3).subscribe(resposta => {
+      this.lostPets = resposta;
+      console.log(this.lostPets);
+    });
     this.adoptionPets = this.petService.getPets();
     this.adoptedPets = this.petService.getPets();
   }
