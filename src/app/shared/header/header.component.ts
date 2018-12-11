@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/core/token.service';
+import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private tokenService: TokenService,
+    private authService: AuthService,
     private router: Router
   ) { }
 
@@ -27,7 +29,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.tokenService.removeToken();
+    this.authService.logout();
     this.router.navigate(['/home']);
   }
 
