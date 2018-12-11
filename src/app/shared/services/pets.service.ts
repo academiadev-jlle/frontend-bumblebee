@@ -7,9 +7,9 @@ import { PetOptions } from '../options/pet-list-item.options';
     providedIn: 'root'
 })
 export class PetsService {
-
-    // ========== PARA TESTES ==========
+    id_usuario: number;
     pets: PetOptions[] = [];
+
     constructor(private http: HttpClient) {
         this.pets.push(...[{
             id: 1,
@@ -61,7 +61,9 @@ export class PetsService {
     }
 
     getPetsUser(): Observable<PetOptions[]> {
-        return this.http.get<PetOptions[]>(this.url);
+        this.id_usuario = 1;
+        const url = `${this.url}usuario/${this.id_usuario}/`;
+        return this.http.get<PetOptions[]>(url);
     }
 
     // ============= SAIU FORA, MAS ESTÁ AÍ PARA CONSULTA =============

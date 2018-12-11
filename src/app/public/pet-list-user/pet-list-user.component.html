@@ -11,7 +11,7 @@
       <hr />
 
       <div class="container text-center text-md-left mb-5 mt-4">
-        <div class="row" *ngFor="let pet of listPetsUser">
+        <div class="row" *ngFor="let pet of listPetsUser.content">
           <div class="col-12 col-md-4 col-lg-3 text-center">
             <a [routerLink]="['/pet', pet.id]">
               <img class="mr-3 bumblebee-img-list-user" [src]="photo" alt="Foto do pet">
