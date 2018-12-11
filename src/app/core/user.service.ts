@@ -6,7 +6,9 @@ import { AuthService } from './auth.service';
 })
 export class UserService {
     id: number;
+    email: string;
     nome: string;
+    contato: string;
 
     constructor(
         private authService: AuthService
@@ -17,11 +19,25 @@ export class UserService {
             resp => {
                 this.id = resp['body']['id'];
                 this.nome = resp['body']['nome'];
+                this.email = resp['body']['email'];
+                this.contato = resp['body']['contato'];
             }
         );
     }
 
     getId() {
         return this.id;
+    }
+
+    getEmail() {
+        return this.email;
+    }
+
+    getNome() {
+        return this.nome;
+    }
+
+    getContato() {
+        return this.contato;
     }
 }

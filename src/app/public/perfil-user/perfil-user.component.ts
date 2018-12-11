@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
+
   }
 
 }

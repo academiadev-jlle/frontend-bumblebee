@@ -51,13 +51,13 @@
                                 <fa name="phone"></fa>
                             </span>
                         </div>
-                        <input formControlName="telefone" type="text" mask="(00) 00000-0000" [showMaskTyped]="true"
-                            class="form-control" placeholder="Telefone" aria-label="telefone" aria-describedby="basic-addon1">
+                        <input formControlName="contato" type="text" mask="(00) 00000-0000" [showMaskTyped]="true"
+                            class="form-control" placeholder="contato" aria-label="contato" aria-describedby="basic-addon1">
                     </div>
 
-                    <small *ngIf="cadastroForm.get('telefone').errors?.required && cadastroForm.get('telefone').touched"
+                    <small *ngIf="cadastroForm.get('contato').errors?.required && cadastroForm.get('contato').touched"
                         class="text-danger d-block">
-                        Por favor digite o telefone
+                        Por favor digite o contato
                     </small>
                 </div>
 
