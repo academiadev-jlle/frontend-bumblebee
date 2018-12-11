@@ -36,11 +36,11 @@ const routes: Routes = [
   { path: 'perfil/user', component: PerfilUserComponent },
   { path: 'edit/perfil/user', component: EditPerfilUserComponent },
   {
-    path: 'pet/categoria/:category?',
+    path: 'pet/categoria/:category',
     component: PetListCategoryComponent,
-    // resolve: {
-    //   listPets: ListPetsResolver
-    // }
+    resolve: {
+      listPets: ListPetsResolver
+    }
   },
   {
     path: 'user/pets',

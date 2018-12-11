@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PetOptions } from '../options/pet-list-item.options';
 import { UserService } from 'src/app/core/user.service';
+import { CategoriaService } from './categoria.service';
 
 @Injectable({
     providedIn: 'root'
@@ -11,10 +12,13 @@ export class PetsService {
     private url = 'https://test-bumblebeepets.herokuapp.com/pet/';
     id_usuario: number;
     pets: PetOptions[] = [];
+    listCategorias = [];
+    categoria = '';
 
     constructor(
         private http: HttpClient,
-        private userService: UserService
+        private userService: UserService,
+        private categorias: CategoriaService
     ) { }
 
     // ) {
