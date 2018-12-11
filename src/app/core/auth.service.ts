@@ -4,7 +4,6 @@ import { tap } from 'rxjs/operators';
 import { TokenService } from './token.service';
 
 const API_URL = 'https://test-bumblebeepets.herokuapp.com';
-// const API_URL = 'https://bumblebeepets.herokuapp.com';
 
 @Injectable({
   providedIn: 'root'
