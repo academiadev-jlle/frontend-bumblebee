@@ -12,7 +12,7 @@
       <hr />
 
       <form [formGroup]="editarPetForm" class="form-group mt-4" (submit)="editPet()">
-        {{ pet | json }}
+        <!-- {{ pet | json }} -->
         <input formControlName="id_pet" type="hidden" value="{{ id_pet }}" />
 
         <div class="form-row">
