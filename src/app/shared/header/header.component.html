@@ -20,29 +20,37 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/pet/categoria/todos']" (click)="isCollapsed = !isCollapsed">Buscar pets</a>
+            <a class="nav-link" [routerLink]="['/pet/categoria/todos']" (click)="isCollapsed = !isCollapsed">
+              <fa name="search"></fa> Buscar pets
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/cad/pet']" (click)="isCollapsed = !isCollapsed">Cadastrar um pet</a>
+          <li class="nav-item" *ngIf="existeLogin()">
+            <a class="nav-link" [routerLink]="['/cad/pet']" (click)="isCollapsed = !isCollapsed">
+              <fa name="paw"></fa> Cadastrar um pet
+            </a>
           </li>
         </ul>
 
         <!-- NÃO AUTENTICADO -->
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" *ngIf="!existeLogin()">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/cad/user']" (click)="isCollapsed = !isCollapsed">Cadastre-se</a>
+            <a class="nav-link" [routerLink]="['/cad/user']" (click)="isCollapsed = !isCollapsed">
+              <fa name="user-plus"></fa> Cadastre-se
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/login']" (click)="isCollapsed = !isCollapsed">Login</a>
+            <a class="nav-link" [routerLink]="['/login']" (click)="isCollapsed = !isCollapsed">
+              <fa name="sign-in"></fa> Login
+            </a>
           </li>
         </ul>
 
         <!-- AUTENTICADO -->
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" *ngIf="existeLogin()">
           <li class="dropdown" dropdown>
             <a class="nav-link dropdown-toggle" dropdownToggle (click)="false" href id="navbarDropdown" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              Minha conta
+              <fa name="user-circle"></fa> Minha conta
             </a>
             <div *dropdownMenu appBgColor class="dropdown-menu bumblebee-dropdown-menu-user" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" [routerLink]="['/perfil/user']" (click)="isCollapsed = !isCollapsed">
@@ -52,7 +60,7 @@
                 <fa name="paw mr-2"></fa>Meus pets
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" (click)="isCollapsed = !isCollapsed">
+              <a class="dropdown-item bumblebee-link-logout" (click)="logout(); isCollapsed = !isCollapsed">
                 <fa name="power-off mr-2"></fa>Sair
               </a>
             </div>
@@ -65,10 +73,12 @@
 
   <nav class="fixed-top" appBgColor="#141a24">
     <div class="container text-right pr-4 bumblebee-acessibility">
-        <span class="mr-2" (click)="alterarFonte('menos')"><strong>A-</strong></span>
-        <span class="mr-2" (click)="alterarFonte('normal')"><strong>A</strong></span>
-        <span class="mr-2" (click)="alterarFonte('mais')"><strong>A+</strong></span>
-        <span><fa name="adjust" (click)="autoContraste()"></fa></span>
+      <span class="mr-2" (click)="alterarFonte('menos')"><strong>A-</strong></span>
+      <span class="mr-2" (click)="alterarFonte('normal')"><strong>A</strong></span>
+      <span class="mr-2" (click)="alterarFonte('mais')"><strong>A+</strong></span>
+      <span>
+        <fa name="adjust" (click)="autoContraste()"></fa>
+      </span>
     </div>
   </nav>
 

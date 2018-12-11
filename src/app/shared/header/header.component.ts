@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/core/token.service';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +14,23 @@ export class HeaderComponent implements OnInit {
   isCollapsed = true;
   tamanho_fonte = 12;
 
-  constructor() { }
+  constructor(
+    private tokenService: TokenService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  existeLogin() {
+    console.log('existe login?');
+    return this.tokenService.hasToken();
+  }
+
+  logout() {
+    console.log('logout');
+    this.tokenService.removeToken();
+    this.router.navigate(['/home']);
   }
 
   // ============ ACESSIBILIDADE ============ //
