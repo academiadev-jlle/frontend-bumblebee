@@ -17,6 +17,17 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  existeLogin() {
+    console.log('existe login?');
+    // return this.tokenService.hasToken();
+  }
+
+  logout() {
+    console.log('logout');
+    // this.tokenService.removeToken();
+    // this.router.navigate(['/home']);
+  }
+
   // ============ ACESSIBILIDADE ============ //
 
   autoContraste() {
