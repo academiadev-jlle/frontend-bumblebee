@@ -41,10 +41,10 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1"><i class="fa fa-phone"></i></span>
             </div>
-            <input formControlName="telefone" type="text" mask="(00) 00000-0000" [showMaskTyped]="true" class="form-control" placeholder="Telefone" aria-label="Telefone" aria-describedby="basic-addon1">
+            <input formControlName="contato" type="text" mask="(00) 00000-0000" [showMaskTyped]="true" class="form-control" placeholder="contato" aria-label="contato" aria-describedby="basic-addon1">
           </div>
-          <small *ngIf="editarPerfilForm.get('telefone').errors?.required && editarPerfilForm.get('telefone').touched" class="text-danger d-block">
-              Por favor digite seu telefone
+          <small *ngIf="editarPerfilForm.get('contato').errors?.required && editarPerfilForm.get('contato').touched" class="text-danger d-block">
+              Por favor digite seu contato
             </small>
         </div>
 

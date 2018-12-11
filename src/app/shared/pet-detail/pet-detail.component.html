@@ -65,32 +65,37 @@
                 <div class="container">
                     <div class="row mb-4">
 
-                        <div class='col-12 col-md-6 mb-3'>
+                        <div class='col-12 col-md-6 mb-3' *ngIf="pet.localizacao.logradouro">
                             <p class="mb-0 pb-0">
                                 <strong>Rua</strong>
                             </p>
                             {{ pet.localizacao.logradouro }}
                         </div>
 
-                        <div class="col-12 col-md-6 mb-3">
+                        <div class="col-12 col-md-6 mb-3" *ngIf="pet.localizacao.referencia">
                             <p class="mb-0 pb-0">
                                 <strong>Ponto de referência</strong>
                             </p>
                             {{ pet.localizacao.referencia }}
                         </div>
 
-                        <div class='col-12 col-md-6 mb-3'>
+                        <div class='col-12 col-md-6 mb-3' *ngIf="pet.localizacao.bairro">
                             <p class="mb-0 pb-0">
                                 <strong>Bairro</strong>
                             </p>
                             {{ pet.localizacao.bairro }}
                         </div>
 
-                        <div class="col-12 col-md-6 mb-3">
+                        <div class="col-12 col-md-6 mb-3" *ngIf="pet.localizacao.cidade.nome || pet.localizacao.cidade.uf">
                             <p class="mb-0 pb-0">
                                 <strong>Cidade/Estado</strong>
                             </p>
-                            {{ pet.localizacao.cidade.nome }}/{{ pet.localizacao.cidade.uf.uf }}
+                            <span *ngIf="pet.localizacao.cidade.nome">
+                                {{ pet.localizacao.cidade.nome }}
+                            </span>
+                            <span *ngIf="pet.localizacao.cidade.uf">
+                                /{{ pet.localizacao.cidade.uf }}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -112,14 +117,14 @@
                             {{ pet.usuario.nome }}
                         </div>
 
-                        <div class='col-12 col-md-6 mb-3'>
+                        <div class='col-12 col-md-6 mb-3' *ngIf="pet.usuario.contato">
                             <p class="mb-0 pb-0">
-                                <fa name="phone mr-2"></fa><strong>Telefone:</strong>
+                                <fa name="phone mr-2"></fa><strong>contato:</strong>
                             </p>
-                            {{ pet.usuario.telefone }}
+                            {{ pet.usuario.contato }}
                         </div>
 
-                        <div class='col-12 col-md-12 mb-3'>
+                        <div class='col-12 col-md-6 mb-3 mx-auto'>
                             <p class="mb-0 pb-0">
                                 <fa name="envelope mr-2"></fa><strong>E-mail</strong>
                             </p>

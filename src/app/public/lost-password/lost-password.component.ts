@@ -17,9 +17,10 @@ export class LostPasswordComponent implements OnInit {
     });
   }
 
-  editarPerfil() {
+  recuperarSenha() {
     const email = this.senhaPerdidaForm.get('email').value;
 
+    console.log(email);
     // todo
   }
 

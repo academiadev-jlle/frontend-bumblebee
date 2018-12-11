@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/auth.service';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  id_usuario: number;
   loginForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(email, senha)
       .subscribe(
         certo => {
+          this.userService.setValues();
           this.router.navigate(['/home']);
         }
         ,

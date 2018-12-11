@@ -50,7 +50,7 @@
 
       <div class="row">
 
-        <div *ngFor="let pet of listPets" class="bumblebee-card-single mx-auto">
+        <div *ngFor="let pet of listPets['content']" class="bumblebee-card-single mx-auto">
           <app-pet-list-item [pet]="pet"></app-pet-list-item>
         </div>
 

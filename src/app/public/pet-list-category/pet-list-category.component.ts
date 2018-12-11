@@ -33,9 +33,14 @@ export class PetListCategoryComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.listPets = this.pets.getPets();
-    // this.listPets = this.router.snapshot.data.listPets;
-    // this.categoria = this.router.snapshot.params.category;
+    // this.listPets = this.pets.getPets();
+    this.listPets = this.router.snapshot.data.listPets;
+    const cat = this.router.snapshot.params.category;
+
+    this.categoria = this.categorias.getCategorias().filter(
+      resp => resp.enum === cat
+    )[0].descricao;
+
     this.listCategorias = this.categorias.getCategorias();
     this.listEspecies = this.especies.getEspecies();
 

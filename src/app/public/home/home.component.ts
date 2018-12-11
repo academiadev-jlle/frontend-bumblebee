@@ -19,18 +19,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private petService: PetsService) { }
 
-  // this.listCategorias = this.categorias.getCategorias();
-
   ngOnInit() {
-    this.lostPets = this.petService.getPets();
-    this.adoptionPets = this.petService.getPets();
-    this.adoptedPets = this.petService.getPets();
+    this.petService.getPetsByCategory('PERDIDOS', 3).subscribe(resposta => this.lostPets = resposta);
+    this.petService.getPetsByCategory('ADOCAO', 3).subscribe(resposta => this.adoptionPets = resposta);
+    this.petService.getPetsByCategory('ADOTADOS', 3).subscribe(resposta => this.adoptedPets = resposta);
   }
-
-  // ngOnInit() {
-  //   this.petService.getPetsByCategory('perdidos').subscribe(resposta => this.lostPets = resposta);
-  //   this.petService.getPetsByCategory('para-adocao').subscribe(resposta => this.adoptionPets = resposta);
-  //   this.petService.getPetsByCategory('adotados').subscribe(resposta => this.adoptedPets = resposta);
-  // }
-
 }

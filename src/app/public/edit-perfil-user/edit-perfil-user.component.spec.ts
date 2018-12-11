@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { EditPerfilUserComponent } from './edit-perfil-user.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('PageEditPerfilComponent', () => {
   let component: EditPerfilUserComponent;
@@ -12,7 +13,7 @@ describe('PageEditPerfilComponent', () => {
     TestBed.configureTestingModule({
       declarations: [EditPerfilUserComponent],
       schemas: [NO_ERRORS_SCHEMA],
-      imports: [ReactiveFormsModule]
+      imports: [ReactiveFormsModule, HttpClientModule]
     })
       .compileComponents();
   }));
@@ -24,6 +25,6 @@ describe('PageEditPerfilComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy;
   });
 });

@@ -20,7 +20,7 @@ export class UserCadComponent implements OnInit {
     this.cadastroForm = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       nome: ['', Validators.required],
-      telefone: ['', Validators.required],
+      contato: ['', Validators.required],
       senha: ['', Validators.required],
       confirmacaoSenha: ['', Validators.required],
     });
@@ -29,9 +29,9 @@ export class UserCadComponent implements OnInit {
   cadastraUsuario() {
     const email = this.cadastroForm.get('email').value;
     const nome = this.cadastroForm.get('nome').value;
-    const telefone = this.cadastroForm.get('telefone').value;
+    const contato = this.cadastroForm.get('contato').value;
     const senha = this.cadastroForm.get('senha').value;
-    this.authService.cadastraUsuario(email, nome, telefone, senha)
+    this.authService.cadastraUsuario(email, nome, contato, senha)
       .subscribe(
         certo => console.log(certo),
         err => {
