@@ -17,8 +17,8 @@ export class PetsService {
 
     constructor(
         private http: HttpClient,
-        private userService: UserService,
-        private categorias: CategoriaService
+        // private userService: UserService,
+        // private categorias: CategoriaService
     ) { }
 
     // ) {
@@ -55,13 +55,8 @@ export class PetsService {
 
     getPetsByCategory(category: string, tamanho: number = 10): Observable<PetOptions[]> {
         let filtro = '';
-        if (category === 'todos') {
-            filtro = `filtro?&tamanho=${tamanho}`;
-        } else {
-            filtro = `filtro?categoria=${category}&tamanho=${tamanho}`;
-        }
+        filtro = category === 'todos' ? `filtro?&tamanho=${tamanho}` : `filtro?categoria=${category}&tamanho=${tamanho}`;
         const url = `${this.url}${filtro}`;
-        console.log(url);
         return this.http.get<PetOptions[]>(url);
     }
 
